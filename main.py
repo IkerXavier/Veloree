@@ -75,8 +75,28 @@ def hello_world() -> str:
 def menu() -> str:
     return render_template("menu.html")
 @app.route("/konto")
-def menu() -> str:
+def konto() -> str:
     return render_template("konto.html")
+@app.route("/warenkorb")
+def warenkorb() -> str:
+    return render_template("warenkorb.html")
+@app.route("/ueberuns")
+def ueberuns() -> str:
+    return render_template("ueberuns.html")
+@app.route("/frauen")
+def frauen() -> str:
+    return render_template("frauen.html")
+@app.route("/maenner")
+def maenner() -> str:
+    return render_template("maenner.html")
+@app.route("/unisex")
+def unisex() -> str:
+    return render_template("unisex.html")
+@app.route("/zahlungsversand")
+def zahlungsversand() -> str:
+    return render_template("zahlungversand.html")
+
+
 
 if __name__ == '__main__':
     app.run()
