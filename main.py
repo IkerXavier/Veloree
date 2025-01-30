@@ -96,6 +96,10 @@ def unisex() -> str:
 def zahlungsversand() -> str:
     return render_template("zahlungversand.html")
 
+@app.route("/homepage")
+def homepage() -> str:
+    return render_template("homepage.html")
+
 
 
 if __name__ == '__main__':
