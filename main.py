@@ -68,6 +68,15 @@ def hello_world() -> str:
     # Die Anzeigefunktion 'hello_world' gibt den String "Hello, World" als Antwort zurück
     return 'Hello, World!'
 
+#########################
+# PARFÜM
+#########################
+@app.route("/menu")
+def menu() -> str:
+    return render_template("menu.html")
+@app.route("/konto")
+def menu() -> str:
+    return render_template("konto.html")
 
 if __name__ == '__main__':
     app.run()
