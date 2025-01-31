@@ -1,0 +1,27 @@
+nav a{
+    text-decoration: none;
+    color: inherit;
+}
+.gutschein{
+    display: flex;
+    justify-content: center;
+}
+hr {
+    border: 2px solid black;
+    width: 100%;
+
+}
+.linie2{
+    border: 2px solid black;
+    width: 100%;
+
+}
+.bottom{
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 220px;
+    padding: 30px;
+
+}
