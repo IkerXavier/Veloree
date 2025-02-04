@@ -9,6 +9,7 @@ languages = [
     {"name": "Java", "creator": "James Gosling", "year": 1995},
     {"name": "C#", "creator": "Microsoft", "year": 2000},
     {"name": "Ruby", "creator": "Yukihiro Matsumoto", "year": 1995},
+    {"name": "TypeScript", "creator": "Microsoft", "year": 2012},
 ]
 
 # Definieren einer Variable, die die aktuelle Datei zum Zentrum
@@ -30,6 +31,10 @@ def home() -> str:
     print(math_service.add(1.0, 2.0))
     app.logger.info("Rendering home page")
     return render_template("home.html")
+
+@app.route("/contact")
+def contact() -> str:
+    return render_template("contact.html")
 
 
 @app.route("/about_flask")
