@@ -1,8 +1,44 @@
 {% extends 'base.html' %}
 
-{% block title %}Languages{% endblock %}
+{% block title %}Über uns{% endblock %}
+
+{% block extra_styles %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/ueberuns.css') }}">
+{% endblock %}
 
 {% block content %}
-<h1>Über uns</h1>
+<div class="ueberuns-container">
+    <h1 class="headline">Über uns</h1>
 
+    <div class="content-wrapper">
+        <div class="text-box">
+           Über Velorée
+
+
+            Velorée ist eine aufstrebende Parfümmarke, die im Jahr 2025 mit einer klaren Vision gegründet wurde: einzigartige Düfte
+            zu kreieren, die Emotionen wecken. Unsere erste Kollektion umfasst drei exklusive Duftlinien, die Eleganz, Frische
+            und Individualität vereinen. Jedes Parfüm wurde mit viel Leidenschaft und Liebe zum Detail entwickelt, um unseren Kund:inne
+            n ein besonderes Dufterlebnis zu bieten. Wir setzen auf hochwertige Inhaltsstoffe und moderne Duftkompositionen, die Trends
+            setzen und gleichzeitig zeitlos sind. Unser Ziel ist es, Parfüm neu zu definieren – nicht nur als Produkt, sondern als Ausdruck
+            von Persönlichkeit und Stil. Velorée steht für Innovation, Qualität und das gewisse Etwas.
+
+        </div>
+        <div class="image-box"></div>
+
+        <div class="image-box"></div>
+        <div class="text-box">
+           Unsere Philosophie
+
+
+            Bei Velorée glauben wir daran, dass Luxus und Nachhaltigkeit Hand in Hand gehen können.
+            Deshalb legen wir großen Wert auf umweltfreundliche Verpackungen und verwenden nachhaltige Inhaltsstoffe,
+            wo immer es möglich ist. Unsere Düfte entstehen in Zusammenarbeit mit erfahrenen Parfümeuren, die sich von
+            der Natur und den Geschichten des Lebens inspirieren lassen. Wir möchten nicht nur großartige Düfte kreieren,
+            sondern auch einen positiven Einfluss auf die Welt haben. Unser Engagement für faire Produktion und ressourcenschonende
+            Herstellung macht Velorée zu einer Marke mit Verantwortung. Wer Velorée trägt, entscheidet sich nicht nur für ein Parfüm –
+            sondern für ein Lebensgefühl.
+
+        </div>
+    </div>
+</div>
 {% endblock %}
