@@ -5,25 +5,38 @@
 <head>
     <title>{% block title %}{% endblock %}</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='styles/base.css') }}">
+  {% block extra_styles %}{% endblock %}
 </head>
 
 <body>
-
+    <div class="gutscheinhr">
     <h2 class="gutschein">Gutscheincode "2025" ab Einkauf über 100CHF</h2>
-    <hr>
-<nav>
 
+    </div>
+<nav>
+    <div class="iconcontainer">
+
+        <div class="iconLeft">
             <a href="{{ url_for('menu') }}">
                  <img src="{{ url_for('static', filename='pictures/OIP.jpg') }}" alt="Menü" width="30" height="30">
             </a>
+    </div>
+
+    <div class="logo">
+    <img src="{{ url_for('static', filename='pictures/Logo.png') }}" alt="Logo" width="320" height="200">
+        </div>
+
+        <div class="iconRight">
+            <img src="{{ url_for('static', filename='pictures/suche.png') }}" alt="Konto" width="30" height="30">
             <a href="{{ url_for('konto') }}">
                 <img src="{{ url_for('static', filename='pictures/konto.jpg') }}" alt="Konto" width="30" height="30">
             </a>
-
             <a href="{{ url_for('warenkorb') }}">
                 <img src="{{ url_for('static', filename='pictures/warennkorb.jpg') }}" alt="Konto" width="40" height="40">
             </a>
-                <img src="{{ url_for('static', filename='pictures/suche.png') }}" alt="Konto" width="30" height="30">
+    </div>
+        </div>
+
 
 {#            <a href="{{ url_for('ueberuns') }}">Über uns</a>#}
 {#            <a href="{{ url_for('frauen') }}">Frauen Parfüm</a>#}
@@ -31,13 +44,24 @@
 {#            <a href="{{ url_for('unisex') }}">Unisex Parfüm</a>#}
 {#            <a href="{{ url_for('zahlungsversand') }}">Zahlung und Versand</a>#}
 
+
+    <main class="content">
+        {% block content %}
+        <p>Hier kommt der Inhalt der Seite rein.</p>
+        {% endblock %}
+    </main>
+
+    <div class="container">
+
     <hr class="linie2">
     <div class="bottom">
+
         <h3>AGB</h3>
         <h3>Datenschutzerklärung</h3>
         <h3>©</h3>
         <h3>Hilfe</h3>
-        <img src="{{ url_for('static', filename='pictures/instagram.png') }}" alt="Insta" width="30" height="30">
+{#        <img src="{{ url_for('static', filename='pictures/instagram.png') }}" alt="Insta" width="30" height="30">#}
+        </div>
 
 
     </div>
@@ -46,8 +70,7 @@
 
 </nav>
 
-{% block content %}
-{% endblock %}
+
 </body>
 
 </html>
