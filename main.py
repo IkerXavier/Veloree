@@ -105,9 +105,7 @@ def zahlungsversand() -> str:
 def homepage() -> str:
     return render_template("homepage.html")
 
-@app.route("/home")
-def home() -> str:
-    return render_template("home.html")
+
 
 
 
