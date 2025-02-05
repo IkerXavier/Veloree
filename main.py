@@ -94,6 +94,9 @@ def frauen() -> str:
 @app.route("/maenner")
 def maenner() -> str:
     return render_template("maenner.html")
+@app.route("/parfumepage")
+def parfumepage() -> str:
+    return render_template("parfumepage.html")
 @app.route("/unisex")
 def unisex() -> str:
     return render_template("unisex.html")
