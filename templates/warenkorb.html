@@ -1,8 +1,18 @@
 {% extends 'base.html' %}
 
 {% block title %}Languages{% endblock %}
+ {% block extra_styles %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/warenkorb.css') }}">
+{% endblock %}
 
 {% block content %}
-<h1>Warenkorb</h1>
+<h1 class="title">Warenkorb</h1>
+    <div class="container">
+    <div class="box">
+    <p class="text">
+        Dein Warenkorb ist leer.
+    </p>
+        </div>
+    </div>
 
 {% endblock %}
