@@ -101,6 +101,9 @@ def unisex() -> str:
 def zahlungsversand() -> str:
     return render_template("zahlungversand.html")
 
+@app.route("/kontakt")
+def kontakt() -> str:
+    return render_template("kontakt.html")
 @app.route("/homepage")
 def homepage() -> str:
     return render_template("homepage.html")
