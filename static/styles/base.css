@@ -1,6 +1,7 @@
 nav a{
     text-decoration: none;
     color: inherit;
+
 }
 .gutschein{
     display: flex;
@@ -14,6 +15,8 @@ nav a{
      padding: 10px 0;
 }
 body{
+    font-family: "Comic Sans MS", cursive, sans-serif;
+
     margin: 0;
     padding: 0;
 }
@@ -42,6 +45,14 @@ body{
     display: flex;
     justify-content: left;
     padding-left: 20px;
+    padding-top: 0;
+
+}
+.iconcontainer{
+      display: flex;
+    align-items: center; /* Vertikale Ausrichtung */
+    justify-content: space-between;
+
 
 }
 .iconRight{
