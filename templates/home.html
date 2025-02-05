@@ -2,7 +2,18 @@
 
 {% block title %}Home{% endblock %}
 
+
 {% block content %}
-<h1>Welcome</h1>
+    <head>
+        <link rel="stylesheet" href="{{ url_for('static', filename='styles/home.css') }}">
+    </head>
+    <h1>"L'innovation que vous adorez"</h1>
+    <div class="Conatiner">
+        <a href="{{ url_for('3perfume') }}">
+            <img src="{{ url_for('static', filename='Dokumente\ZKB\Velorée\Bilder\3pefumeclean.jpg') }}" alt="" width="300" height="300">
+        </a>
+
+    </div>
+
 
 {% endblock %}
