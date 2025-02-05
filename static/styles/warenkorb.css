@@ -1,0 +1,14 @@
+.title{
+    display: flex;
+    justify-content: center;
+}
+
+.box{
+    display: flex;
+    justify-content: center;
+    border: 3px solid black;
+    width: 300px;
+    height: auto;
+    border-radius: 15px;
+
+}
