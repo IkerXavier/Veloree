@@ -50,8 +50,8 @@ body{
 }
 .iconcontainer{
       display: flex;
-    align-items: center; /* Vertikale Ausrichtung */
     justify-content: space-between;
+    padding-top: 20px;
 
 
 }
