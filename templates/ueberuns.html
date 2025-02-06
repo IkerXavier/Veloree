@@ -11,30 +11,40 @@
     <h1 class="headline">Über uns</h1>
 
     <div class="image-container">
-        <div class="image-box">
-           <img src="{{ url_for('static', filename='pictures/velore.png') }}" alt="" width="500" height="300">
-            <h2>Über Velorée</h2>
-            <p>Velorée ist eine junge, leidenschaftliche Parfümmarke, die 2025 gegründet wurde. Wir glauben, dass ein Duft mehr
-                ist als nur ein Accessoire – er erzählt Geschichten, weckt Emotionen und hinterlässt einen bleibenden Eindruck.</p>
+        <div class="image-box veloree">
+            <img src="{{ url_for('static', filename='pictures/velore.png') }}" alt="Velorée Logo">
+            <div class="text-content">
+                <h2>Über Velorée</h2>
+                <p>Velorée ist eine junge, innovative Parfümmarke, die 2025 mit einer klaren Vision gegründet wurde:
+                   Einzigartige Düfte zu kreieren, die Emotionen wecken und Erinnerungen schaffen. Unsere ersten Kollektionen
+                   vereinen zeitlose Eleganz mit modernen Akzenten. Jedes Parfüm erzählt eine eigene Geschichte – inspiriert von
+                   besonderen Momenten und außergewöhnlichen Ingredienzen. Velorée ist nicht nur ein Duft, sondern eine Lebenseinstellung.</p>
+            </div>
         </div>
     </div>
 
     <div class="bottom-container">
         <div class="image-box">
             <img src="{{ url_for('static', filename='pictures/team.png') }}" alt="Unser Team">
-            <h2>Unser Team</h2>
-            <p>Hinter Velorée steht ein kreatives Team aus erfahrenen Parfümeuren, Designern und Marketingexperten,
-                die alle eine gemeinsame Vision teilen: die Welt der Düfte neu zu gestalten.</p>
+            <div class="text-content">
+                <h2>Unser Team</h2>
+                <p>Hinter Velorée steht ein kreatives Team aus erfahrenen Parfümeuren, Designern und Visionären,
+                   die mit Leidenschaft und Expertise daran arbeiten, unverwechselbare Düfte zu erschaffen. Unsere Mission ist es,
+                   Parfüm nicht nur als Produkt, sondern als Kunstform zu verstehen. Jeder Duft wird mit Liebe zum Detail entwickelt
+                   und ist ein Ausdruck unserer Werte: Qualität, Kreativität und Individualität.</p>
+            </div>
         </div>
 
         <div class="image-box">
-            <img src="{{ url_for('static', filename='images/mission.jpg') }}" alt="Unser Ziel">
-            <h2>Unser Ziel</h2>
-            <p>Wir bei Velorée setzen auf Nachhaltigkeit und bewussten Konsum.
-                Unsere Verpackungen sind recycelbar, unsere Inhaltsstoffe sorgfältig ausgewählt.</p>
+            <img src="{{ url_for('static', filename='pictures/wald.png') }}" alt="Nachhaltigkeit">
+            <div class="text-content">
+                <h2>Unser Ziel</h2>
+                <p>Velorée steht für Nachhaltigkeit und bewussten Luxus. Unsere Verpackungen bestehen aus recycelbaren Materialien,
+                   und wir setzen auf umweltfreundliche Produktionsprozesse. Jeder Duft wird mit sorgfältig ausgewählten, ethisch
+                   vertretbaren Inhaltsstoffen hergestellt. Wir glauben daran, dass Schönheit und Verantwortung Hand in Hand gehen –
+                   für eine Zukunft, die nicht nur duftet, sondern auch wirkt.</p>
+            </div>
         </div>
     </div>
 </div>
 {% endblock %}
-
-
