@@ -62,7 +62,7 @@
 
 .bottom-container .image-box img {
     height: auto;
-    max-height: 350px;
+    max-height: 400px;
 }
 
 .bottom-container .image-box img:nth-child(1) {
