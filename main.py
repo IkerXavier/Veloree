@@ -100,7 +100,7 @@ def parfumepage() -> str:
 @app.route("/unisex")
 def unisex() -> str:
     return render_template("unisex.html")
-@app.route("/zahlungsversand")
+@app.route("/zahlungversand")
 def zahlungsversand() -> str:
     return render_template("zahlungversand.html")
 
@@ -111,6 +111,9 @@ def kontakt() -> str:
 def homepage() -> str:
     return render_template("homepage.html")
 
+@app.route("/zahlungversand")
+def zahlungversand() -> str:
+    return render_template("zahlungversand.html")
 
 
 
