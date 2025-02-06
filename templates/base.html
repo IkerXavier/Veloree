@@ -31,7 +31,10 @@
     </a>
 
         <div class="iconRight">
-            <img class="paula" src="{{ url_for('static', filename='pictures/suche.png') }}" alt="Suche" width="30" height="30">
+
+            <form class="d-flex" role="search">
+                <input class="search" type="search" placeholder="Search" aria-label="Search"></form>
+
             <a href="{{ url_for('konto') }}">
                 <img class="paula" src="{{ url_for('static', filename='pictures/konto.jpg') }}" alt="Konto" width="30" height="30">
             </a>
