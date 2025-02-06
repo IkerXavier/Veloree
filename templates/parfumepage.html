@@ -8,8 +8,11 @@
 
 {% block content %}
     <div class="container3">
-        <div class="container1">
+        <div>
             <h1>Verlorée Homme</h1>
+        </div>
+        <div class="container1">
+
             <img class="pic" src="{{ url_for('static', filename='imagesZKB/HommeBlackBack.png') }}">
         </div>
         <div class="container2">
@@ -26,7 +29,7 @@
                 <input type="radio" name="size">
                 <span>50ml</span>
                 <span>45 CHF</span>
-                <span class="online-status available">🟢 Online: auf Lager</span>
+                <span class="online-status unavailable">🔴 Nicht auf Lager</span>
             </label>
 
             <label class="option">
