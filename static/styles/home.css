@@ -1,87 +1,103 @@
-h1 {
-    font-family: Georgia, serif;
-    font-style: italic;
-    justify-content: center;
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    font-size: 50px;
-    margin-bottom: 5%;
-    margin-top: 5%;
-}
+    h1 {
+        font-family: Georgia, serif;
+        font-style: italic;
+        justify-content: center;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        font-size: 50px;
+        margin-bottom: 5%;
+        margin-top: 5%;
+    }
 
-.perfume3 {
-    display: flex;
-    width: 90%;
-    height: auto;
-    justify-content: center;
-    justify-self: center;
-    border-radius: 50px;
-    margin-bottom: 3%;
-    margin-top: 5%;
-}
+    .perfume3 {
+        display: flex;
+        width: 90%;
+        height: auto;
+        justify-content: center;
+        justify-self: center;
+        border-radius: 50px;
+        margin-bottom: 3%;
+        margin-top: 5%;
+    }
 
-.Infoalledreiperfume {
-    margin-bottom: 1%;
-    text-align: center;
-    padding-bottom: 5%;
-}
+    .Infoalledreiperfume {
+        margin-bottom: 1%;
+        text-align: center;
+        padding-bottom: 5%;
+    }
 
-/* Preis-Darstellung */
-.price-container {
-    display: flex;
-    align-items: center;
-    gap: 15px; /* Abstand zwischen den Preisen */
-    justify-content: center;
-}
+    .rating {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 20px;
+        margin-top: 5px;
+        margin-bottom: 10px;
+    }
 
-.old-price {
-    font-family: 'Playfair Display', serif;
-    font-size: 18px;
-    color: gray;
-    text-decoration: line-through;
-}
+    .rating span {
+        color: #eaa908;
+        font-size: 22px;
+    }
 
-.new-price {
-    font-family: 'Playfair Display', serif;
-    font-size: 22px;
-    font-weight: bold;
-    color: black;
-}
+    .reviews {
+        font-size: 18px;
+        color: gray;
+        margin-left: 5px;
+    }
 
-/* Kollektion */
-.kollektion {
-    font-family: 'Playfair Display', serif;
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    justify-content: center;
-    font-size: 50px;
-    margin-top: 2%;
-}
+    .price-container {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        justify-content: center;
+    }
 
-.kleinep {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-}
+    .old-price {
+        font-family: 'Playfair Display', serif;
+        font-size: 18px;
+        color: gray;
+        text-decoration: line-through;
+    }
 
-.kleinep img {
-    border-radius: 50px;
-    height: 450px;
-    width: auto;
-    display: flex;
-    justify-content: space-evenly;
-    flex-direction: column;
-    margin-top: 5%;
-}
+    .new-price {
+        font-family: 'Playfair Display', serif;
+        font-size: 22px;
+        font-weight: bold;
+        color: black;
+    }
 
-.infomen, .infofemme, .infounisex {
-    justify-content: center;
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    margin-top: 7%;
-}
+    .kollektion {
+        font-family: 'Playfair Display', serif;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        justify-content: center;
+        font-size: 50px;
+        margin-top: 2%;
+    }
 
+    .kleinep {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+    }
 
+    .kleinep img {
+        border-radius: 50px;
+        height: 450px;
+        width: auto;
+        display: flex;
+        justify-content: space-evenly;
+        flex-direction: column;
+        margin-top: 5%;
+    }
+
+    .infomen, .infofemme, .infounisex {
+        justify-content: center;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        margin-top: 7%;
+    }
