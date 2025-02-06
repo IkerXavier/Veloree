@@ -1,18 +1,19 @@
 {% extends 'base.html' %}
 
 {% block title %}Home{% endblock %}
-
+{% block extra_styles %}
+<link rel="stylesheet" href="{{ url_for('static', filename='styles/home.css') }}">
+{% endblock %}
 
 {% block content %}
-    <head>
-        <link rel="stylesheet" href="{{ url_for('static', filename='styles/home.css') }}">
-    </head>
-    <h1>"L'innovation que vous adorez"</h1>
-    <div class="Images">
-        <img class="Perfume3" src="{{ url_for('static', filename='pictures/pefumeclean.jpg') }}" alt=""
-             width="300" height="300">
-        <img class="menperfume" src="{{ url_for('static', filename='pictures/menperfume.jpg') }}" alt=""
-             width="300" height="300">
+
+    <h1>L'innovation que vous adorez</h1>
+    <img class="perfume3" src="{{ url_for('static', filename='pictures/alleperfume.jpg') }}" alt="">
+    <h2 class="kollektion">Summer Kollektion</h2>
+    <div class="kleinep">
+        <img class="menperfumee" src="{{ url_for('static', filename='pictures/menperfume.png') }}" alt="">
+        <img class="unisexperfumee" src="{{ url_for('static', filename='pictures/unisexperfume.png') }}" alt="">
+        <img class="femmeperfumee" src="{{ url_for('static', filename='pictures/femmeperfume.png') }}" alt="">
     </div>
 
 

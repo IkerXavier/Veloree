@@ -1,9 +1,45 @@
-
 h1{
-    font-family: "Comic Sans MS", cursive, sans-serif;
+    font-family: Georgia, serif;
+    font-style: italic;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    font-size: 50px;
+    margin-bottom: 10%;
 }
 
-img{
+.perfume3{
+    display: flex;
+    width: 90%;
+    height: auto;
+    justify-content: center;
+    justify-self: center;
+    border-radius: 50px;
+    margin-bottom: 5%;
+}
 
+.kollektion{
+    font-family: 'Playfair Display', serif;
+
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    font-size: 50px;
+    margin-top: 5%;
+}
+
+.kleinep{
+    height: 450px;
+    width: auto;
+    display: flex;
+    justify-content: space-evenly;
+
+    margin-top: 5%;
+}
+
+.kleinep img {
+        border-radius: 50px;
 
 }
