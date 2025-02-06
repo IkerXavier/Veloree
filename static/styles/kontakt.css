@@ -74,15 +74,18 @@
 }
 .mail{
     font-size: 20px;
-    color: #1a73e8;
+    color: #4B0082;
     font-weight: bold;
     margin-bottom: 10px;
 }
 .service{
     font-size: 18px;
-    color: #666; /* Noch etwas heller für feinen Kontrast */
-    font-style: italic; /* Hebt den Service-Text stilistisch hervor */
+    color: dimgray;
+    font-style: italic;
     margin-top: 20px;
     padding: 10px;
-    border-left: 4px solid #1a73e8;
+    border-left: 4px solid #4B0082;
+}
+.sendButton {
+    background-color: #4B0082;
 }
