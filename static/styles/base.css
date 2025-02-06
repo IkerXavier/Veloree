@@ -67,3 +67,11 @@ body{
 
     padding-left: 8%;
 }
+.search {
+    background-color: lightgray;
+    padding: 20px;
+    height: 20px;
+    width: 200px;
+    border: 2px solid gray;
+    border-radius: 5px;
+}
