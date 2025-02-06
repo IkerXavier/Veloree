@@ -1,12 +1,35 @@
-div{
+* {
+
 
 }
 
-label{
 
-}
-
-.container{
+div {
     display: flex;
 
+
+}
+
+label {
+
+}
+
+.container1 {
+    justify-content: flex-start;
+
+
+}
+.container2{
+    align-content: flex-end;
+}
+
+.pic {
+
+}
+
+.option {
+
+}
+.container3{
+    display: flex;
 }
