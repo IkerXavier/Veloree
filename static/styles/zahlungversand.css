@@ -36,6 +36,36 @@
 
 }
 .textT{
-    font-size: 30px;
+    font-size: 187.5%;
+
+}
+.produktcontainer{
+    margin-bottom: 50%;
+
+}
+.subtitle{
+    display: flex;
+    justify-content: center;
+}
+.zusammenfassung{
+    margin-left: 15%;
+    margin-right: 15%;
+}
+.linie{
+    border:  solid black;
+}
+.gutscheincode{
+    margin-bottom: 0;
+    margin-top: 15px;
+    margin-left: 15%;
+    border: solid black;
+    padding: 2%;
+    border-radius: 20px;
+
+}
+.gutscheincode::placeholder {
+    font-family: "Comic Sans MS", sans-serif; /
+    font-size: 12px;
+    color: grey;
 
 }
