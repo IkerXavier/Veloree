@@ -1,17 +1,24 @@
 {% extends 'base.html' %}
 
 {% block title %}Menu{% endblock %}
-
+{% block extra_styles %}
+<link rel="stylesheet" href="{{ url_for('static', filename='styles/menu.css') }}">
+{% endblock %}
 {% block content %}
 
     <div class="all1">
         <h1>Menu</h1>
         <ul class="menu-list">
-            <li><a href="{{ url_for('ueberuns') }}">Über uns</a></li>
-            <li><a href="{{ url_for('frauen') }}">Frauen Parfüm</a></li>
-            <li><a href="{{ url_for('maenner') }}">Männer Parfüm</a></li>
-            <li><a href="{{ url_for('unisex') }}">Unisex Parfüm</a></li>
-            <li><a href="{{ url_for('zahlungsversand') }}">Zahlung und Versand</a></li>
+            <p><a href="{{ url_for('home') }}">Home</a></p>
+            <p><a href="{{ url_for('ueberuns') }}">Über uns</a></p>
+            <p><a href="{{ url_for('frauen') }}">Frauen Parfüm</a></p>
+            <p><a href="{{ url_for('maenner') }}">Männer Parfüm</a></p>
+            <p><a href="{{ url_for('unisex') }}">Unisex Parfüm</a></p>
+            <p><a href="{{ url_for('kontakt') }}">Kontakt</a></p>
+            <p><a href="{{ url_for('konto') }}">Konto</a></p>
+            <p><a href="{{ url_for('parfumepage') }}">Parfümpage</a></p>
+            <p><a href="{{ url_for('konto') }}">Konto</a></p>
+            <p><a href="{{ url_for('warenkorb') }}">Warenkorb</a></p>
         </ul>
     </div>
 
