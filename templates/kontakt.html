@@ -1,20 +1,23 @@
 {% extends 'base.html' %}
 
-{% block title %}Languages{% endblock %}
-<link rel="stylesheet" href="{{ url_for('static', filename='styles/kontakt.css') }}">
+{% block title %}Kontakt{% endblock %}
+{% block extra_styles %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/kontakt.css') }}">
+{% endblock %}
 
 {% block content %}
-    <h1>Kontakt</h1>
-    <h2>Call us</h2>
-    <h4>velorée.shop@zkb.ch <p>
-        Service available from Monday to Friday 10 am to 6 pm
-    </p>
-    +41 00 000 00 00</h4>
-    <div class="border">
-    <div>
-    email
-    </div>
-    <div>message:</div>
+    <div class="all">
+        <h1 class="kontakt">Kontakt</h1>
+        <h2 class="callus">Call us</h2>
+        <h4 class="mail">velorée.shop@zkb.ch</h4>
+        <div class="service">Service available from Monday to Friday 10 am to 6 pm
+            <p>+41 00 000 00 00</p></div>
+        <div class="box">
+            <div class="fieldEmail">email</div>
+            <div class="line"></div>
+            <div class="fieldMessage">message:</div>
+            <button class="sendButton">Send</button>
+        </div>
     </div>
 
 {% endblock %}

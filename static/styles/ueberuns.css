@@ -1,0 +1,86 @@
+.ueberuns-container {
+    font-family: 'Roboto', sans-serif;
+    margin: 40px auto;
+    width: 80%;
+    text-align: left;
+}
+
+.headline {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    border-bottom: 1px solid black;
+    padding-bottom: 5px;
+}
+
+.image-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 50px;
+}
+
+.image-box.veloree {
+    width: 80%;
+    max-width: 900px;
+    text-align: center;
+}
+
+.image-box img {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.text-content {
+    text-align: center;
+    margin-top: 20px;
+
+}
+
+.text-content h2 {
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.text-content p {
+    font-size: 15px;
+    color: #444;
+    line-height: 1.6;
+}
+
+.bottom-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.bottom-container .image-box {
+    width: 48%;
+    text-align: center;
+}
+
+.bottom-container .image-box img {
+    height: auto;
+    max-height: 400px;
+}
+
+.bottom-container .image-box img:nth-child(1) {
+    max-height: 350px;
+}
+
+.bottom-container .text-content {
+    margin-top: 10px;
+}
+
+@media (max-width: 900px) {
+    .bottom-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .bottom-container .image-box {
+        width: 80%;
+    }
+}
+

@@ -1,18 +1,23 @@
 {% extends 'base.html' %}
 
 {% block title %}Languages{% endblock %}
- {% block extra_styles %}
+{% block extra_styles %}
     <link rel="stylesheet" href="{{ url_for('static', filename='styles/warenkorb.css') }}">
 {% endblock %}
 
 {% block content %}
-<h1 class="title">Warenkorb</h1>
+    <h1 class="title">Warenkorb</h1>
     <div class="containerp">
-    <div class="box">
-    <p class="text">
-        Dein Warenkorb ist leer.
-    </p>
+        <div class="box">
+            <p class="text">
+                Dein Warenkorb ist leer.
+            </p>
         </div>
+    </div>
+    <div class="buttoncontainer">
+        <a href="{{ url_for('zahlungversand') }}">
+            <button class="button1">Kaufen</button>
+        </a>
     </div>
 
 {% endblock %}

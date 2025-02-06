@@ -26,10 +26,14 @@ z.B.
 """
 
 
+#@app.route("/")
+#def home() -> str:
+  #  print(math_service.add(1.0, 2.0))
+ #   app.logger.info("Rendering home page")
+#    return render_template("home.html")
+
 @app.route("/")
-def home() -> str:
-    print(math_service.add(1.0, 2.0))
-    app.logger.info("Rendering home page")
+def home():
     return render_template("home.html")
 
 @app.route("/contact")
@@ -100,7 +104,7 @@ def parfumepage() -> str:
 @app.route("/unisex")
 def unisex() -> str:
     return render_template("unisex.html")
-@app.route("/zahlungsversand")
+@app.route("/zahlungversand")
 def zahlungsversand() -> str:
     return render_template("zahlungversand.html")
 
@@ -111,6 +115,9 @@ def kontakt() -> str:
 def homepage() -> str:
     return render_template("homepage.html")
 
+@app.route("/zahlungversand")
+def zahlungversand() -> str:
+    return render_template("zahlungversand.html")
 
 
 
