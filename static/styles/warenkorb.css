@@ -12,3 +12,7 @@
     border-radius: 15px;
 
 }
+.containerp{
+    display: flex;
+    justify-content: center;
+}
