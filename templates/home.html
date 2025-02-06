@@ -8,13 +8,18 @@
 {% block content %}
 
     <h1>L'innovation que vous adorez</h1>
-    <img class="perfume3" src="{{ url_for('static', filename='pictures/alleperfume.jpg') }}" alt="">
-    <div class="Infoalledreiperfume"><b>Dreierpack</b><p>Eau de Parfum - 3 Flakons mit je 50 ml</p><p>CHF 99,95
-    </div>
+    <a href="{{ url_for('parfumepage') }}">
+        <img class="perfume3" src="{{ url_for('static', filename='pictures/alleperfume.jpg') }}">
+        <div class="Infoalledreiperfume">
+            <b>Dreierpack</b>
+            <p>Eau de Parfum - 3 Flakons mit je 50 ml</p>
+            <p>CHF 99,95</p>
+        </div>
+    </a>
     <h2 class="kollektion">Summer Kollektion</h2>
     <div class="kleinep">
         <div class="KPmen">
-            <img class="menperfumee" src="{{ url_for('static', filename='pictures/menperfume.png') }}" alt="">
+            <img class="menperfumee" src="{{ url_for('static', filename='imagesZKB/HommeBlackBack.png') }}" alt="">
             <div class="infomen">
                 <b>Velorée Homme</b>
                 <p>Eau de Parfum - Flakon mit je 50 ml</p>
@@ -22,7 +27,7 @@
             </div>
         </div>
         <div class="KPfemme">
-            <img class="femmeperfumee" src="{{ url_for('static', filename='pictures/femmeperfume.png') }}" alt="">
+            <img class="femmeperfumee" src="{{ url_for('static', filename='imagesZKB/FemmeBlackBack.png') }}" alt="">
             <div class="infofemme">
                 <b>Velorée Femme</b>
                 <p>Eau de Parfum - Flakon mit je 50 ml</p>
@@ -30,7 +35,7 @@
             </div>
         </div>
         <div class="KPunisex">
-            <img class="unisexperfumee" src="{{ url_for('static', filename='pictures/unisexperfume.png') }}" alt="">
+            <img class="unisexperfumee" src="{{ url_for('static', filename='imagesZKB/UnisexBlackBack.png') }}" alt="">
             <div class="infounisex">
                 <b>Velorée Unisex</b>
                 <p>Eau de Parfum - Flakon mit je 50 ml</p>

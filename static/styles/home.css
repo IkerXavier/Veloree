@@ -40,7 +40,7 @@ h1{
 
 .kleinep {
     display: flex;
-    flex-direction: row !important;
+    flex-direction: row;
     justify-content: space-evenly;
 
 
