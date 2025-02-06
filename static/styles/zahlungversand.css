@@ -1,21 +1,24 @@
-.zahlung{
+.zahlung {
     font-size: 40px;
 }
 
-.title{
+.title {
     display: flex;
     justify-content: center;
 
 }
-.zahlung{
+
+.zahlung {
 
 }
-.lieferung{
+
+.lieferung {
     display: flex;
     justify-content: center;
 
 }
-.box1{
+
+.box1 {
     border: solid black;
     margin-left: 10%;
     margin-right: 10%;
@@ -25,47 +28,79 @@
     flex-direction: row;
     justify-content: space-between;
 }
-.boxLieferung{
+
+.boxLieferung {
     padding-left: 8%;
 
 }
-.boxClick{
+
+.boxClick {
     padding-right: 8%;
     border-left: 2px solid black; /* Vertikale Linie hinzufügen */
     padding-left: 16%;
 
 }
-.textT{
-    font-size: 187.5%;
 
+.textT {
+    font-size: 187.5%;
 }
-.produktcontainer{
+
+.produktcontainer {
     margin-bottom: 50%;
 
 }
-.subtitle{
+
+.subtitle {
     display: flex;
     justify-content: center;
 }
-.zusammenfassung{
+.middle{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 5%;
+    margin-top: 2%;
+}
+
+
+.zusammenfassung {
     margin-left: 15%;
     margin-right: 15%;
 }
-.linie{
-    border:  solid black;
+
+.linie {
+    border: solid black;
 }
-.gutscheincode{
-    margin-bottom: 0;
-    margin-top: 15px;
+
+.gutscheinzahlung {
+    display: flex;
+    flex-direction: row;
+    gap: 20%;
+}
+
+.gutscheincode {
     margin-left: 15%;
     border: solid black;
     padding: 2%;
     border-radius: 20px;
-
 }
+
 .gutscheincode::placeholder {
-    font-family: "Comic Sans MS", sans-serif; /
-    font-size: 12px;
+    font-family: "Comic Sans MS", sans-serif;
+/ font-size: 12 px;
     color: grey;
 
 }
+
+.zahlbox {
+    background-color: white;
+    display: flex;
+    border: solid black;
+    width: 250%;
+    border-radius: 20px;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    margin-left: 245%;
+}
+
