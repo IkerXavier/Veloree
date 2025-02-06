@@ -26,10 +26,14 @@ z.B.
 """
 
 
+#@app.route("/")
+#def home() -> str:
+  #  print(math_service.add(1.0, 2.0))
+ #   app.logger.info("Rendering home page")
+#    return render_template("home.html")
+
 @app.route("/")
-def home() -> str:
-    print(math_service.add(1.0, 2.0))
-    app.logger.info("Rendering home page")
+def home():
     return render_template("home.html")
 
 @app.route("/contact")
@@ -114,6 +118,7 @@ def homepage() -> str:
 @app.route("/zahlungversand")
 def zahlungversand() -> str:
     return render_template("zahlungversand.html")
+
 
 
 
