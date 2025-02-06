@@ -23,6 +23,20 @@
 
     </div>
     </div>
+    <div class="middle">
+    <div class="foto">
+        <img src="{{ url_for('static', filename='imagesZKB/HommeBlackBack.png') }}" alt="Logo" width="auto" height="150">
+
+    </div>
+    <div class="info">
+        <div class="textT">Produktname</div>
+        <div class="textP">Beschreibung, erfrischend, 50ml</div>
+    </div>
+    <div class="preis">
+        <div class="textP">CHF 69.95</div>
+
+    </div>
+    </div>
     <div class="produktcontainer">
 
     </div>
@@ -36,10 +50,11 @@
     </div>
     <div class="gutscheinzahlung">
         <input class="gutscheincode" type="text" placeholder="Gutschein-/Rabattcode" aria-label=".form-control-lg example">
-        <div class="zahlbox">
-
-
-        </div>
+        <a href="{{ url_for('home') }}">
+        <button class="zahlbox">
+            <p class="textT">Zahlen</p>
+        </button>
+        </a>
     </div>
 
 {% endblock %}
