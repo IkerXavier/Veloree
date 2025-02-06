@@ -1,3 +1,57 @@
-.border{
-    border: black 1px;
+.box {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 75%;
+    height: 250px;
+    padding: 20px;
+    border: 2px solid black;
+    border-radius: 10px;
+    background-color: white;
+}
+
+.fieldEmail {
+    font-size: 18px;
+    padding-bottom: 5px;
+}
+.line {
+    margin-top: 15px;
+    width: 50%;
+    height: 1px;
+    background-color: black;
+    margin-bottom: 10px;
+}
+.fieldMessage {
+    font-size: 18px;
+    margin-top: 10px;
+}
+.sendButton{
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    padding: 8px 16px;
+    font-size: 16px;
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.all {
+    padding-left: 100px;
+}
+
+.kontakt {
+    text-decoration: underline;
+    font-size: 40px;
+}
+
+.callus {
+    text-decoration: underline;
+    font-size: 25px;
+}
+.service {
+    margin-top: 50px;
+    word-wrap: break-word;
+    margin-bottom: 100px;
 }
