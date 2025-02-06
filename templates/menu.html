@@ -1,8 +1,18 @@
 {% extends 'base.html' %}
 
-{% block title %}Languages{% endblock %}
+{% block title %}Menu{% endblock %}
 
 {% block content %}
-<h1>Menu</h1>
+
+    <div class="all1">
+        <h1>Menu</h1>
+        <ul class="menu-list">
+            <li><a href="{{ url_for('ueberuns') }}">Über uns</a></li>
+            <li><a href="{{ url_for('frauen') }}">Frauen Parfüm</a></li>
+            <li><a href="{{ url_for('maenner') }}">Männer Parfüm</a></li>
+            <li><a href="{{ url_for('unisex') }}">Unisex Parfüm</a></li>
+            <li><a href="{{ url_for('zahlungsversand') }}">Zahlung und Versand</a></li>
+        </ul>
+    </div>
 
 {% endblock %}
