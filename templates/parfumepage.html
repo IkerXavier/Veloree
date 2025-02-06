@@ -7,39 +7,41 @@
 {% endblock %}
 
 {% block content %}
-    <div class="container">
-        <h1>Verlorée Homme</h1>
-        <img src="{{ url_for('static', filename='imagesZKB/HommeBlackBack.png') }}">
-        <h2>Eau de Parfum</h2>
+    <div class="container3">
+        <div class="container1">
+            <h1>Verlorée Homme</h1>
+            <img class="pic" src="{{ url_for('static', filename='imagesZKB/HommeBlackBack.png') }}">
+        </div>
+        <div class="container2">
+            <h2 class="zwei">Eau de Parfum</h2>
 
-        <label class="option container">
-            <input type="radio" name="size" checked>
-            <span>25ml</span>
-            <span>20 CHF</span>
-            <span class="online-status new">🔶 Bald neu bei uns</span>
-        </label>
+            <label class="option">
+                <input type="radio" name="size" checked>
+                <span>25ml</span>
+                <span>20 CHF</span>
+                <span class="online-status new">🔶 Bald neu bei uns</span>
+            </label>
 
-        <label class="option container">
-            <input type="radio" name="size">
-            <span>50ml</span>
-            <span>45 CHF</span>
-            <span class="online-status available">🟢 Online: auf Lager</span>
-        </label>
+            <label class="option">
+                <input type="radio" name="size">
+                <span>50ml</span>
+                <span>45 CHF</span>
+                <span class="online-status available">🟢 Online: auf Lager</span>
+            </label>
 
-        <label class="option container">
-            <input type="radio" name="size">
-            <span>100ml</span>
-            <span>85 CHF</span>
-            <span class="online-status available">🟢 Online: auf Lager</span>
-        </label>
+            <label class="option">
+                <input type="radio" name="size">
+                <span>100ml</span>
+                <span>85 CHF</span>
+                <span class="online-status available">🟢 Online: auf Lager</span>
+            </label>
 
-        <label class="option container">
-            <input type="radio" name="size">
-            <span>200ml</span>
-            <span>112 CHF</span>
-            <span class="online-status available">🟢 Online: auf Lager</span>
-        </label>
-
-
+            <label class="option">
+                <input type="radio" name="size">
+                <span>200ml</span>
+                <span>112 CHF</span>
+                <span class="online-status available">🟢 Online: auf Lager</span>
+            </label>
+        </div>
     </div>
 {% endblock %}
