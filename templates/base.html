@@ -21,10 +21,11 @@
                  <img class="paula" src="{{ url_for('static', filename='pictures/OIP.jpg') }}" alt="Menü" width="30" height="30">
             </a>
     </div>
-
-    <div class="logo">
-    <img class="paula" src="{{ url_for('static', filename='pictures/Logo.png') }}" alt="Logo" width="260" height="200">
+    <a href="{{ url_for('home') }}">
+        <div class="logo">
+            <img src="{{ url_for('static', filename='pictures/Logo.png') }}" alt="Logo" width="260" height="200">
         </div>
+    </a>
 
         <div class="iconRight">
             <img class="paula" src="{{ url_for('static', filename='pictures/suche.png') }}" alt="Suche" width="30" height="30">

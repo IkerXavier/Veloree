@@ -1,8 +1,27 @@
 {% extends 'base.html' %}
 
 {% block title %}Languages{% endblock %}
+{% block extra_styles %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/zahlungversand.css') }}">
+{% endblock %}
 
 {% block content %}
-<h1>Zahlung und Versand</h1>
+    <div class="title">
+<h1 class="zahlung">Zahlung & Versand</h1>
+    </div>
+    <div class="lieferung">
+    <div class="box1">
+        <div class="boxLieferung">
+        <p class="textT">Lieferung</p>
+        <p class="textP">Ab CHF 7.95</p>
+            </div>
+        <div class="boxClick">
+        <p class="textT">Click & Collect</p>
+        <p class="textP">Bei der Hardbrücke</p>
+        <p class="textP">CHF 4.95</p>
+            </div>
+
+    </div>
+    </div>
 
 {% endblock %}
