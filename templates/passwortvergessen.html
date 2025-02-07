@@ -16,10 +16,18 @@
                 <label for="email">Email Adresse</label>
                 <input type="email" id="email" name="email" required>
 
-                <button type="submit" class="reset-btn">Passwort zurücksetzen</button>
+
+                <label for="code">Bestätigungscode</label>
+                <input type="text" id="code" name="code" required maxlength="6" pattern="[0-9]{6}">
+
+
+
+
+
+                <a href="{{ url_for('home') }}" class="reset-btn">Passwort zurücksetzen</a>
             </form>
 
-            <a href="{{ url_for('login') }}" class="back-link">Zurück zum Login</a>
+            <a href="{{ url_for('konto') }}" class="back-link">Zurück zum Login</a>
         </div>
     </div>
 {% endblock %}

@@ -1,9 +1,7 @@
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-
     height: 100vh;
-
     justify-content: center;
     align-items: center;
 }
@@ -73,6 +71,10 @@ input {
     margin-bottom: 10px;
 }
 
+.forgot-password:hover{
+    color: darkgrey;
+}
+
 .register-btn {
     display: inline-block;
     padding:8px 50px;
@@ -100,4 +102,8 @@ button[type="submit"] {
     border-radius: 8px;
     cursor: pointer;
     font-size: 18px;
+}
+
+.login-btn:hover {
+    background-color: midnightblue;
 }
