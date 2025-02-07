@@ -1,8 +1,93 @@
 {% extends 'base.html' %}
 
-{% block title %}Languages{% endblock %}
+{% block title %}Über uns{% endblock %}
+
+{% block extra_styles %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/unisex.css') }}">
+{% endblock %}
 
 {% block content %}
-<h1>Unisex Parfüm</h1>
+    <div class="container3">
+        <div>
+
+        </div>
+        <div class="container1">
+
+            <img class="pic" src="{{ url_for('static', filename='imagesZKB/UnisexBlackBack.png') }}">
+        </div>
+        <div class="container2">
+            <h1 class="titleA">Verlorée Unisex</h1>
+            <h2 class="zwei">Eau de Parfum</h2>
+
+            <label class="option">
+                <input type="radio" name="size" checked>
+                <span>25ml</span>
+                <span>20 CHF</span>
+                <span class="online-status new">🔶 Bald neu bei uns</span>
+            </label>
+
+            <label class="option">
+                <input type="radio" name="size">
+                <span>50ml</span>
+                <span>45 CHF</span>
+                <span class="online-status unavailable">🔴 Nicht auf Lager</span>
+            </label>
+
+            <label class="option">
+                <input type="radio" name="size">
+                <span>100ml</span>
+                <span>85 CHF</span>
+                <span class="online-status available">🟢 Online: auf Lager</span>
+            </label>
+
+            <label class="option">
+                <input type="radio" name="size">
+                <span>200ml</span>
+                <span>112 CHF</span>
+                <span class="online-status available">🟢 Online: auf Lager</span>
+            </label>
+            <a href="{{ url_for('warenkorb') }}">
+                <button class="button">In den Warenkorb</button>
+            </a>
+
+        </div>
+
+    </div>
+    <div class="accordion" id="accordionExample">
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne"
+                        aria-expanded="true" aria-controls="collapseOne">
+                    Beschreibung
+                </button>
+            </h2>
+            <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                    Dieses einzigartige Unisex-Parfüm vereint die spritzige Frische von Orange und Limette mit der
+                    warmen, strahlenden Note der Sonnenblume. Die lebendige Komposition verleiht dem Duft eine belebende
+                    Leichtigkeit und eine sanfte, natürliche Eleganz, die für jeden Anlass perfekt geeignet ist. Ob im
+                    Alltag oder zu besonderen Momenten – dieses Parfüm unterstreicht deine Individualität mit einer
+                    harmonischen Balance aus Frische und Wärme. Lass dich von der sonnigen, energiegeladenen Aura
+                    umhüllen und hinterlasse einen unvergesslichen Eindruck.
+                </div>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                    Inhaltsstoffe
+                </button>
+            </h2>
+            <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                    Alcohol Denat., Wasser, Duftstoff, Limonene, Linalool, Citral, Geraniol, Eugenol, Benzylalkohol,
+                    Hexyl Cinnamal, Citronellol, Farnesol, Benzylbenzoat, Cumarin, Orangen-Extrakt, Limetten-Extrakt,
+                    Sonnenblumen-Extrakt, Alpha-Terpineol, Terpineol, Pinene.
+                </div>
+            </div>
+        </div>
+    </div>
 
 {% endblock %}
+
