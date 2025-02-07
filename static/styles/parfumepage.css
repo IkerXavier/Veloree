@@ -74,13 +74,13 @@
     gap: 20px;
 }
 
-h1 {
+.titleA {
     font-size: 32px;
     color: #000000;
     font-weight: bold;
 }
 
-h2 {
+.zwei {
     font-size: 18px;
     color: #444;
 }
