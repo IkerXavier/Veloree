@@ -69,9 +69,13 @@
                 <span>112 CHF</span>
                 <span class="online-status available">🟢 Online: auf Lager</span>
             </label>
-             <a href="{{ url_for('warenkorb') }}">
-            <button class="button">In den Warenkorb</button>
-             </a>
+             <div class="heart">
+                <button type="button" class="btn btn-outline-danger">♥</button>
+
+                <a href="{{ url_for('warenkorb') }}">
+                    <button class="button">In den Warenkorb</button>
+                </a>
+            </div>
 
         </div>
 
