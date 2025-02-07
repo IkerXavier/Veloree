@@ -10,6 +10,7 @@ body {
 
 .container{
     margin-top: 5%;
+    width: 60%;
 }
 
 .sidebar {
@@ -74,6 +75,9 @@ input {
 
 .register-btn{
     margin-bottom: 5%;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
 
 }
 
