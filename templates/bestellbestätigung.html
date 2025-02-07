@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block title %}Message{% endblock %}
+
+{% block extra_styles %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/message.css') }}">
+{% endblock %}
+
+{% block content %}
+<h1 class="erfolgreich">Vielen Dank für Ihre Bestellung!</h1>
+{% endblock %}

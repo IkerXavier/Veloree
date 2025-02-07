@@ -128,6 +128,9 @@ def createaccount() -> str:
 @app.route("/zahlen")
 def zahlen() -> str:
     return render_template("zahlungsformular.html")
+@app.route("/bestellung")
+def bestellung() -> str:
+    return render_template("bestellbestätigung.html")
 
 
 @app.route('/reset_password', methods=['GET', 'POST'])
