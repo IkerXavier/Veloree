@@ -94,7 +94,7 @@ input {
 }
 
 
-button[type="submit"] {
+.login-btn {
     background-color: #4B0082;
     color: white;
     padding: 10px;
@@ -103,6 +103,9 @@ button[type="submit"] {
     cursor: pointer;
     font-size: 18px;
     margin-bottom: 20%;
+    justify-content: center;
+    display: flex;
+
 }
 
 .login-btn:hover {

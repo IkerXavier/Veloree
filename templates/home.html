@@ -3,37 +3,37 @@
 {% block title %}Home{% endblock %}
 
 {% block extra_styles %}
-<link rel="stylesheet" href="{{ url_for('static', filename='styles/home.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/home.css') }}">
 {% endblock %}
 
 {% block content %}
 
     <h1>L'innovation que vous adorez</h1>
 
-    <a href="{{ url_for('parfumepage') }}">
-        <img class="perfume3" src="{{ url_for('static', filename='pictures/alleperfume.jpg') }}">
-        <div class="Infoalledreiperfume">
-            <b>Dreier Bundle</b>
-            <p>Eau de Parfum - 3 Flakons mit je 50 ml</p>
-            <div class="rating">
-                <span>★★★★☆</span>
-                <span class="reviews">(1297)</span>
-            </div>
-            <div class="price-container">
-                <p class="old-price">CHF 123.00</p>
-                <p class="new-price">CHF 93.00</p>
-            </div>
+
+    <img class="perfume3" src="{{ url_for('static', filename='pictures/alleperfume.jpg') }}">
+    <div class="Infoalledreiperfume">
+        <b>Dreier Bundle</b>
+        <p>Eau de Parfum - 3 Flakons mit je 50 ml</p>
+        <div class="rating">
+            <span>★★★★☆</span>
+            <span class="reviews">(1297)</span>
         </div>
-    </a>
+        <div class="price-container">
+            <p class="old-price">CHF 123.00</p>
+            <p class="new-price">CHF 93.00</p>
+        </div>
+    </div>
+
 
     <h2 class="kollektion">Summer Kollektion</h2>
-     <div class="cart-line"></div>
+    <div class="cart-line"></div>
 
     <div class="kleinep">
         <div class="KPmen">
-             <a href="{{ url_for('maenner') }}">
-            <img class="menperfumee" src="{{ url_for('static', filename='imagesZKB/HommeBlackBack.png') }}" alt="">
-             </a>
+            <a href="{{ url_for('maenner') }}">
+                <img class="menperfumee" src="{{ url_for('static', filename='imagesZKB/HommeBlackBack.png') }}" alt="">
+            </a>
             <div class="infomen">
                 <b>Velorée Homme</b>
                 <p>Eau de Parfum - Flakon mit je 50 ml</p>
@@ -49,9 +49,10 @@
         </div>
 
         <div class="KPfemme">
-             <a href="{{ url_for('frauen') }}">
-            <img class="femmeperfumee" src="{{ url_for('static', filename='imagesZKB/FemmeBlackBack.png') }}" alt="">
-             </a>
+            <a href="{{ url_for('frauen') }}">
+                <img class="femmeperfumee" src="{{ url_for('static', filename='imagesZKB/FemmeBlackBack.png') }}"
+                     alt="">
+            </a>
             <div class="infofemme">
                 <b>Velorée Femme</b>
                 <p>Eau de Parfum - Flakon mit je 50 ml</p>
@@ -67,9 +68,10 @@
         </div>
 
         <div class="KPunisex">
-             <a href="{{ url_for('unisex') }}">
-            <img class="unisexperfumee" src="{{ url_for('static', filename='imagesZKB/UnisexBlackBack.png') }}" alt="">
-             </a>
+            <a href="{{ url_for('unisex') }}">
+                <img class="unisexperfumee" src="{{ url_for('static', filename='imagesZKB/UnisexBlackBack.png') }}"
+                     alt="">
+            </a>
             <div class="infounisex">
                 <b>Velorée Unisex</b>
                 <p>Eau de Parfum - Flakon mit je 50 ml</p>
