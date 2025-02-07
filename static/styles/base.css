@@ -90,4 +90,6 @@ body{
 justify-content: flex-end;
     margin-left: 29%;
     align-items: center;
+    justify-items: center;
+    align-content: center;
 }
