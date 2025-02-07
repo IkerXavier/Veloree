@@ -5,6 +5,7 @@
     border: 1px solid #ddd;
     border-radius: 5px;
     background: #f9f9f9;
+    margin-bottom: 10%;
 }
 
 h2 {
@@ -14,6 +15,7 @@ h2 {
 form {
     display: flex;
     flex-direction: column;
+
 }
 
 label {
@@ -34,6 +36,8 @@ button {
     margin-top: 20px;
     border-radius: 8px;
     cursor: pointer;
+    margin-bottom: 7%;
+
 }
 
 .register-btn:hover {
