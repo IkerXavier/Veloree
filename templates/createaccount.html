@@ -1,13 +1,37 @@
 {% extends 'base.html' %}
 
-{% block title %}Create Acoount{% endblock %}
+{% block title %}Konto erstellen{% endblock %}
 
 {% block extra_styles %}
 <link rel="stylesheet" href="{{ url_for('static', filename='styles/createaccount.css') }}">
 {% endblock %}
 
 {% block content %}
+<div class="register-container">
+    <h2>Konto erstellen</h2>
+    <form>
+        <label for="email">E-Mail-Adresse:</label>
+        <input type="email" id="email" name="email" required>
 
+        <label for="password">Passwort:</label>
+        <input type="password" id="password" name="password" required>
 
+        <label for="title">Titel:</label>
+        <select id="title" name="title">
+            <option value="Herr">Herr</option>
+            <option value="Frau">Frau</option>
+        </select>
 
+        <label for="firstname">Vorname:</label>
+        <input type="text" id="firstname" name="firstname" required>
+
+        <label for="lastname">Nachname:</label>
+        <input type="text" id="lastname" name="lastname" required>
+
+        <label for="birthdate">Geburtsdatum:</label>
+        <input type="date" id="birthdate" name="birthdate" required>
+
+        <button type="submit">Registrieren</button>
+    </form>
+</div>
 {% endblock %}

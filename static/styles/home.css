@@ -36,21 +36,22 @@ h1 {
 }
 
 .old-price {
-    font-family: 'Playfair Display', serif;
+    font-family: Arial, sans-serif;
     font-size: 18px;
     color: gray;
     text-decoration: line-through;
 }
 
 .new-price {
-    font-family: 'Playfair Display', serif;
-    font-size: 22px;
+    font-family: Arial, sans-serif;
+    font-size: 18px;
     font-weight: bold;
     color: black;
 }
 
 .kollektion {
-    font-family: 'Playfair Display', serif;
+    font-family: Georgia, serif;
+    font-style: italic;
     display: flex;
     flex-direction: column;
     text-align: center;

@@ -22,7 +22,9 @@
 
                 <a href="#" class="forgot-password">Passwort vergessen?</a>
                 <p class="nokonto">Kein Konto?</p>
-                <button class="register-btn">Benutzer Konto erstellen</button>
+                <a href="{{ url_for('createaccount') }}">
+                    <button class="register-btn">Benutzer Konto erstellen</button>
+                </a>
                 <button type="submit" class="login-btn">Anmelden</button>
             </form>
         </div>
