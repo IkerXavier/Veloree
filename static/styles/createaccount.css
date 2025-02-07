@@ -32,4 +32,10 @@ button {
     color: white;
     cursor: pointer;
     margin-top: 20px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.register-btn:hover {
+    background-color: midnightblue;
 }
