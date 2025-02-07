@@ -122,9 +122,9 @@ def zahlungversand() -> str:
 def message() -> str:
     return render_template("message.html")
 
-@app.route("/zahlen")
-def zahlen() -> str:
-    return render_template("zahlungsformular.html")
+@app.route("/createaccount")
+def createaccount() -> str:
+    return render_template("createaccount.html")
 
 
 
