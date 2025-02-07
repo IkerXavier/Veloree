@@ -119,6 +119,10 @@ def homepage() -> str:
 def zahlungversand() -> str:
     return render_template("zahlungversand.html")
 
+@app.route("/createaccount")
+def createaccount() -> str:
+    return render_template("createaccount.html")
+
 
 
 
