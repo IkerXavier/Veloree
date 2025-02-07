@@ -1,4 +1,4 @@
-<!-- /templates/base.html -->
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -14,6 +14,7 @@
 <body>
     <div class="gutscheinhr">
     <h2 class="gutschein">Gutscheincode "2025" ab Einkauf über 100CHF</h2>
+              <img class="paula" src="{{ url_for('static', filename='pictures/cross.jpg') }}" alt="Menü" width="30" height="30">
 
     </div>
 <nav>
@@ -33,7 +34,7 @@
         <div class="iconRight">
 
             <form class="d-flex" role="search">
-                <input class="search" type="search" placeholder="Search" aria-label="Search"></form>
+                <input class="search" type="search" placeholder="Suchen" aria-label="Suchen"></form>
 
             <a href="{{ url_for('konto') }}">
                 <img class="paula" src="{{ url_for('static', filename='pictures/konto.jpg') }}" alt="Konto" width="30" height="30">
@@ -57,10 +58,10 @@
         <p>Hier kommt der Inhalt der Seite rein.</p>
         {% endblock %}
     </main>
-
+ <hr class="linie2">
     <div class="container">
 
-    <hr class="linie2">
+
     <div class="bottom">
 
         <h3>AGB</h3>
@@ -70,6 +71,7 @@
         <img src="{{ url_for('static', filename='pictures/instagram.png') }}" alt="Insta" width="30" height="30">
          <img src="{{ url_for('static', filename='pictures/facebooks.png') }}" alt="Insta" width="30" height="30">
           <img src="{{ url_for('static', filename='pictures/tiktok.jpg') }}" alt="Insta" width="33" height="33">
+
 
         </div>
 
