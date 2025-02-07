@@ -130,3 +130,15 @@
     text-align: center;
     font-weight: bold;
 }
+.carousel-item img {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+}
+.carousel-item {
+    flex: 0 0 100%;
+}
+.carousel-inner {
+    display: flex;
+    align-items: center;
+}
