@@ -25,7 +25,8 @@
 
 .fieldMessage {
     font-size: 18px;
-    margin-top: 10px;
+    margin-top: 5px;
+
 }
 
 .sendButton {
@@ -39,10 +40,12 @@
     border: none;
     border-radius: 5px;
     cursor: pointer;
+      margin-top: 25%;
 }
 
 .all {
     padding-left: 100px;
+    margin-bottom: 16%;
 }
 
 .kontakt {
@@ -53,6 +56,7 @@
     color: #222;
     font-weight: bold;
     margin-bottom: 10px;
+
 }
 
 .callus {
@@ -88,6 +92,7 @@
     border-left: 4px solid #4B0082;
 }
 .sendButton {
+    margin-top: auto;
     background-color: #4B0082;
 
 }
