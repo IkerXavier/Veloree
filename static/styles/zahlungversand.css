@@ -93,7 +93,8 @@
 }
 
 .zahlbox {
-    background-color: white;
+    background-color: #4B0082;
+    color: white;
     display: flex;
     border: solid black;
     width: 250%;
@@ -102,5 +103,6 @@
     justify-content: center;
     align-items: center;
     margin-left: 245%;
+
 }
 
