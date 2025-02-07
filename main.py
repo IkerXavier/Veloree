@@ -130,6 +130,18 @@ def zahlen() -> str:
     return render_template("zahlungsformular.html")
 
 
+@app.route('/reset_password', methods=['GET', 'POST'])
+def reset_password():
+    if request.method == 'POST':
+        email = request.form['email']
+
+
+
+        return redirect(url_for('login'))
+
+    return render_template('passwortvergessen.html')
+
+
 
 
 
