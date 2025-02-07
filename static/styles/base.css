@@ -8,19 +8,10 @@ nav a{
     justify-content: center;
     color: white;
     margin: 0;
-    align-items: center;
-    align-content: center;
-    justify-items: center;
-    margin-right: auto;
-    padding-left: 30%;
 }
 .gutscheinhr{
     background-color: black;
      padding: 10px 0;
-    display: flex;
-     justify-content: center;
-    align-items: center;
-
 }
 body{
     font-family: "Comic Sans MS", cursive, sans-serif;
@@ -90,7 +81,5 @@ body{
 }
 
 .cross{
-    justify-content: flex-end;
-    margin-left: auto;
-    padding-right: 2%;
+
 }
