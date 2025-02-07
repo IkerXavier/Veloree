@@ -1,3 +1,129 @@
-.all1 {
-    padding-left: 200px;
+.menu-container {
+    width: 100%;
+    max-width: 1200px;
+    padding: 50px 20px 30px;
+    background-color: #f4f3f3;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    margin: 50px auto 0;
+}
+
+h1 {
+    font-size: 2.5em;
+    color: #333;
+    text-align: left;
+    margin-bottom: 20px;
+    letter-spacing: 2px;
+    padding-left: 20px;
+    position: relative;
+}
+
+h1::after {
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #333;
+}
+
+.menu-items {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    justify-items: center;
+    padding-left: 20px;
+    width: 100%;
+    margin-top: 40px; /* Menü weiter nach unten verschieben */
+}
+
+.menu-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 1.1em;
+    color: #333;
+    background-color: #fff;
+    padding: 20px;
+    width: 100%;
+    height: 250px;
+    border-radius: 10px;
+    text-decoration: none;
+    transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.menu-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
+}
+
+.menu-item span {
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+.menu-icon {
+    width: 70px;
+    height: 70px;
+    background-color: transparent;
+    border: 2px solid #333;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #333;
+    font-size: 1.5em;
+    margin-bottom: 15px;
+}
+
+.menu-icon.home-icon {
+    background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTJz8q2U_haJAW2hmpHnv7NScoOyb1NLNzzpY11Y6hqgWOHpPTcrRE6Tm6cwj1n1K9fkC0&usqp=CAU');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.menu-icon.about-icon {
+    background-image: url('https://static.vecteezy.com/ti/gratis-vektor/p1/28670924-gruppe-von-menschen-symbol-einfach-gliederung-stil-mitarbeiter-menge-menschen-organisation-management-gruppe-treffen-mann-geschaft-team-zusammenarbeit-konzept-dunn-linie-symbol-illustration-isoliert-vektor.jpg');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.menu-icon.women-icon {
+    background-image: url('https://t3.ftcdn.net/jpg/11/93/32/80/360_F_1193328032_r433gmLe4XMScrS1qZ34uPS4lWZY0Jif.jpg');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.menu-icon.men-icon {
+    background-image: url('https://cdn-icons-png.flaticon.com/512/3439/3439380.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.menu-icon.unisex-icon {
+    background-image: url('https://us.123rf.com/450wm/andrerosi/andrerosi2102/andrerosi210201890/164553337-symbolvektor-f%C3%BCr-mann-und-frau-m%C3%A4nnliches-und-weibliches-symbol.jpg?ver=6');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.menu-icon.contact-icon {
+    background-image: url('https://static.vecteezy.com/ti/gratis-vektor/p1/5269576-mail-icon-kostenlos-vektor.jpg');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.menu-icon.account-icon {
+    background-image: url('https://img.freepik.com/premium-vector/user-icon-avatar-user-profile-person-icon-gender-neutral-silhouette-profile-picture-suitable_697711-1132.jpg');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.menu-icon.cart-icon {
+    background-image: url('https://media.istockphoto.com/id/1206806317/de/vektor/cart-icon-isoliert-auf-wei%C3%9Fem-hintergrund.jpg?s=612x612&w=0&k=20&c=C8M_hZIFVmivufyr8J36_Cpbs09Usu4HaNBnR8PTf2M=');
+    background-size: contain;
+    background-repeat: no-repeat;
 }

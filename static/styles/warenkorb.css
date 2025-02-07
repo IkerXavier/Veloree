@@ -1,33 +1,97 @@
-.title{
-    display: flex;
-    justify-content: center;
+body {
+    background-color: #ffffff;
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
 }
 
-.box{
-    display: flex;
-    text-align: center;
-    justify-content: center;
-    border: 3px solid black;
-    width: 300px;
-    height: auto;
+.cart-container {
+    max-width: 1000px;
+    margin: 50px auto;
+    background-color: #ffffff;
+    padding: 40px;
     border-radius: 15px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
 }
 
-.containerp{
+.cart-header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.cart-title {
+    font-size: 2.5em;
+    font-weight: 600;
+    color: #333;
+}
+
+.cart-line {
+    width: 100px;
+    height: 2px;
+    background-color: #161377
+;
+    margin: 20px auto;
+}
+
+.cart-content {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
 }
-.buttoncontainer{
+
+.empty-cart-box {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+    align-items: center;
     justify-content: center;
-
-
+    padding: 40px;
+    background-color: #f9f9f9;
+    border: 2px solid #ffffff;
+    border-radius: 10px;
+    width: 80%;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    margin-bottom: 30px;
 }
-.button1{
-    margin-top: 15px;
-    background-color: white;
-    border-radius: 12px;
 
+.empty-cart-text {
+    font-size: 1.8em;
+    color: #333;
+    margin: 0;
+    font-weight: 600;
+}
+
+.empty-cart-description {
+    font-size: 1.2em;
+    color: #888;
+    margin-top: 10px;
+}
+
+.cart-button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+.checkout-link {
+    text-decoration: none;
+}
+
+.checkout-button {
+    padding: 15px 35px;
+    background-color: #161377
+;
+    color: white;
+    font-size: 1.2em;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.checkout-button:hover {
+    background-color: #161377
+;
+    transform: scale(1.05);
 }
