@@ -125,6 +125,10 @@ def message() -> str:
 @app.route("/createaccount")
 def createaccount() -> str:
     return render_template("createaccount.html")
+@app.route("/zahlen")
+def zahlen() -> str:
+    return render_template("zahlungsformular.html")
+
 
 
 
