@@ -100,9 +100,15 @@
     width: 250%;
     border-radius: 20px;
     height: 100%;
-    justify-content: center;
-    align-items: center;
+    justify-content: center; /* Zentriert den Text horizontal */
+    align-items: center; /* Zentriert den Text vertikal */
     margin-left: 245%;
-
+    padding: 10px; /* Fügt Innenabstand hinzu, falls nötig */
+    text-align: center; /* Falls `p` nicht richtig zentriert ist */
 }
 
+.textT {
+    margin: 0; /* Entfernt unnötigen Abstand vom Absatz */
+    width: 100%; /* Stellt sicher, dass der Text sich dem Button anpasst */
+    text-align: center; /* Falls nötig */
+}
