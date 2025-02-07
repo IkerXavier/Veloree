@@ -1,4 +1,3 @@
-
 * {
     margin: 0;
     padding: 0;
@@ -17,19 +16,20 @@
 }
 
 .container1 {
-    width: 50%;
+    width: 55%;
     display: flex;
     justify-content: center;
     align-items: center;
-    background: #1c1c1c;
     border-radius: 20px;
     padding: 20px;
+    background: none;
 }
 
-.pic {
-    max-width: 100%;
-    height: auto;
-    border-radius: 10px;
+.carousel-img {
+    width: 100%;
+    height: 650px;  /* Bild etwas größer */
+    object-fit: cover;
+    border-radius: 15px;
 }
 
 .container2 {
@@ -40,62 +40,95 @@
 }
 
 .titleA {
-    font-size: 32px;
+    font-size: 36px;
     color: dodgerblue;
     font-weight: bold;
 }
 
 .zwei {
-    font-size: 18px;
+    font-size: 20px;
     color: #444;
+}
+
+.options-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
 }
 
 .option {
     display: flex;
-    align-items: center;
-    justify-content: space-between;
-    border: 2px solid #000;
+    flex-direction: column;  /* Elemente untereinander anordnen */
+    align-items: flex-start; /* Links ausrichten */
+    justify-content: flex-start;
+    border: 1px solid #000;  /* Dünneres Kästchen */
     border-radius: 15px;
-    padding: 15px;
+    padding: 12px 20px;  /* Weniger Padding für dünnere Kästchen */
     cursor: pointer;
-    font-size: 16px;
+    font-size: 18px;
+    background-color: #f4f2f2;
+    transition: all 0.3s ease-in-out;
+    width: 100%;
+}
+
+.option:hover {
+    background-color: #e8e3e3;
 }
 
 .option input {
     margin-right: 10px;
 }
 
+.size {
+    font-size: 20px;
+    font-weight: bold;
+
+}
+
+.price-container {
+    display: flex;
+    justify-content: flex-start;  /* Preis links ausrichten */
+    width: 100%;
+    align-items: center;
+}
+
+.ml-info {
+    font-size: 20px;
+    font-weight: bold;
+    margin-right: 10px;  /* Abstand zwischen Punkt und ML */
+}
+
+.point {
+    font-size: 30px;
+    margin-bottom: 5px;  /* Punkt etwas weiter nach unten verschieben */
+}
+
+.price {
+    font-size: 20px;
+    color: dodgerblue;
+    font-weight: bold;
+    margin-left: auto;  /* Preis ganz nach rechts schieben */
+}
+
 .online-status {
-    font-size: 14px;
+    font-size: 12px;  /* Kleinere Schrift */
+    color: gray;  /* Verfügbarkeit grau */
+    margin-top: 5px;  /* Abstand zur ML-Größe */
 }
-
-.new {
-    color: orange;
-}
-
-.available {
-    color: green;
-}
-
-.unavailable {
-    color: red;
-}
-
 
 .button {
-    display: flex;
-    align-items: center;
-    justify-content: center;
     background: dodgerblue;
     color: white;
-    font-size: 18px;
-    padding: 15px;
+    font-size: 20px;
+    padding: 18px;
     border-radius: 15px;
     cursor: pointer;
     border: none;
     text-align: center;
     font-weight: bold;
-    width: 100%;
+    width: 91%;
+    margin-right: 230px;
+    margin-left: 25px;
 }
 
 .accordion-button {
@@ -106,7 +139,14 @@
 .accordion {
     padding-right: 18%;
     padding-left: 20%;
+}
 
+.heart {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 10px;
 }
 
 .accordion-header {
@@ -116,37 +156,24 @@
 .accordion-button:not(.collapsed) {
     background-color: lightskyblue; /* Beispiel: Blau */
     color: white;
-
-}
-.carousel-item img {
-    width: 100%;
-    height: 500px;
-    object-fit: cover;
-}
-.carousel-item {
-    flex: 0 0 100%;
-}
-.carousel-inner {
-    display: flex;
-    align-items: center;
-}
-.heart {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    padding: 10px;
 }
 
+/* Kleinere Accordion-Buttons (Beschreibung & Inhaltsstoffe) */
+.accordion-button {
+    font-size: 14px; /* Kleinere Schrift */
+    padding: 8px 12px; /* Weniger Padding */
+}
+
+.accordion-button:not(.collapsed) {
+    font-size: 14px;
+    padding: 8px 12px;
+}
 .heart-btn {
-    width: 50px;
-    height: 50px;
+    font-size: 50px;  /* Größere Schrift für das Herz */
+    padding: 12px;  /* Etwas mehr Padding, um den Button größer zu machen */
+    width: 55px;  /* Feste Breite, um das Herz sichtbar größer zu machen */
+    height: 55px;  /* Feste Höhe */
     display: flex;
     justify-content: center;
     align-items: center;
-    border-radius: 8px;
-}
-
-.button {
-    padding: 10px 20px;
 }
