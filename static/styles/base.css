@@ -23,7 +23,7 @@ body{
 .linie2{
     border: 2px solid #161377;
 
-    width: 1400%;
+    width: 100%;
 }
 .container{
     display: flex;
@@ -77,3 +77,4 @@ body{
     border: 2px solid gray;
     border-radius: 5px;
 }
+

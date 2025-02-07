@@ -88,4 +88,9 @@ h1 {
     color: #ffc30e;
 }
 
-
+.cart-line {
+    width: 100px;
+    height: 2px;
+    background-color: #161377;
+    margin: 20px auto;
+}
