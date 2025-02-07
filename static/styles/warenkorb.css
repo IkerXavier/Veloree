@@ -5,16 +5,18 @@
 
 .box{
     display: flex;
+    text-align: center;
     justify-content: center;
     border: 3px solid black;
     width: 300px;
     height: auto;
     border-radius: 15px;
-
 }
+
 .containerp{
     display: flex;
     justify-content: center;
+    align-items: center;
 }
 .buttoncontainer{
     display: flex;

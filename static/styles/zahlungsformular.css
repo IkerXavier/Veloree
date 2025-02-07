@@ -1,0 +1,16 @@
+.formular{
+    margin-left: 25%;
+    width: 50%;
+    margin-top: 5%
+}
+
+.titleZ{
+    display: flex;
+    justify-content: center;
+
+}
+.button2{
+    background-color: #4B0082;
+    color: white;
+    border-radius: 10px;
+}

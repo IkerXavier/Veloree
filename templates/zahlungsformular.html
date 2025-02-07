@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block title %}Languages{% endblock %}
+{% block extra_styles %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/zahlungsformular.css') }}">
+{% endblock %}
+
+{% block content %}
+<h1 class="titleZ">Zahlen</h1>
+    <div class="formular">
+    <div class="mb-3">
+  <label for="exampleFormControlInput1" class="form-label">Vorname Nachname</label>
+  <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Blenda Ramani">
+</div>
+    <div class="mb-3">
+  <label for="exampleFormControlInput1" class="form-label">E-Mail</label>
+  <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="blenda@example.com">
+</div>
+    <div class="mb-3">
+  <label for="exampleFormControlInput1" class="form-label">Strasse</label>
+  <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Mustermannstrasse 17">
+</div>
+    <div class="mb-3">
+  <label for="exampleFormControlInput1" class="form-label">Ort</label>
+  <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Musterort">
+</div>
+    <div class="mb-3">
+  <label for="exampleFormControlInput1" class="form-label">PLZ</label>
+  <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="8050">
+</div>
+    <div class="mb-3">
+  <label for="exampleFormControlInput1" class="form-label">Kreditkartenummer</label>
+  <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="1234 5678 9012 3456">
+</div>
+    <a href="{{ url_for('home') }}">
+    <button type="button" class="button2">Senden</button>
+    </a>
+    </div>
+{% endblock %}
