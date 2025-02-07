@@ -9,7 +9,7 @@ body {
 }
 
 .container{
-    margin-top: 10%;
+    margin-top: 5%;
 }
 
 .sidebar {
@@ -21,7 +21,13 @@ body {
 }
 
 h2 {
-    text-align: center;
+
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    border-bottom: 1px solid black;
+    padding-bottom: 5px;
 }
 
 .register {
