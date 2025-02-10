@@ -80,8 +80,8 @@
 }
 
 .size {
-    font-size: 20px;
-    font-weight: bold;
+    font-size: 10px;
+    color: #444444;
 
 }
 
@@ -184,7 +184,7 @@
     flex-direction: row;
     align-items: center;
     justify-content: flex-start;
-    border: 1px solid #000;
+    border: 1px solid #787777;
     border-radius: 15px;
     padding: 12px 20px;
     cursor: pointer;
@@ -200,13 +200,14 @@
 }
 
 .size {
-    font-size: 20px;
+    font-size: 15px;
     font-weight: bold;
+    color: #444444;
 }
 
 .price {
     font-size: 20px;
-    color: dodgerblue;
+    color: #333333;
     font-weight: bold;
     margin-left: auto;
 }
