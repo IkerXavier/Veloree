@@ -162,15 +162,26 @@ def reset_password():
 
     return render_template('passwortvergessen.html')
 
+
 @app.route('/add_to_cart', methods=['POST'])
 def add_to_cart():
     product_name = request.form.get('product_name')
     size = request.form.get('size')
-    price = request.form.get('price')
+    price = request.form.get('price')  # Preis als String (z.B. "20 CHF")
     image = request.form.get('image')
 
+    print(f"Product: {product_name}, Size: {size}, Price: {price}, Image: {image}")  # Debugging
+
     if not all([product_name, size, price, image]):
+        print("Fehlende Daten!")
         return "Fehlende Daten", 400
+
+    # Entferne " CHF" und konvertiere den Preis in eine Zahl
+    try:
+        price = float(price.replace(" CHF", ""))
+    except ValueError:
+        print("Fehler bei der Preisumwandlung!")
+        return "Ungültiger Preis", 400
 
     if 'cart' not in session:
         session['cart'] = []
@@ -178,12 +189,13 @@ def add_to_cart():
     session['cart'].append({
         'name': product_name,
         'size': size,
-        'price': price,
+        'price': price,  # Jetzt als Float
         'image': image
     })
 
-    session.modified = True
+    session.modified = True  # Speichere Änderungen in der Session
     return redirect(url_for('warenkorb'))
+
 
 @app.route('/add_to_cash', methods=['POST'])
 def add_to_cash():
@@ -206,7 +218,7 @@ def add_to_cash():
     session['cart'].append({
         'name': product_name,
         'size': size,
-        'price': price,
+        'price': float(price),
         'image': image
     })
 
@@ -220,7 +232,9 @@ def clear_cart():
 @app.route("/zahlungversand")
 def zahlungversand():
     cart_items = session.get('cart', [])
-    return render_template("zahlungversand.html", cart=cart_items)
+    total_price = sum(float(item['price']) for item in cart_items)
+
+    return render_template("zahlungversand.html", cart=cart_items, total_price=total_price)
 
 
 if __name__ == '__main__':

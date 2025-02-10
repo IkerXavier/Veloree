@@ -131,3 +131,12 @@
 .buttonLief1{
     margin-right: 15%;
 }
+.preisProdukt{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-size: 25px;
+}
+.preis {
+    padding: 20%;
+}

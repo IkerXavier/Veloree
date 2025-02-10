@@ -13,9 +13,9 @@
         <div class="box1">
             <div class="boxLieferung">
                 <button class="buttonLief">
-                <p class="textT">Lieferung</p>
-                <p class="textP">Ab CHF 7.95</p>
-                    </button>
+                    <p class="textT">Lieferung</p>
+                    <p class="textP">Ab CHF 7.95</p>
+                </button>
             </div>
             <div class="boxClick">
                 <button class="buttonLief1">
@@ -42,7 +42,10 @@
     </div>
     <div class="bestellung">
         <div class="zusammenfassung">
-            <p class="textP">Produkte</p>
+            <div class="preisProdukt">
+                <p class="textP">Produkte</p>
+                <p class="preis">CHF {{ total_price|round(2) }}</p>
+            </div>
             <div class="linie"></div>
             <p class="textP">Gesamtbetrag inkl. MwSt.</p>
         </div>
