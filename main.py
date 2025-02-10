@@ -1,6 +1,6 @@
 # Wir importieren zuerst das Flask-Objekt aus dem Package
 from flask import Flask, request, render_template, url_for, redirect, session
-import services.math_service as math_service
+
 
 # mock data
 languages = [
@@ -106,10 +106,6 @@ def parfumepage() -> str:
 @app.route("/unisex")
 def unisex() -> str:
     return render_template("unisex.html")
-@app.route("/zahlungversand")
-def zahlungsversand() -> str:
-    return render_template("zahlungversand.html")
-
 @app.route("/kontakt")
 def kontakt() -> str:
     return render_template("kontakt.html")
@@ -117,9 +113,7 @@ def kontakt() -> str:
 def homepage() -> str:
     return render_template("homepage.html")
 
-@app.route("/zahlungversand")
-def zahlungversand() -> str:
-    return render_template("zahlungversand.html")
+
 @app.route("/message")
 def message() -> str:
     return render_template("message.html")
@@ -130,9 +124,7 @@ def createaccount() -> str:
 @app.route("/zahlen")
 def zahlen() -> str:
     return render_template("zahlungsformular.html")
-@app.route("/bestellung")
-def bestellung() -> str:
-    return render_template("bestellbestaetigung.html")
+
 
 @app.route("/bestellbestaetigung", methods=["POST"])
 def bestellbestaetigung():
@@ -193,11 +185,42 @@ def add_to_cart():
     session.modified = True
     return redirect(url_for('warenkorb'))
 
+@app.route('/add_to_cash', methods=['POST'])
+def add_to_cash():
+    product_name = request.form.get('product_name')
+    size = request.form.get('size')
+    price = request.form.get('price')
+    image = request.form.get('image')
 
+    if not all([product_name, size, price, image]):
+        return "Fehlende Daten", 400
+
+    if 'cart' not in session:
+        session['cart'] = []
+
+    existing_item = next((item for item in session['cart'] if item['name'] == product_name and item['size'] == size), None)
+
+    if existing_item:
+        return redirect(url_for('warenkorb'))
+
+    session['cart'].append({
+        'name': product_name,
+        'size': size,
+        'price': price,
+        'image': image
+    })
+
+    session.modified = True
+    return redirect(url_for('warenkorb'))
 @app.route("/clear_cart")
 def clear_cart():
     session["cart"] = []
     return redirect(url_for("warenkorb"))
+
+@app.route("/zahlungversand")
+def zahlungversand():
+    cart_items = session.get('cart', [])
+    return render_template("zahlungversand.html", cart=cart_items)
 
 
 if __name__ == '__main__':

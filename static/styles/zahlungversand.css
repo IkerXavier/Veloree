@@ -28,14 +28,14 @@
 }
 
 .boxLieferung {
-    padding-left: 8%;
-
+    padding-left: 15%;
+    margin-top: 2%;
 }
 
 .boxClick {
     padding-right: 8%;
     border-left: 2px solid black;
-    padding-left: 16%;
+    padding-left: 17%;
 
 }
 
@@ -114,4 +114,20 @@
     margin: 0;
     width: 100%;
     text-align: center;
+}
+.cart-content1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 5%;
+    margin-bottom: 5%;
+
+}
+.buttonLief, .buttonLief1 {
+    background-color: white;
+    border: white;
+}
+.buttonLief1{
+    margin-right: 15%;
 }

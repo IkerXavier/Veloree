@@ -7,57 +7,55 @@
 
 {% block content %}
     <div class="title">
-<h1 class="zahlung">Zahlung & Versand</h1>
+        <h1 class="zahlung">Zahlung & Versand</h1>
     </div>
     <div class="lieferung">
-    <div class="box1">
-        <div class="boxLieferung">
-        <p class="textT">Lieferung</p>
-        <p class="textP">Ab CHF 7.95</p>
+        <div class="box1">
+            <div class="boxLieferung">
+                <button class="buttonLief">
+                <p class="textT">Lieferung</p>
+                <p class="textP">Ab CHF 7.95</p>
+                    </button>
             </div>
-        <div class="boxClick">
-        <p class="textT">Click & Collect</p>
-        <p class="textP">Bei der Hardbrücke</p>
-        <p class="textP">CHF 4.95</p>
+            <div class="boxClick">
+                <button class="buttonLief1">
+                    <p class="textT">Click & Collect</p>
+                    <p class="textP">Bei der Hardbrücke</p>
+                    <p class="textP">CHF 4.95</p>
+                </button>
             </div>
 
+        </div>
     </div>
+    <div class="cart-content1">
+        {% for item in cart %}
+            <div class="cart-item">
+                <p><strong>{{ item.name }}</strong></p>
+                <p>Größe: {{ item.size }}</p>
+                <p>Preis: {{ item.price }}</p>
+            </div>
+        {% endfor %}
     </div>
-    <div class="middle">
-    <div class="foto">
-        <img src="{{ url_for('static', filename='imagesZKB/HommeBlackBack.png') }}" alt="Logo" width="auto" height="150">
 
-    </div>
-    <div class="info">
-        <div class="textT">Männnerparfüm</div>
-        <div class="textP">Herrenduft, erfrischend, 50ml</div>
-    </div>
-    <div class="preis">
-        <div class="textP">CHF 69.95</div>
-
-    </div>
-    </div>
-    <div class="produktcontainer">
-
-    </div>
     <div class="subtitle">
-    <p class="textT">Zusammenfassung der Bestellung</p>
+        <p class="textT">Zusammenfassung der Bestellung</p>
     </div>
     <div class="bestellung">
-    <div class="zusammenfassung">
-        <p class="textP">Produkte</p>
-        <div class="linie"></div>
-        <p class="textP">Gesamtbetrag inkl. MwSt.</p>
+        <div class="zusammenfassung">
+            <p class="textP">Produkte</p>
+            <div class="linie"></div>
+            <p class="textP">Gesamtbetrag inkl. MwSt.</p>
         </div>
 
-    <div class="gutscheinzahlung">
-        <input class="gutscheincode" type="text" placeholder="Gutschein-/Rabattcode" aria-label=".form-control-lg example">
-        <a href="{{ url_for('zahlen') }}">
-        <button class="zahlbox">
-            <p class="textT">Zahlen</p>
-        </button>
-        </a>
-    </div>
+        <div class="gutscheinzahlung">
+            <input class="gutscheincode" type="text" placeholder="Gutschein-/Rabattcode"
+                   aria-label=".form-control-lg example">
+            <a href="{{ url_for('zahlen') }}">
+                <button class="zahlbox">
+                    <p class="textT">Zahlen</p>
+                </button>
+            </a>
+        </div>
     </div>
 
 {% endblock %}
