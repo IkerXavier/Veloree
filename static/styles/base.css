@@ -108,14 +108,14 @@ body {
 
 
 
-/* Animation: Aufpoppen beim Auswählen */
+
 .option input:checked + span {
     transform: scale(1.1);
     font-weight: bold;
     transition: 0.2s ease-in-out;
 }
 
-/* Hover-Effekt für weiches Aufpoppen */
+
 .option:hover {
     transform: scale(1.05);
     background: #e0e0e0;

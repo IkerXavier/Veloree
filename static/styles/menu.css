@@ -36,7 +36,7 @@ h1::after {
     justify-items: center;
     padding-left: 20px;
     width: 100%;
-    margin-top: 40px; /* Menü weiter nach unten verschieben */
+    margin-top: 40px;
 }
 
 .menu-item {
