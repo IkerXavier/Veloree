@@ -130,8 +130,28 @@ def zahlen() -> str:
     return render_template("zahlungsformular.html")
 @app.route("/bestellung")
 def bestellung() -> str:
-    return render_template("bestellbestätigung.html")
+    return render_template("bestellbestaetigung.html")
 
+@app.route("/bestellbestaetigung", methods=["POST"])
+def bestellbestaetigung():
+    app.logger.info("Form submitted")
+
+    # Formulardaten erfassen
+    name = request.form.get("name")
+    email = request.form.get("email")
+    address = request.form.get("address")
+    city = request.form.get("city")
+    zip_code = request.form.get("zip")
+    creditcard = request.form.get("creditcard")
+
+    # Bestätigungsseite rendern und Daten übergeben
+    return render_template("bestellbestaetigung.html",
+                           name=name,
+                           email=email,
+                           address=address,
+                           city=city,
+                           zip=zip_code,
+                           creditcard=creditcard)
 
 @app.route('/reset_password', methods=['GET', 'POST'])
 def reset_password():
