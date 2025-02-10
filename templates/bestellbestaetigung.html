@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block title %}Message{% endblock %}
+
+{% block extra_styles %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/message.css') }}">
+{% endblock %}
+
+{% block content %}
+<h1 class="erfolgreich">Vielen Dank für Ihre Bestellung!</h1>
+<div class="daten">
+<h2>Ihre Bestelldaten:</h2>
+<ul style="list-style-type: none;">
+    <li><strong>Name:</strong> {{ name }}</li>
+    <li><strong>E-Mail:</strong> {{ email }}</li>
+    <li><strong>Strasse:</strong> {{ address }}</li>
+    <li><strong>Ort:</strong> {{ city }}</li>
+    <li><strong>PLZ:</strong> {{ zip }}</li>
+    <li><strong>Kreditkartennummer:</strong> **** **** **** {{ creditcard[-4:] }}</li>
+</ul>
+</div>
+{% endblock %}
