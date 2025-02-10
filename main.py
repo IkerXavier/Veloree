@@ -1,5 +1,5 @@
 # Wir importieren zuerst das Flask-Objekt aus dem Package
-from flask import Flask, request, render_template, url_for, redirect
+from flask import Flask, request, render_template, url_for, redirect, session
 import services.math_service as math_service
 
 # mock data
@@ -86,9 +86,11 @@ def menu() -> str:
 @app.route("/konto")
 def konto() -> str:
     return render_template("konto.html")
-@app.route("/warenkorb")
-def warenkorb() -> str:
-    return render_template("warenkorb.html")
+@app.route('/warenkorb')
+def warenkorb():
+    cart_items = session.get('cart', [])
+    return render_template('warenkorb.html', cart=cart_items)
+
 @app.route("/ueberuns")
 def ueberuns() -> str:
     return render_template("ueberuns.html")
@@ -153,6 +155,10 @@ def bestellbestaetigung():
                            zip=zip_code,
                            creditcard=creditcard)
 
+
+
+app.secret_key = "geheimschlüssel"
+
 @app.route('/reset_password', methods=['GET', 'POST'])
 def reset_password():
     if request.method == 'POST':
@@ -164,8 +170,34 @@ def reset_password():
 
     return render_template('passwortvergessen.html')
 
+@app.route('/add_to_cart', methods=['POST'])
+def add_to_cart():
+    product_name = request.form.get('product_name')
+    size = request.form.get('size')
+    price = request.form.get('price')
+    image = request.form.get('image')  # Bild jetzt mitnehmen!
+
+    if not all([product_name, size, price, image]):  # Stelle sicher, dass das Bild existiert
+        return "Fehlende Daten", 400
+
+    if 'cart' not in session:
+        session['cart'] = []
+
+    session['cart'].append({
+        'name': product_name,
+        'size': size,
+        'price': price,
+        'image': image  # Bild speichern
+    })
+
+    session.modified = True
+    return redirect(url_for('warenkorb'))
 
 
+@app.route("/clear_cart")
+def clear_cart():
+    session["cart"] = []
+    return redirect(url_for("warenkorb"))
 
 
 if __name__ == '__main__':
