@@ -6,23 +6,39 @@
 {% endblock %}
 
 {% block content %}
+
     <div class="cart-container">
         <div class="cart-header">
             <h1 class="cart-title">Warenkorb</h1>
             <div class="cart-line"></div>
         </div>
-        <div class="cart-content">
+
+        {% if cart %}
+            <div class="cart-content">
+                {% for item in cart %}
+                    <div class="cart-item">
+                        <p><strong>{{ item.name }}</strong></p>
+                        <p>Größe: {{ item.size }}</p>
+                        <p>Preis: {{ item.price }}</p>
+                    </div>
+                {% endfor %}
+
+                <div class="cart-button-container">
+                    <a href="{{ url_for('zahlungversand') }}" class="checkout-link">
+                        <button class="checkout-button">Weiter zur Kasse</button>
+                    </a>
+                </div>
+                <a href="{{ url_for('clear_cart') }}">
+                    <button class="leeren">Warenkorb leeren</button>
+                </a>
+
+            </div>
+        {% else %}
             <div class="empty-cart-box">
                 <p class="empty-cart-text">Dein Warenkorb ist leer.</p>
                 <p class="empty-cart-description">Füge Produkte hinzu, um mit dem Einkaufen zu beginnen.</p>
             </div>
-            <div class="cart-button-container">
-                <a href="{{ url_for('zahlungversand') }}" class="checkout-link">
-                    <button class="checkout-button">Weiter zur Kasse</button>
-                </a>
-            </div>
-        </div>
+        {% endif %}
     </div>
+
 {% endblock %}
-
-
