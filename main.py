@@ -193,7 +193,7 @@ def add_to_cart():
         'image': image
     })
 
-    session.modified = True  # Speichere Änderungen in der Session
+    session.modified = True
     return redirect(url_for('warenkorb'))
 
 
