@@ -83,7 +83,7 @@ body {
 
 .checkout-button {
     padding: 15px 35px;
-    background-color: #161377;
+    background-color: #4B0082;
     color: white;
     font-size: 1.2em;
     font-weight: bold;
@@ -96,7 +96,7 @@ body {
 }
 
 .checkout-button:hover {
-    background-color: #161377;
+    background-color: #4B0082;
     transform: scale(1.05);
 }
 .cart-container {
@@ -108,9 +108,9 @@ body {
 }
 .leeren {
     background-color: white;
-    color: #161377;
+    color: #4B0082;
     border-radius: 10px;
-    border: 2px solid #161377;
+    border: 2px solid #4B0082;
     padding: 10px;
 }
 .cart-item {
