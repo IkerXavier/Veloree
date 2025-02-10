@@ -1,5 +1,6 @@
-
-.container3 {
+* {
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
     font-family: 'Arial', sans-serif;
 }
@@ -15,19 +16,20 @@
 }
 
 .container1 {
-    width: 50%;
+    width: 55%;
     display: flex;
     justify-content: center;
     align-items: center;
-    background: #1c1c1c;
     border-radius: 20px;
     padding: 20px;
+    background: none;
 }
 
-.pic {
-    max-width: 100%;
-    height: auto;
-    border-radius: 10px;
+.carousel-img {
+    width: 100%;
+    height: 650px;
+    object-fit: cover;
+    border-radius: 15px;
 }
 
 .container2 {
@@ -38,62 +40,97 @@
 }
 
 .titleA {
-    font-size: 32px;
+    font-size: 36px;
     color: hotpink;
     font-weight: bold;
 }
 
 .zwei {
-    font-size: 18px;
+    font-size: 20px;
     color: #444;
+}
+
+.options-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
 }
 
 .option {
     display: flex;
-    align-items: center;
-    justify-content: space-between;
-    border: 2px solid #000;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    border: 1px solid #000;
     border-radius: 15px;
-    padding: 15px;
+    padding: 12px 20px;
     cursor: pointer;
-    font-size: 16px;
+    font-size: 18px;
+    background-color: #f4f2f2;
+    transition: all 0.3s ease-in-out;
+    width: 100%;
+}
+
+.option:hover {
+    background-color: #e8e3e3;
 }
 
 .option input {
     margin-right: 10px;
 }
 
+.size {
+    font-size: 10px;
+    color: #444444;
+
+}
+
+.price-container {
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
+    align-items: center;
+}
+
+.ml-info {
+    font-size: 20px;
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.point {
+    font-size: 30px;
+    margin-bottom: 5px;
+}
+
+.price {
+    font-size: 20px;
+    color: hotpink;
+    font-weight: bold;
+    margin-left: auto;
+}
+
 .online-status {
-    font-size: 14px;
+    font-size: 12px;
+    color: gray;
+    margin-top: 5px;
+    margin-left: 10px;
+    margin-right: 150px;
 }
-
-.new {
-    color: orange;
-}
-
-.available {
-    color: green;
-}
-
-.unavailable {
-    color: red;
-}
-
 
 .button {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: #ff66a3;
+    background: hotpink;
     color: white;
-    font-size: 18px;
-    padding: 15px;
+    font-size: 20px;
+    padding: 18px;
     border-radius: 15px;
     cursor: pointer;
     border: none;
     text-align: center;
     font-weight: bold;
-    width: 100%;
+    width: 91%;
+    margin-right: 230px;
+    margin-left: 25px;
 }
 
 .accordion-button {
@@ -104,31 +141,8 @@
 .accordion {
     padding-right: 18%;
     padding-left: 20%;
-
 }
 
-.accordion-header {
-    background-color: white;
-}
-
-.accordion-button:not(.collapsed) {
-    background-color: pink; /* Beispiel: Blau */
-    color: white;
-
-}
-
-.carousel-item img {
-    width: 100%;
-    height: 500px;
-    object-fit: cover;
-}
-.carousel-item {
-    flex: 0 0 100%;
-}
-.carousel-inner {
-    display: flex;
-    align-items: center;
-}
 .heart {
     display: flex;
     justify-content: space-between;
@@ -137,15 +151,74 @@
     padding: 10px;
 }
 
+.accordion-header {
+    background-color: white;
+}
+
+.accordion-button:not(.collapsed) {
+    background-color: lightpink;
+    color: white;
+}
+
+
+.accordion-button {
+    font-size: 14px;
+    padding: 8px 12px;
+}
+
+.accordion-button:not(.collapsed) {
+    font-size: 14px;
+    padding: 8px 12px;
+}
 .heart-btn {
-    width: 50px;
-    height: 50px;
+    font-size: 50px;
+    padding: 12px;
+    width: 55px;
+    height: 55px;
     display: flex;
     justify-content: center;
     align-items: center;
-    border-radius: 8px;
+}
+.option {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    border: 1px solid #787777;
+    border-radius: 15px;
+    padding: 12px 20px;
+    cursor: pointer;
+    font-size: 18px;
+    background-color: #f4f2f2;
+    transition: all 0.3s ease-in-out;
+    width: 100%;
 }
 
-.button {
-    padding: 10px 20px;
+.option input {
+    margin-right: 10px;
+    height: 25px;
+}
+
+.size {
+    font-size: 15px;
+    font-weight: bold;
+    color: #444444;
+}
+
+.price {
+    font-size: 20px;
+    color: #333333;
+    font-weight: bold;
+    margin-left: auto;
+}
+
+.ml-info {
+    font-size: 20px;
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.point {
+    font-size: 30px;
+    margin-bottom: 5px;
 }
