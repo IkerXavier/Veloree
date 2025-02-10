@@ -43,11 +43,13 @@
     <div class="subtitle">
     <p class="textT">Zusammenfassung der Bestellung</p>
     </div>
+    <div class="bestellung">
     <div class="zusammenfassung">
         <p class="textP">Produkte</p>
         <div class="linie"></div>
         <p class="textP">Gesamtbetrag inkl. MwSt.</p>
-    </div>
+        </div>
+
     <div class="gutscheinzahlung">
         <input class="gutscheincode" type="text" placeholder="Gutschein-/Rabattcode" aria-label=".form-control-lg example">
         <a href="{{ url_for('zahlen') }}">
@@ -55,6 +57,7 @@
             <p class="textT">Zahlen</p>
         </button>
         </a>
+    </div>
     </div>
 
 {% endblock %}
