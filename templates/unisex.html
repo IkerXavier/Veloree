@@ -78,12 +78,30 @@
                     </label>
                 </div>
 
-                <div class="heart">
+                <div class="button-container">
                     <button type="button" class="btn btn-outline-danger heart-btn">♥</button>
-                    <a href="{{ url_for('warenkorb') }}">
-                        <button class="button">In den Warenkorb</button>
-                    </a>
+
+                    <form action="{{ url_for('add_to_cart') }}" method="POST">
+                        <input type="hidden" name="product_name" value="Verlorée Unisex">
+                        <input type="hidden" name="size" id="selected_size" value="25ml">
+                        <input type="hidden" name="price" id="selected_price" value="20 CHF">
+                        <input type="hidden" name="image" value="{{ url_for('static', filename='imagesZKB/FemmeBlackBack.png') }}">
+
+
+                        <button type="submit" class="button">In den Warenkorb</button>
+                    </form>
+
                 </div>
+
+
+                <script>
+                    document.querySelectorAll(".option input").forEach(radio => {
+                        radio.addEventListener("change", function () {
+                            document.getElementById("selected_size").value = this.nextElementSibling.textContent;
+                            document.getElementById("selected_price").value = this.nextElementSibling.nextElementSibling.nextElementSibling.textContent;
+                        });
+                    });
+                </script>
             </div>
         </div>
         <div class="accordion" id="accordionExample">

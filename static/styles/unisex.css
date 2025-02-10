@@ -225,3 +225,49 @@
     font-size: 30px;
     margin-bottom: 5px;
 }
+.button-container {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.heart-btn {
+    font-size: 30px;
+    padding: 10px;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    border: 2px solid #d9534f;
+    background-color: transparent;
+    color: #d9534f;
+    transition: background-color 0.3s;
+}
+
+.heart-btn:hover {
+    background-color: #d9534f;
+    color: white;
+}
+
+.button {
+    background: #ffd137;
+    color: white;
+    font-size: 18px;
+    padding: 12px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    border: none;
+    font-weight: bold;
+    text-align: center;
+    width: 92%;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+
+.button:hover {
+    background-color: #ffe404;
+    transform: scale(1.05);
+}

@@ -175,9 +175,9 @@ def add_to_cart():
     product_name = request.form.get('product_name')
     size = request.form.get('size')
     price = request.form.get('price')
-    image = request.form.get('image')  # Bild jetzt mitnehmen!
+    image = request.form.get('image')
 
-    if not all([product_name, size, price, image]):  # Stelle sicher, dass das Bild existiert
+    if not all([product_name, size, price, image]):
         return "Fehlende Daten", 400
 
     if 'cart' not in session:
@@ -187,7 +187,7 @@ def add_to_cart():
         'name': product_name,
         'size': size,
         'price': price,
-        'image': image  # Bild speichern
+        'image': image
     })
 
     session.modified = True
