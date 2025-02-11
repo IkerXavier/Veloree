@@ -7,16 +7,27 @@
 {% endblock %}
 
 {% block content %}
-<h1 class="erfolgreich">Vielen Dank für Ihre Bestellung!</h1>
-<div class="daten">
-<h2>Ihre Bestelldaten:</h2>
-<ul style="list-style-type: none;">
-    <li><strong>Name:</strong> {{ name }}</li>
-    <li><strong>E-Mail:</strong> {{ email }}</li>
-    <li><strong>Strasse:</strong> {{ address }}</li>
-    <li><strong>Ort:</strong> {{ city }}</li>
-    <li><strong>PLZ:</strong> {{ zip }}</li>
-    <li><strong>Kreditkartennummer:</strong> **** **** **** {{ creditcard[-4:] }}</li>
-</ul>
-</div>
+    <h1 class="erfolgreich">Vielen Dank für Ihre Bestellung!</h1>
+    <div class="daten">
+        <h2>Ihre Bestelldaten:</h2>
+        <ul style="list-style-type: none;">
+            <li><strong>Name:</strong> {{ name }}</li>
+            <li><strong>E-Mail:</strong> {{ email }}</li>
+            <li><strong>Strasse:</strong> {{ address }}</li>
+            <li><strong>Ort:</strong> {{ city }}</li>
+            <li><strong>PLZ:</strong> {{ zip }}</li>
+            <li><strong>Kreditkartennummer:</strong> **** **** **** {{ creditcard[-4:] }}</li>
+        </ul>
+
+        <h2>Bestellte Artikel:</h2>
+        {% for item in cart %}
+            <div class="cart-item">
+                <div class="text7">
+                    <p class="infos"><strong>{{ item.name }}</strong></p>
+                    <p>Größe: {{ item.size }}</p>
+                    <p>Preis: {{ item.price }} CHF</p>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
 {% endblock %}

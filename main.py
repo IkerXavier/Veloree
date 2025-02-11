@@ -130,7 +130,6 @@ def zahlen() -> str:
 def bestellbestaetigung():
     app.logger.info("Form submitted")
 
-    # Formulardaten erfassen
     name = request.form.get("name")
     email = request.form.get("email")
     address = request.form.get("address")
@@ -138,14 +137,16 @@ def bestellbestaetigung():
     zip_code = request.form.get("zip")
     creditcard = request.form.get("creditcard")
 
-    # Bestätigungsseite rendern und Daten übergeben
+    cart_items = session.get('cart', [])
+
     return render_template("bestellbestaetigung.html",
                            name=name,
                            email=email,
                            address=address,
                            city=city,
                            zip=zip_code,
-                           creditcard=creditcard)
+                           creditcard=creditcard,
+                           cart=cart_items)
 
 
 
