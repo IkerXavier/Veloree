@@ -9,7 +9,7 @@
 {% block content %}
     <h1 class="erfolgreich">Vielen Dank für Ihre Bestellung!</h1>
     <div class="daten">
-        <h2>Ihre Bestelldaten:</h2>
+        <h2 class="lila"><strong>Ihre Bestelldaten:</strong></h2>
         <ul style="list-style-type: none;">
             <li><strong>Name:</strong> {{ name }}</li>
             <li><strong>E-Mail:</strong> {{ email }}</li>
@@ -18,21 +18,44 @@
             <li><strong>PLZ:</strong> {{ zip }}</li>
             <li><strong>Kreditkartennummer:</strong> **** **** **** {{ creditcard[-4:] }}</li>
         </ul>
-
-        <h2><strong>Bestellte Artikel:</strong></h2>
-        {% for item in cart %}
-            <div class="cart-item">
-                <div class="text7">
-                    <p class="infos"><strong>{{ item.name }}</strong></p>
-                    <p>Größe: {{ item.size }}</p>
-                    <p>Preis: {{ item.price }} CHF</p>
-                </div>
-            </div>
-        {% endfor %}
-        <h2>Gesamtpreis:</h2>
-        <p class="preis">CHF {{ total_price }}</p>
-        <h2>Liefermethode:</h2>
-        <p><strong>{{ delivery_method }}</strong></p>
-
     </div>
+
+    <div class="artikels">
+        <div class="artikel">
+            <h2 class="lila"><strong>Bestellte Artikel:</strong></h2>
+            {% for item in cart %}
+                <div class="cart-item">
+                    <div class="text7">
+                        <p class="infos"><strong>{{ item.name }}</strong></p>
+                        <p>Größe: {{ item.size }}</p>
+                        <p>Preis: {{ item.price }} CHF</p>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+        <div class="gesamtpreis">
+            <h2 class="lila"><strong>Gesamtpreis:</strong></h2>
+            <p class="preis" id="total-price">CHF {{ total_price }}</p>
+        </div>
+        <div class="liefermethode">
+            <h2 class="lila"><strong>Liefermethode:</strong></h2>
+            <p class="text7"><strong id="delivery_method_display">Keine Liefermethode angegeben</strong></p>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            let savedMethod = localStorage.getItem("delivery_method");
+            let savedCost = localStorage.getItem("shipping_cost");
+
+            if (savedMethod) {
+                document.getElementById("delivery_method_display").innerText = savedMethod;
+            }
+            if (savedCost) {
+                let baseTotal = parseFloat("{{ total_price }}");
+                let newTotal = baseTotal + parseFloat(savedCost);
+                document.getElementById("total-price").innerText = `CHF ${newTotal.toFixed(2)}`;
+            }
+        });
+    </script>
 {% endblock %}

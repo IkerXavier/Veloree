@@ -15,8 +15,50 @@
     margin-top: 5%;
 }
 
+.boxLieferung, .boxClick {
+    width: 21%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.buttonLief, .buttonLief1 {
+    width: 100%;
+    padding: 20px;
+    background-color: #4B0082;
+    color: white;
+    font-size: 1.2em;
+    font-weight: bold;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.buttonLief:hover, .buttonLief1:hover {
+    background-color: #000000;
+}
+
+.buttonLief.ausgewählt, .buttonLief1.ausgewählt {
+    background-color: #ffd700;
+    color: black;
+    transform: scale(1.05);
+}
+
 .textT {
     font-size: 187.5%;
+    text-align: center;
+    margin: 0;
+}
+
+.textP {
+    font-size: 16px;
+    text-align: center;
+    margin: 5px 0 0 0;
 }
 
 .produktcontainer {
@@ -31,7 +73,7 @@
 .gutscheinzahlung {
     display: flex;
     flex-direction: row;
-    gap: 20%;
+    gap: 17%;
     margin-top: 3%;
 }
 
@@ -39,7 +81,8 @@
     margin-left: 25%;
     border: solid black;
     padding: 2%;
-    border-radius: 20px;
+    border-radius: 10px;
+    height: 90%;
 }
 
 .gutscheincode::placeholder {
@@ -58,12 +101,12 @@
     color: white;
     display: flex;
     border: solid black;
-    width: 200%;
-    border-radius: 20px;
-    height: 100%;
+    width: 50%;
+    border-radius: 10px;
+    height: 90%;
     justify-content: center;
     align-items: center;
-    margin-left: 0;
+    margin-left: 25%;
     padding: 10px;
     text-align: center;
     box-sizing: border-box;
@@ -73,6 +116,8 @@
     margin: 0;
     width: 100%;
     text-align: center;
+    font-size: xx-large;
+    align-content: center;
 }
 
 .cart-content1 {
@@ -88,25 +133,6 @@
     flex-direction: row;
     justify-content: space-between;
     font-size: 25px;
-}
-
-.buttonLief {
-    height: 65%;
-    width: 150%;
-}
-
-.buttonLief1, .buttonLief {
-    padding: 10px;
-    background-color: #4B0082;
-    color: white;
-    font-size: 1.2em;
-    font-weight: bold;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-    margin-bottom: 35%;
 }
 
 .cart-item {
@@ -145,15 +171,21 @@
     background-color: #4B0082;
     color: white;
     font-size: 1em;
-    padding: 8px 15px;
+    padding: 2% 5%;
     border-radius: 10px;
     border: none;
     cursor: pointer;
     transition: background-color 0.3s;
+    margin-right: 80%;
+    height: 10%;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    align-content: center;
 }
 
 .einloesen:hover {
-    background-color: #370062;
+    background-color: #6930a8;
 }
 
 .rabatt-info {
@@ -168,4 +200,23 @@
     text-align: center;
     font-size: 16px;
     font-weight: bold;
+}
+
+.preis{
+    font-size: 26px;
+    font-weight: bold ;
+     margin-right: 15%;
+}
+.text3{
+    font-size: 16px;
+    margin-left: 15%;
+}
+
+.text23{
+    font-size: 44px;
+    padding-bottom: 2%;
+}
+.buttonLief.ausgewählt, .buttonLief1.ausgewählt {
+    background-color: black;
+    color: white;
 }

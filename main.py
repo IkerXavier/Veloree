@@ -1,3 +1,4 @@
+
 # Wir importieren zuerst das Flask-Objekt aus dem Package
 from flask import Flask, request, render_template, url_for, redirect, session
 
@@ -29,7 +30,7 @@ z.B.
 #@app.route("/")
 #def home() -> str:
   #  print(math_service.add(1.0, 2.0))
- #   app.logger.info("Rendering home page")
+#   app.logger.info("Rendering home page")
 #    return render_template("home.html")
 
 @app.route("/")
@@ -239,7 +240,3 @@ def zahlungversand():
     total_price = sum(float(item['price']) for item in cart_items)
 
     return render_template("zahlungversand.html", cart=cart_items, total_price=total_price)
-
-
-if __name__ == '__main__':
-    app.run()
