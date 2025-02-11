@@ -20,10 +20,6 @@
                             <img src="{{ url_for('static', filename='imagesZKB/AllBlackBackDust.jpg') }}"
                                  class="carousel-img" alt="Parfüm Bundle 2">
                         </div>
-                        {#                        <div class="carousel-item">#}
-                        {#                            <img src="{{ url_for('static', filename='imagesZKB/Bundle3.png') }}"#}
-                        {#                                 class="carousel-img" alt="Parfüm Bundle 3">#}
-                        {#                        </div>#}
                     </div>
                     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying"
                             data-bs-slide="prev">
@@ -47,19 +43,50 @@
                         <span class="online-status available">🟢 Auf Lager</span>
                         <span class="price">55 CHF</span>
                     </label>
+
+                    <label class="option">
+                        <input type="radio" name="size">
+                        <span class="size">3x 50ml</span>
+                        <span class="online-status available">🟢 Auf Lager</span>
+{#                        <span class="online-status new">🟠 Bald neu</span>#}
+                        <span class="price">95 CHF</span>
+                    </label>
+
+                    <label class="option">
+                        <input type="radio" name="size">
+                        <span class="size">3x 100ml</span>
+                        <span class="online-status available">🟢 Auf Lager</span>
+{#                        <span class="online-status unavailable">🔴 Nicht verfügbar</span>#}
+                        <span class="price">165 CHF</span>
+                    </label>
+
+                    <label class="option">
+                        <input type="radio" name="size">
+                        <span class="size">3x 200ml</span>
+                        <span class="online-status available">🟢 Auf Lager</span>
+                        <span class="price">299 CHF</span>
+                    </label>
                 </div>
 
                 <div class="button-container">
                     <button type="button" class="btn btn-outline-danger heart-btn">♥</button>
                     <form action="{{ url_for('add_to_cart') }}" method="POST">
                         <input type="hidden" name="product_name" value="Exklusives Parfüm Bundle">
-                        <input type="hidden" name="size" value="3x 25ml">
-                        <input type="hidden" name="price" value="55 CHF">
-                        <input type="hidden" name="image"
-                               value="{{ url_for('static', filename='imagesZKB/Bundle1.png') }}">
+                        <input type="hidden" name="size" id="selected_size" value="3 x 25ml">
+                        <input type="hidden" name="price" id="selected_price" value="55 CHF">
+                        <input type="hidden" name="image" value="{{ url_for('static', filename='imagesZKB/AllBlackBackDust.jpg') }}">
+
                         <button type="submit" class="button">In den Warenkorb</button>
                     </form>
                 </div>
+                                <script>
+                    document.querySelectorAll(".option input").forEach(radio => {
+                        radio.addEventListener("change", function () {
+                            document.getElementById("selected_size").value = this.nextElementSibling.textContent;
+                            document.getElementById("selected_price").value = this.nextElementSibling.nextElementSibling.nextElementSibling.textContent;
+                        });
+                    });
+                </script>
             </div>
         </div>
 

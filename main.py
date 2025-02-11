@@ -172,7 +172,7 @@ def reset_password():
 def add_to_cart():
     product_name = request.form.get('product_name')
     size = request.form.get('size')
-    price = request.form.get('price')  # Preis als String (z.B. "20 CHF")
+    price = request.form.get('price')
     image = request.form.get('image')
 
     print(f"Product: {product_name}, Size: {size}, Price: {price}, Image: {image}")  # Debugging
