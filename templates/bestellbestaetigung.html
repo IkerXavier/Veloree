@@ -19,7 +19,7 @@
             <li><strong>Kreditkartennummer:</strong> **** **** **** {{ creditcard[-4:] }}</li>
         </ul>
 
-        <h2>Bestellte Artikel:</h2>
+        <h2><strong>Bestellte Artikel:</strong></h2>
         {% for item in cart %}
             <div class="cart-item">
                 <div class="text7">
@@ -29,5 +29,10 @@
                 </div>
             </div>
         {% endfor %}
+        <h2>Gesamtpreis:</h2>
+        <p class="preis">CHF {{ total_price }}</p>
+        <h2>Liefermethode:</h2>
+        <p><strong>{{ delivery_method }}</strong></p>
+
     </div>
 {% endblock %}
