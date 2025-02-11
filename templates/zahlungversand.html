@@ -13,13 +13,13 @@
 
     <div class="lieferung">
         <div class="boxLieferung">
-            <button class="buttonLief" onclick="updateTotal(7.95)">
+<button class="buttonLief" onclick="updateTotal(7.95, this)">
                 <p class="textT">Lieferung</p>
                 <p class="textP">Ab CHF 7.95</p>
             </button>
         </div>
         <div class="boxClick">
-            <button class="buttonLief1" onclick="updateTotal(4.95)">
+<button class="buttonLief1" onclick="updateTotal(4.95, this)">
                 <p class="textT">Click & Collect</p>
                 <p class="textP">CHF 4.95 (Hardbrücke) </p>
             </button>
@@ -72,15 +72,6 @@
     </a>
 
     <script>
-        let baseTotal = {{ total_price|round(2) }};
-        let selectedShippingCost = 0;
-
-        function updateTotal(shippingCost) {
-            selectedShippingCost = shippingCost;
-            let newTotal = baseTotal + selectedShippingCost;
-            document.getElementById("total-price").innerText = `CHF ${newTotal.toFixed(2)}`;
-        }
-
         function applyDiscount() {
             const code = document.getElementById("gutscheincode").value;
             let totalPrice = baseTotal + selectedShippingCost;
@@ -100,5 +91,22 @@
                 document.getElementById("gutschein-bestätigung").style.color = "red";
             }
         }
+
+    let baseTotal = {{ total_price|round(2) }};
+    let selectedShippingCost = 0;
+
+    function updateTotal(shippingCost, button) {
+        selectedShippingCost = shippingCost;
+        let newTotal = baseTotal + selectedShippingCost;
+        document.getElementById("total-price").innerText = `CHF ${newTotal.toFixed(2)}`;
+
+        document.querySelectorAll(".buttonLief, .buttonLief1").forEach(btn => {
+            btn.classList.remove("ausgewählt");
+        });
+
+        button.classList.add("ausgewählt");
+    }
+
+
     </script>
 {% endblock %}
