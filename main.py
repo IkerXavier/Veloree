@@ -112,8 +112,9 @@ def kontakt() -> str:
 @app.route("/homepage")
 def homepage() -> str:
     return render_template("homepage.html")
-
-
+@app.route("/bundlepage")
+def bundlepage() -> str:
+    return render_template("bundlepage.html")
 @app.route("/message")
 def message() -> str:
     return render_template("message.html")
@@ -130,23 +131,27 @@ def zahlen() -> str:
 def bestellbestaetigung():
     app.logger.info("Form submitted")
 
-    # Formulardaten erfassen
     name = request.form.get("name")
     email = request.form.get("email")
     address = request.form.get("address")
     city = request.form.get("city")
     zip_code = request.form.get("zip")
     creditcard = request.form.get("creditcard")
+    delivery_method = request.form.get("delivery_method")
 
-    # Bestätigungsseite rendern und Daten übergeben
+    cart_items = session.get('cart', [])
+    total_price = round(sum(float(item['price']) for item in cart_items), 2)
+
     return render_template("bestellbestaetigung.html",
                            name=name,
                            email=email,
                            address=address,
                            city=city,
                            zip=zip_code,
-                           creditcard=creditcard)
-
+                           creditcard=creditcard,
+                           cart=cart_items,
+                           total_price=total_price,
+                           delivery_method=delivery_method)
 
 
 app.secret_key = "geheimschlüssel"
@@ -188,7 +193,7 @@ def add_to_cart():
     session['cart'].append({
         'name': product_name,
         'size': size,
-        'price': price,  # Jetzt als Float
+        'price': price,
         'image': image
     })
 
