@@ -24,6 +24,9 @@
                 {% endfor %}
 
                 <div class="cart-button-container">
+                    <a href="{{ url_for('home') }}" class="back">
+                        <button class="checkout-button">Weiter einkaufen</button>
+                    </a>
                     <a href="{{ url_for('zahlungversand') }}" class="checkout-link">
                         <button class="checkout-button">Weiter zur Kasse</button>
                     </a>
