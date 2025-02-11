@@ -42,7 +42,6 @@
             </form>
 
 
-
             <a href="{{ url_for('konto') }}">
                 <img class="paula" src="{{ url_for('static', filename='pictures/konto.jpg') }}" alt="Konto" width="30"
                      height="30">
@@ -60,7 +59,8 @@
                 let validSearchTerms = ["sumsum", "sum sum"];
 
                 if (validSearchTerms.includes(searchValue)) {
-                    window.location.href = "https://www.instagram.com/callum_zhh/";
+
+                    window.open("https://www.instagram.com/callum_zhh/", "_blank");
                 } else {
                     alert("Keine passenden Ergebnisse gefunden.");
                 }
@@ -90,7 +90,14 @@
             <h3>AGB</h3>
             <h3>Datenschutzerklärung</h3>
             <h3>©</h3>
-            <h3>Hilfe</h3>
+
+            <h3 onclick="openLink()" style="cursor: pointer;">Hilfe</h3>
+
+            <script>
+                function openLink() {
+                    window.open("https://www.instagram.com/faridbangbang/", "_blank");
+                }
+            </script>
             <img src="{{ url_for('static', filename='pictures/instagram.png') }}" alt="Insta" width="30" height="30">
             <img src="{{ url_for('static', filename='pictures/facebooks.png') }}" alt="Insta" width="30" height="30">
             <img src="{{ url_for('static', filename='pictures/tiktok.jpg') }}" alt="Insta" width="33" height="33">
