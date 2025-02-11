@@ -100,8 +100,13 @@
             </script>
             <img src="{{ url_for('static', filename='pictures/instagram.png') }}" alt="Insta" width="30" height="30">
             <img src="{{ url_for('static', filename='pictures/facebooks.png') }}" alt="Insta" width="30" height="30">
-            <img src="{{ url_for('static', filename='pictures/tiktok.jpg') }}" alt="Insta" width="33" height="33">
-
+            <img onclick="openLink3()" style="cursor: pointer;"
+                 src="{{ url_for('static', filename='pictures/tiktok.jpg') }}" alt="Insta" width="33" height="33">
+            <script>
+                function openLink3() {
+                    window.open("https://www.tiktok.com/@georgekb62/photo/7468375694746094880?_d=secCgYIASAHKAESPgo89kn5uNbzX0T1QWTFvHD6cc6PoLzgMYknuqGB%2BfwE%2BGgfRzbciN04fT%2F6bkwq%2BBMuPwImfnqr8dCYNAfXGgA%3D&_r=1&checksum=487d806c511df203aae35f2b4cd0e7e1a6ff148e33fd1aa839d2925bae538acd&cover_exp=v1&link_reflow_popup_iteration_sharer=%7B%22dynamic_cover%22%3A1%2C%22profile_clickable%22%3A1%2C%22follow_to_play_duration%22%3A-1%2C%22click_empty_to_play%22%3A1%7D&preview_pb=0&sec_user_id=MS4wLjABAAAAu_LWMHX068q1MpjCBSQr5cIjPkkW78w_MsDbCTjYYnCAucMdiHFGbI_3t0ZF9iru&share_app_id=1233&share_item_id=7468375694746094880&share_link_id=B803B46B-FFDB-4AB4-BE15-387E95E90EFE&sharer_language=de&social_share_type=14&source=h5_m&timestamp=1739286557&tt_from=more&u_code=e722d136jmd9ba&ug_btm=b8727%2Cb2878&ug_photo_idx=6&user_id=7211923415199826950&utm_campaign=client_share&utm_medium=ios&utm_source=more", "_blank");
+                }
+            </script>
 
         </div>
 
