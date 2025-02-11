@@ -88,7 +88,7 @@
 
 
             if (code === "2025" && totalPrice > 100) {
-                let discount = totalPrice * 0.20; // 20% Rabatt
+                let discount = totalPrice * 0.20;
                 totalPrice -= discount;
                 document.getElementById("total-price").innerText = `CHF ${totalPrice.toFixed(2)}`;
                 document.getElementById("gutschein-bestätigung").innerText = "Erfolgreiches Abziehen mit Code 2025!";
