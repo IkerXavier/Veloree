@@ -11,65 +11,70 @@
         <h1 class="zahlung">Zahlung & Versand</h1>
     </div>
 
-    <div class="lieferung">
-        <div class="boxLieferung">
-<button class="buttonLief" onclick="updateTotal(7.95, this)">
-                <p class="textT">Lieferung</p>
-                <p class="textP">Ab CHF 7.95</p>
-            </button>
-        </div>
-        <div class="boxClick">
-<button class="buttonLief1" onclick="updateTotal(4.95, this)">
-                <p class="textT">Click & Collect</p>
-                <p class="textP">CHF 4.95 (Hardbrücke) </p>
-            </button>
-        </div>
-    </div>
+        <input type="hidden" name="delivery_method" id="delivery_method_input">
 
-    <div class="cart-content1">
-        {% for item in cart %}
-            <div class="cart-item">
-                <img src="{{ item.image }}" alt="{{ item.name }}" class="cart-image">
-                <div class="text7">
-                    <p class="infos"><strong>{{ item.name }}</strong></p>
-                    <p>Größe: {{ item.size }}</p>
-                    <p>Preis: {{ item.price }} CHF</p>
+        <div class="lieferung">
+            <div class="boxLieferung">
+                <button class="buttonLief" onclick="updateTotal(7.95, this, 'Lieferung')">
+                    <p class="textT">Lieferung</p>
+                    <p class="textP">Ab CHF 7.95</p>
+                </button>
+            </div>
+            <div class="boxClick">
+                <button class="buttonLief1" onclick="updateTotal(4.95, this, 'Click&Collect')">
+                    <p class="textT">Click & Collect</p>
+                    <p class="textP">CHF 4.95 (Hardbrücke) </p>
+                </button>
+            </div>
+        </div>
+
+        <div class="cart-content1">
+            {% for item in cart %}
+                <div class="cart-item">
+                    <img src="{{ item.image }}" alt="{{ item.name }}" class="cart-image">
+                    <div class="text7">
+                        <p class="infos"><strong>{{ item.name }}</strong></p>
+                        <p>Größe: {{ item.size }}</p>
+                        <p>Preis: {{ item.price }} CHF</p>
+                    </div>
                 </div>
-            </div>
-        {% endfor %}
-    </div>
-
-    <div class="subtitle">
-        <p class="text23">Zusammenfassung der Bestellung</p>
-    </div>
-    <div class="bestellung">
-        <div class="zusammenfassung">
-            <div class="preisProdukt">
-                <p class="text3">Gesamtbetrag:</p>
-                <p class="preis" id="total-price">CHF {{ total_price|round(2) }}</p>
-            </div>
-            <div class="linie"></div>
+            {% endfor %}
         </div>
-    </div>
 
-    <div class="gutscheinzahlung">
-        <input class="gutscheincode" type="text" placeholder="Gutschein-/Rabattcode" id="gutscheincode" aria-label=".form-control-lg example">
-        <button class="einloesen" onclick="applyDiscount()">Einlösen</button>
-    </div>
+        <div class="subtitle">
+            <p class="text23">Zusammenfassung der Bestellung</p>
+        </div>
+        <div class="bestellung">
+            <div class="zusammenfassung">
+                <div class="preisProdukt">
+                    <p class="text3">Gesamtbetrag:</p>
+                    <p class="preis" id="total-price">CHF {{ total_price|round(2) }}</p>
+                </div>
+                <div class="linie"></div>
+            </div>
+        </div>
 
-    <div class="rabatt-info">
-        <p class="rabatt-text">Rabatt: 20% (nur bei Bestellungen über 100 CHF mit dem Code "2025")</p>
-    </div>
+        <div class="gutscheinzahlung">
+            <input class="gutscheincode" type="text" placeholder="Gutschein-/Rabattcode" id="gutscheincode"
+                   aria-label=".form-control-lg example">
+            <button class="einloesen" onclick="applyDiscount()">Einlösen</button>
+        </div>
 
-    <div class="gutscheincode-bestätigung" id="gutschein-bestätigung">
+        <div class="rabatt-info">
+            <p class="rabatt-text">Rabatt: 20% (nur bei Bestellungen über 100 CHF mit dem Code "2025")</p>
+        </div>
 
-    </div>
+        <div class="gutscheincode-bestätigung" id="gutschein-bestätigung">
 
-    <a href="{{ url_for('zahlen') }}">
-        <button class="zahlbox">
-            <p class="textT">Zahlen</p>
-        </button>
-    </a>
+        </div>
+
+        <a href="{{ url_for('zahlen') }}">
+            <button class="zahlbox">
+                <p class="textT">Zahlen</p>
+            </button>
+        </a>
+
+
 
     <script>
         function applyDiscount() {
@@ -92,20 +97,26 @@
             }
         }
 
-    let baseTotal = {{ total_price|round(2) }};
-    let selectedShippingCost = 0;
+        let baseTotal = {{ total_price|round(2) }};
+        let selectedShippingCost = 0;
 
-    function updateTotal(shippingCost, button) {
-        selectedShippingCost = shippingCost;
-        let newTotal = baseTotal + selectedShippingCost;
-        document.getElementById("total-price").innerText = `CHF ${newTotal.toFixed(2)}`;
+        function updateTotal(shippingCost, button, method) {
+            selectedShippingCost = shippingCost;
+            let newTotal = baseTotal + selectedShippingCost;
+            document.getElementById("total-price").innerText = `CHF ${newTotal.toFixed(2)}`;
 
-        document.querySelectorAll(".buttonLief, .buttonLief1").forEach(btn => {
-            btn.classList.remove("ausgewählt");
-        });
+            // Entferne vorherige Auswahl
+            document.querySelectorAll(".buttonLief, .buttonLief1").forEach(btn => {
+                btn.classList.remove("ausgewählt");
+            });
 
-        button.classList.add("ausgewählt");
-    }
+            // Markiere den gewählten Button
+            button.classList.add("ausgewählt");
+
+            // Speichere die Liefermethode in localStorage
+            localStorage.setItem("delivery_method", method);
+            localStorage.setItem("shipping_cost", shippingCost);
+        }
 
 
     </script>

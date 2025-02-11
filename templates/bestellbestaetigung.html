@@ -31,20 +31,31 @@
                         <p>Preis: {{ item.price }} CHF</p>
                     </div>
                 </div>
-
             {% endfor %}
         </div>
         <div class="gesamtpreis">
             <h2 class="lila"><strong>Gesamtpreis:</strong></h2>
-            <p class="preis">CHF {{ total_price }}</p>
+            <p class="preis" id="total-price">CHF {{ total_price }}</p>
         </div>
-    <div class="liefermethode">
-        <h2 class="lila"><strong>Liefermethode:</strong></h2>
-
-        <p class="text7"><strong>{{ delivery_method }}</strong></p>
+        <div class="liefermethode">
+            <h2 class="lila"><strong>Liefermethode:</strong></h2>
+            <p class="text7"><strong id="delivery_method_display">Keine Liefermethode angegeben</strong></p>
+        </div>
     </div>
-    </div>
 
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            let savedMethod = localStorage.getItem("delivery_method");
+            let savedCost = localStorage.getItem("shipping_cost");
 
+            if (savedMethod) {
+                document.getElementById("delivery_method_display").innerText = savedMethod;
+            }
+            if (savedCost) {
+                let baseTotal = parseFloat("{{ total_price }}");
+                let newTotal = baseTotal + parseFloat(savedCost);
+                document.getElementById("total-price").innerText = `CHF ${newTotal.toFixed(2)}`;
+            }
+        });
+    </script>
 {% endblock %}
-
