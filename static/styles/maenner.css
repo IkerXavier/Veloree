@@ -270,7 +270,7 @@
 
 
 .button:hover {
-    background-color: blue;
+    background-color: lightskyblue;
     transform: scale(1.05);
 }
 

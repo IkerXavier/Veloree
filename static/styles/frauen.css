@@ -271,6 +271,6 @@
 
 
 .button:hover {
-    background-color: #e02085;
+    background-color: lightpink;
     transform: scale(1.05);
 }

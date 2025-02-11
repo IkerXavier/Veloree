@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 
 {% block title %}Zahlungsversand{% endblock %}
+
 {% block extra_styles %}
     <link rel="stylesheet" href="{{ url_for('static', filename='styles/zahlungversand.css') }}">
 {% endblock %}
@@ -9,6 +10,7 @@
     <div class="title">
         <h1 class="zahlung">Zahlung & Versand</h1>
     </div>
+
     <div class="lieferung">
         <div class="boxLieferung">
             <button class="buttonLief" onclick="updateTotal(7.95)">
@@ -31,10 +33,8 @@
                 <img src="{{ item.image }}" alt="{{ item.name }}" class="cart-image">
                 <div class="text7">
                     <p class="infos"><strong>{{ item.name }}</strong></p>
-
                     <p>Größe: {{ item.size }}</p>
                     <p>Preis: {{ item.price }} CHF</p>
-
                 </div>
             </div>
         {% endfor %}
@@ -54,14 +54,24 @@
     </div>
 
     <div class="gutscheinzahlung">
-        <input class="gutscheincode" type="text" placeholder="Gutschein-/Rabattcode"
-               aria-label=".form-control-lg example">
-        <a href="{{ url_for('zahlen') }}">
-            <button class="zahlbox">
-                <p class="textT">Zahlen</p>
-            </button>
-        </a>
+        <input class="gutscheincode" type="text" placeholder="Gutschein-/Rabattcode" id="gutscheincode" aria-label=".form-control-lg example">
+        <button class="einloesen" onclick="applyDiscount()">Einlösen</button>
     </div>
+
+    <div class="rabatt-info">
+        <p class="rabatt-text">Rabatt: 20% (nur bei Bestellungen über 100 CHF mit dem Code "2025")</p>
+    </div>
+
+    <div class="gutscheincode-bestätigung" id="gutschein-bestätigung">
+        <!-- Erfolgs-/Fehlermeldung wird hier angezeigt -->
+    </div>
+
+    <a href="{{ url_for('zahlen') }}">
+        <button class="zahlbox">
+            <p class="textT">Zahlen</p>
+        </button>
+    </a>
+
     <script>
         let baseTotal = {{ total_price|round(2) }};
         let selectedShippingCost = 0;
@@ -71,7 +81,25 @@
             let newTotal = baseTotal + selectedShippingCost;
             document.getElementById("total-price").innerText = `CHF ${newTotal.toFixed(2)}`;
         }
+
+        function applyDiscount() {
+            const code = document.getElementById("gutscheincode").value;
+            let totalPrice = baseTotal + selectedShippingCost;
+
+            // Überprüfe den Rabattcode und den Gesamtbetrag
+            if (code === "2025" && totalPrice > 100) {
+                let discount = totalPrice * 0.20; // 20% Rabatt
+                totalPrice -= discount;
+                document.getElementById("total-price").innerText = `CHF ${totalPrice.toFixed(2)}`;
+                document.getElementById("gutschein-bestätigung").innerText = "Erfolgreiches Abziehen mit Code 2025!";
+                document.getElementById("gutschein-bestätigung").style.color = "green";
+            } else if (code === "2025" && totalPrice <= 100) {
+                document.getElementById("gutschein-bestätigung").innerText = "Rabatt nur für Bestellungen über 100 CHF gültig!";
+                document.getElementById("gutschein-bestätigung").style.color = "red";
+            } else {
+                document.getElementById("gutschein-bestätigung").innerText = "Dieser Gutscheincode gibt es nicht!";
+                document.getElementById("gutschein-bestätigung").style.color = "red";
+            }
+        }
     </script>
-
-
 {% endblock %}
