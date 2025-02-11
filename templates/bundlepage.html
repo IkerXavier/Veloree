@@ -34,7 +34,12 @@
 
             <div class="container2">
                 <h1 class="titleA">Exklusives Parfüm Bundle</h1>
-                <h2 class="zwei">Drei Düfte in einem Set</h2>
+                <h2 class="zwei">Drei Düfte in einem Set
+                    <div class="rating">
+                        <span>★★★★☆</span>
+                        <span class="reviews">(1297)</span>
+                    </div>
+                </h2>
 
                 <div class="options-container">
                     <label class="option">
@@ -48,7 +53,7 @@
                         <input type="radio" name="size">
                         <span class="size">3x 50ml</span>
                         <span class="online-status available">🟢 Auf Lager</span>
-{#                        <span class="online-status new">🟠 Bald neu</span>#}
+                        {#                        <span class="online-status new">🟠 Bald neu</span>#}
                         <span class="price">95 CHF</span>
                     </label>
 
@@ -56,7 +61,7 @@
                         <input type="radio" name="size">
                         <span class="size">3x 100ml</span>
                         <span class="online-status available">🟢 Auf Lager</span>
-{#                        <span class="online-status unavailable">🔴 Nicht verfügbar</span>#}
+                        {#                        <span class="online-status unavailable">🔴 Nicht verfügbar</span>#}
                         <span class="price">165 CHF</span>
                     </label>
 
@@ -74,12 +79,13 @@
                         <input type="hidden" name="product_name" value="Exklusives Parfüm Bundle">
                         <input type="hidden" name="size" id="selected_size" value="3 x 25ml">
                         <input type="hidden" name="price" id="selected_price" value="55 CHF">
-                        <input type="hidden" name="image" value="{{ url_for('static', filename='imagesZKB/AllBlackBackDust.jpg') }}">
+                        <input type="hidden" name="image"
+                               value="{{ url_for('static', filename='imagesZKB/AllBlackBackDust.jpg') }}">
 
                         <button type="submit" class="button">In den Warenkorb</button>
                     </form>
                 </div>
-                                <script>
+                <script>
                     document.querySelectorAll(".option input").forEach(radio => {
                         radio.addEventListener("change", function () {
                             document.getElementById("selected_size").value = this.nextElementSibling.textContent;

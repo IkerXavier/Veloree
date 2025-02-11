@@ -274,3 +274,7 @@
     background-color: lightpink;
     transform: scale(1.05);
 }
+.rating{
+    color: #ffc30e;
+    margin-top: 2%;
+}

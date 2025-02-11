@@ -46,7 +46,12 @@
 
             <div class="container2">
                 <h1 class="titleA">Verlorée Homme</h1>
-                <h2 class="zwei">Eau de Parfum</h2>
+                <h2 class="zwei">Eau de Parfum
+                    <div class="rating">
+                        <span>★★★★★</span>
+                        <span class="reviews">(863)</span>
+                    </div>
+                </h2>
 
                 <div class="options-container">
                     <label class="option">
@@ -85,7 +90,8 @@
                         <input type="hidden" name="product_name" value="Verlorée Homme">
                         <input type="hidden" name="size" id="selected_size" value="25ml">
                         <input type="hidden" name="price" id="selected_price" value="20 CHF">
-                        <input type="hidden" name="image" value="{{ url_for('static', filename='imagesZKB/HommeBlackBack.png') }}">
+                        <input type="hidden" name="image"
+                               value="{{ url_for('static', filename='imagesZKB/HommeBlackBack.png') }}">
                         <button type="submit" class="button">In den Warenkorb</button>
                     </form>
                 </div>
@@ -111,9 +117,12 @@
                 </h2>
                 <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
                     <div class="accordion-body">
-                        Dieses markante Herrenparfüm vereint die frische Spritzigkeit von Zitrone mit der fruchtigen Süße
-                        von Blaubeere und Apfel, während ein Hauch von Minze für eine belebende Kühle sorgt. Die harmonische
-                        Komposition verleiht dem Duft eine maskuline Eleganz und eine erfrischende Dynamik, die perfekt für
+                        Dieses markante Herrenparfüm vereint die frische Spritzigkeit von Zitrone mit der fruchtigen
+                        Süße
+                        von Blaubeere und Apfel, während ein Hauch von Minze für eine belebende Kühle sorgt. Die
+                        harmonische
+                        Komposition verleiht dem Duft eine maskuline Eleganz und eine erfrischende Dynamik, die perfekt
+                        für
                         jeden Anlass ist. Ob im Alltag oder zu besonderen Momenten – dieses Parfüm unterstreicht deine
                         Ausstrahlung mit einer modernen, selbstbewussten Note.
                     </div>

@@ -249,6 +249,11 @@
     transition: background-color 0.3s;
 }
 
+.rating{
+    color: #ffc30e;
+    margin-top: 2%;
+}
+
 .heart-btn:hover {
     background-color: #d9534f;
     color: white;

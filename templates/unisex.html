@@ -46,7 +46,12 @@
 
             <div class="container2">
                 <h1 class="titleA">Verlorée Unisex</h1>
-                <h2 class="zwei">Eau de Parfum</h2>
+                <h2 class="zwei">Eau de Parfum
+                    <div class="rating">
+                        <span>★★★☆☆</span>
+                        <span class="reviews">(312)</span>
+                    </div>
+                </h2>
 
                 <div class="options-container">
                     <label class="option">
@@ -85,7 +90,8 @@
                         <input type="hidden" name="product_name" value="Verlorée Unisex">
                         <input type="hidden" name="size" id="selected_size" value="25ml">
                         <input type="hidden" name="price" id="selected_price" value="20 CHF">
-                        <input type="hidden" name="image" value="{{ url_for('static', filename='imagesZKB/UnisexBlackBack.png') }}">
+                        <input type="hidden" name="image"
+                               value="{{ url_for('static', filename='imagesZKB/UnisexBlackBack.png') }}">
 
                         <button type="submit" class="button">In den Warenkorb</button>
                     </form>
