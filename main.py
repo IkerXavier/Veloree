@@ -176,7 +176,6 @@ def add_to_cart():
         print("Fehlende Daten!")
         return "Fehlende Daten", 400
 
-    # Entferne " CHF" und konvertiere den Preis in eine Zahl
     try:
         price = float(price.replace(" CHF", ""))
     except ValueError:
