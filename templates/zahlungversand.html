@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 
 {% block title %}Zahlungsversand{% endblock %}
+
 {% block extra_styles %}
     <link rel="stylesheet" href="{{ url_for('static', filename='styles/zahlungversand.css') }}">
 {% endblock %}
@@ -9,15 +10,16 @@
     <div class="title">
         <h1 class="zahlung">Zahlung & Versand</h1>
     </div>
+
     <div class="lieferung">
         <div class="boxLieferung">
-            <button class="buttonLief" onclick="updateTotal(7.95, 'Lieferung')">
+            <button class="buttonLief" onclick="updateTotal(7.95)">
                 <p class="textT">Lieferung</p>
                 <p class="textP">Ab CHF 7.95</p>
             </button>
         </div>
         <div class="boxClick">
-            <button class="buttonLief1" onclick="updateTotal(4.95, 'Click & Collect')">
+            <button class="buttonLief1" onclick="updateTotal(4.95)">
                 <p class="textT">Click & Collect</p>
                 <p class="textP">Bei der Hardbrücke</p>
                 <p class="textP1">CHF 4.95</p>
@@ -51,35 +53,53 @@
         </div>
     </div>
 
-    <form action="{{ url_for('bestellbestaetigung') }}" method="POST">
-        <input type="hidden" id="delivery_method" name="delivery_method" value="">
+    <div class="gutscheinzahlung">
+        <input class="gutscheincode" type="text" placeholder="Gutschein-/Rabattcode" id="gutscheincode" aria-label=".form-control-lg example">
+        <button class="einloesen" onclick="applyDiscount()">Einlösen</button>
+    </div>
 
-        <input type="hidden" name="name" value="{{ name }}">
-        <input type="hidden" name="email" value="{{ email }}">
-        <input type="hidden" name="address" value="{{ address }}">
-        <input type="hidden" name="city" value="{{ city }}">
-        <input type="hidden" name="zip" value="{{ zip }}">
-        <input type="hidden" name="creditcard" value="{{ creditcard }}">
+    <div class="rabatt-info">
+        <p class="rabatt-text">Rabatt: 20% (nur bei Bestellungen über 100 CHF mit dem Code "2025")</p>
+    </div>
 
-        <div class="gutscheinzahlung">
-            <input class="gutscheincode" type="text" placeholder="Gutschein-/Rabattcode" aria-label=".form-control-lg example">
-            <button type="submit" class="zahlbox">
-                <p class="textT">Zahlen</p>
-            </button>
-        </div>
-    </form>
+    <div class="gutscheincode-bestätigung" id="gutschein-bestätigung">
+        <!-- Erfolgs-/Fehlermeldung wird hier angezeigt -->
+    </div>
+
+    <a href="{{ url_for('zahlen') }}">
+        <button class="zahlbox">
+            <p class="textT">Zahlen</p>
+        </button>
+    </a>
 
     <script>
         let baseTotal = {{ total_price|round(2) }};
         let selectedShippingCost = 0;
 
-        function updateTotal(shippingCost, method) {
+        function updateTotal(shippingCost) {
             selectedShippingCost = shippingCost;
             let newTotal = baseTotal + selectedShippingCost;
             document.getElementById("total-price").innerText = `CHF ${newTotal.toFixed(2)}`;
+        }
 
-            document.getElementById("delivery_method").value = method;
-            console.log("Gewählte Liefermethode:", method); // Debugging
+        function applyDiscount() {
+            const code = document.getElementById("gutscheincode").value;
+            let totalPrice = baseTotal + selectedShippingCost;
+
+
+            if (code === "2025" && totalPrice > 100) {
+                let discount = totalPrice * 0.20; // 20% Rabatt
+                totalPrice -= discount;
+                document.getElementById("total-price").innerText = `CHF ${totalPrice.toFixed(2)}`;
+                document.getElementById("gutschein-bestätigung").innerText = "Erfolgreiches Abziehen mit Code 2025!";
+                document.getElementById("gutschein-bestätigung").style.color = "green";
+            } else if (code === "2025" && totalPrice <= 100) {
+                document.getElementById("gutschein-bestätigung").innerText = "Rabatt nur für Bestellungen über 100 CHF gültig!";
+                document.getElementById("gutschein-bestätigung").style.color = "red";
+            } else {
+                document.getElementById("gutschein-bestätigung").innerText = "Dieser Gutscheincode gibt es nicht!";
+                document.getElementById("gutschein-bestätigung").style.color = "red";
+            }
         }
     </script>
 {% endblock %}
