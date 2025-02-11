@@ -11,13 +11,13 @@
     </div>
     <div class="lieferung">
         <div class="boxLieferung">
-            <button class="buttonLief" onclick="updateTotal(7.95)">
+            <button class="buttonLief" onclick="updateTotal(7.95, 'Lieferung')">
                 <p class="textT">Lieferung</p>
                 <p class="textP">Ab CHF 7.95</p>
             </button>
         </div>
         <div class="boxClick">
-            <button class="buttonLief1" onclick="updateTotal(4.95)">
+            <button class="buttonLief1" onclick="updateTotal(4.95, 'Click & Collect')">
                 <p class="textT">Click & Collect</p>
                 <p class="textP">Bei der Hardbrücke</p>
                 <p class="textP1">CHF 4.95</p>
@@ -31,10 +31,8 @@
                 <img src="{{ item.image }}" alt="{{ item.name }}" class="cart-image">
                 <div class="text7">
                     <p class="infos"><strong>{{ item.name }}</strong></p>
-
                     <p>Größe: {{ item.size }}</p>
                     <p>Preis: {{ item.price }} CHF</p>
-
                 </div>
             </div>
         {% endfor %}
@@ -53,25 +51,35 @@
         </div>
     </div>
 
-    <div class="gutscheinzahlung">
-        <input class="gutscheincode" type="text" placeholder="Gutschein-/Rabattcode"
-               aria-label=".form-control-lg example">
-        <a href="{{ url_for('zahlen') }}">
-            <button class="zahlbox">
+    <form action="{{ url_for('bestellbestaetigung') }}" method="POST">
+        <input type="hidden" id="delivery_method" name="delivery_method" value="">
+
+        <input type="hidden" name="name" value="{{ name }}">
+        <input type="hidden" name="email" value="{{ email }}">
+        <input type="hidden" name="address" value="{{ address }}">
+        <input type="hidden" name="city" value="{{ city }}">
+        <input type="hidden" name="zip" value="{{ zip }}">
+        <input type="hidden" name="creditcard" value="{{ creditcard }}">
+
+        <div class="gutscheinzahlung">
+            <input class="gutscheincode" type="text" placeholder="Gutschein-/Rabattcode" aria-label=".form-control-lg example">
+            <button type="submit" class="zahlbox">
                 <p class="textT">Zahlen</p>
             </button>
-        </a>
-    </div>
+        </div>
+    </form>
+
     <script>
         let baseTotal = {{ total_price|round(2) }};
         let selectedShippingCost = 0;
 
-        function updateTotal(shippingCost) {
+        function updateTotal(shippingCost, method) {
             selectedShippingCost = shippingCost;
             let newTotal = baseTotal + selectedShippingCost;
             document.getElementById("total-price").innerText = `CHF ${newTotal.toFixed(2)}`;
+
+            document.getElementById("delivery_method").value = method;
+            console.log("Gewählte Liefermethode:", method); // Debugging
         }
     </script>
-
-
 {% endblock %}
