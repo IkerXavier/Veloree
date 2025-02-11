@@ -1,0 +1,130 @@
+/* Allgemeine Stile */
+body {
+    font-family: Arial, sans-serif;
+    background-color: white;
+    margin: 0;
+    padding: 0;
+}
+
+.everything {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+/* Container-Styling */
+.container3 {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 50px;
+    max-width: 1200px;
+    width: 100%;
+}
+
+.container1, .container2 {
+    flex: 1;
+    max-width: 500px;
+}
+
+/* Carousel Styling */
+.carousel-img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+/* Titel und Beschreibung */
+.titleA {
+    font-size: 28px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.zwei {
+    font-size: 20px;
+    text-align: center;
+    color: darkgray;
+}
+
+/* Optionen-Styling */
+.options-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 15px;
+}
+
+.option {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 300px;
+    background: white;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid white;
+}
+
+.online-status.available {
+    color: green;
+    font-weight: bold;
+}
+
+.price {
+    font-size: 18px;
+    font-weight: bold;
+    color: #dc3545;
+}
+
+/* Button Styling */
+.button-container {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.heart-btn {
+    border: none;
+    background: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #dc3545;
+}
+
+.button {
+    background-color: #dc3545;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.button:hover {
+    background-color: #c82333;
+}
+
+/* Accordion Styling */
+.accordion {
+    width: 100%;
+    max-width: 800px;
+    margin-top: 20px;
+}
+
+.accordion-button {
+    background-color: #dc3545;
+    color: white;
+    font-size: 18px;
+}
+
+.accordion-body {
+    background: white;
+    padding: 15px;
+    border: 1px solid white;
+    border-radius: 5px;
+}

@@ -112,8 +112,9 @@ def kontakt() -> str:
 @app.route("/homepage")
 def homepage() -> str:
     return render_template("homepage.html")
-
-
+@app.route("/bundlepage")
+def bundlepage() -> str:
+    return render_template("bundlepage.html")
 @app.route("/message")
 def message() -> str:
     return render_template("message.html")
