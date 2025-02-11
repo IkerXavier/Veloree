@@ -10,23 +10,21 @@
         <h1 class="zahlung">Zahlung & Versand</h1>
     </div>
     <div class="lieferung">
-        <div class="box1">
-            <div class="boxLieferung">
-                <button class="buttonLief">
-                    <p class="textT">Lieferung</p>
-                    <p class="textP">Ab CHF 7.95</p>
-                </button>
-            </div>
-            <div class="boxClick">
-                <button class="buttonLief1">
-                    <p class="textT">Click & Collect</p>
-                    <p class="textP">Bei der Hardbrücke</p>
-                    <p class="textP">CHF 4.95</p>
-                </button>
-            </div>
-
+        <div class="boxLieferung">
+            <button class="buttonLief" onclick="updateTotal(7.95)">
+                <p class="textT">Lieferung</p>
+                <p class="textP">Ab CHF 7.95</p>
+            </button>
+        </div>
+        <div class="boxClick">
+            <button class="buttonLief1" onclick="updateTotal(4.95)">
+                <p class="textT">Click & Collect</p>
+                <p class="textP">Bei der Hardbrücke</p>
+                <p class="textP1">CHF 4.95</p>
+            </button>
         </div>
     </div>
+
     <div class="cart-content1">
         {% for item in cart %}
             <div class="cart-item">
@@ -44,21 +42,31 @@
         <div class="zusammenfassung">
             <div class="preisProdukt">
                 <p class="textP">Gesamtbetrag</p>
-                <p class="preis">CHF {{ total_price|round(2) }}</p>
+                <p class="preis" id="total-price">CHF {{ total_price|round(2) }}</p>
             </div>
             <div class="linie"></div>
-
-        </div>
-
-        <div class="gutscheinzahlung">
-            <input class="gutscheincode" type="text" placeholder="Gutschein-/Rabattcode"
-                   aria-label=".form-control-lg example">
-            <a href="{{ url_for('zahlen') }}">
-                <button class="zahlbox">
-                    <p class="textT">Zahlen</p>
-                </button>
-            </a>
         </div>
     </div>
+
+    <div class="gutscheinzahlung">
+        <input class="gutscheincode" type="text" placeholder="Gutschein-/Rabattcode"
+               aria-label=".form-control-lg example">
+        <a href="{{ url_for('zahlen') }}">
+            <button class="zahlbox">
+                <p class="textT">Zahlen</p>
+            </button>
+        </a>
+    </div>
+<script>
+    let baseTotal = {{ total_price|round(2) }};
+    let selectedShippingCost = 0;
+
+    function updateTotal(shippingCost) {
+        selectedShippingCost = shippingCost;
+        let newTotal = baseTotal + selectedShippingCost;
+        document.getElementById("total-price").innerText = `CHF ${newTotal.toFixed(2)}`;
+    }
+</script>
+
 
 {% endblock %}

@@ -5,40 +5,17 @@
 .title {
     display: flex;
     justify-content: center;
-
 }
 
 
 
 .lieferung {
     display: flex;
-    justify-content: center;
-
-}
-
-.box1 {
-    border: solid black;
-    margin-left: 10%;
-    margin-right: 10%;
-    border-radius: 30px;
-    width: 50%;
-    display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: center;
+    gap: 10%;
+    margin-top: 5%;
 }
-
-.boxLieferung {
-    padding-left: 15%;
-    margin-top: 2%;
-}
-
-.boxClick {
-    padding-right: 8%;
-    border-left: 2px solid black;
-    padding-left: 17%;
-
-}
-
 .textT {
     font-size: 187.5%;
 }
@@ -74,11 +51,11 @@
 .gutscheinzahlung {
     display: flex;
     flex-direction: row;
-    gap: 30%;
+    gap: 20%;
 }
 
 .gutscheincode {
-    margin-left: 15%;
+    margin-left: 25%;
     border: solid black;
     padding: 2%;
     border-radius: 20px;
@@ -121,16 +98,8 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    margin-top: 5%;
     margin-bottom: 5%;
 
-}
-.buttonLief, .buttonLief1 {
-    background-color: white;
-    border: white;
-}
-.buttonLief1{
-    margin-right: 15%;
 }
 .preisProdukt{
     display: flex;
@@ -138,6 +107,21 @@
     justify-content: space-between;
     font-size: 25px;
 }
-.preis {
+.buttonLief {
+    height: 65%;
+    width: 150%;
+}
 
+.buttonLief1, .buttonLief {
+    padding: 10px;
+    background-color: #4B0082;
+    color: white;
+    font-size: 1.2em;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    margin-bottom: 35%;
 }
