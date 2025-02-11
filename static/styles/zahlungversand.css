@@ -31,7 +31,7 @@
 .gutscheinzahlung {
     display: flex;
     flex-direction: row;
-    gap: 20%;
+    gap: 17%;
     margin-top: 3%;
 }
 
@@ -39,7 +39,8 @@
     margin-left: 25%;
     border: solid black;
     padding: 2%;
-    border-radius: 20px;
+    border-radius: 10px;
+    height: 90%;
 }
 
 .gutscheincode::placeholder {
@@ -58,21 +59,24 @@
     color: white;
     display: flex;
     border: solid black;
-    width: 200%;
-    border-radius: 20px;
-    height: 100%;
+    width: 50%;
+    border-radius: 10px;
+    height: 90%;
     justify-content: center;
     align-items: center;
-    margin-left: 0;
+    margin-left: 25%;
     padding: 10px;
     text-align: center;
     box-sizing: border-box;
+
+
 }
 
 .textT {
     margin: 0;
     width: 100%;
     text-align: center;
+    font-size: xx-large;
 }
 
 .cart-content1 {
@@ -145,15 +149,21 @@
     background-color: #4B0082;
     color: white;
     font-size: 1em;
-    padding: 8px 15px;
+    padding: 2% 5%;
     border-radius: 10px;
     border: none;
     cursor: pointer;
     transition: background-color 0.3s;
+    margin-right: 80%;
+    height: 10%;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    align-content: center;
 }
 
 .einloesen:hover {
-    background-color: #370062;
+    background-color: #6930a8;
 }
 
 .rabatt-info {
@@ -168,4 +178,8 @@
     text-align: center;
     font-size: 16px;
     font-weight: bold;
+}
+.preis{
+font-size: 26px;
+    font-weight: bold ;
 }

@@ -46,7 +46,7 @@
     <div class="bestellung">
         <div class="zusammenfassung">
             <div class="preisProdukt">
-                <p class="textP">Gesamtbetrag</p>
+                <p class="textP">Gesamtbetrag:</p>
                 <p class="preis" id="total-price">CHF {{ total_price|round(2) }}</p>
             </div>
             <div class="linie"></div>
@@ -63,7 +63,7 @@
     </div>
 
     <div class="gutscheincode-bestätigung" id="gutschein-bestätigung">
-        <!-- Erfolgs-/Fehlermeldung wird hier angezeigt -->
+
     </div>
 
     <a href="{{ url_for('zahlen') }}">
