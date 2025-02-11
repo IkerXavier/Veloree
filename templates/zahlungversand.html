@@ -28,9 +28,14 @@
     <div class="cart-content1">
         {% for item in cart %}
             <div class="cart-item">
-                <p><strong>{{ item.name }}</strong></p>
-                <p>Größe: {{ item.size }}</p>
-                <p>Preis: {{ item.price }}</p>
+                <img src="{{ item.image }}" alt="{{ item.name }}" class="cart-image">
+                <div class="text7">
+                    <p class="infos"><strong>{{ item.name }}</strong></p>
+
+                    <p>Größe: {{ item.size }}</p>
+                    <p>Preis: {{ item.price }} CHF</p>
+
+                </div>
             </div>
         {% endfor %}
     </div>
@@ -57,16 +62,16 @@
             </button>
         </a>
     </div>
-<script>
-    let baseTotal = {{ total_price|round(2) }};
-    let selectedShippingCost = 0;
+    <script>
+        let baseTotal = {{ total_price|round(2) }};
+        let selectedShippingCost = 0;
 
-    function updateTotal(shippingCost) {
-        selectedShippingCost = shippingCost;
-        let newTotal = baseTotal + selectedShippingCost;
-        document.getElementById("total-price").innerText = `CHF ${newTotal.toFixed(2)}`;
-    }
-</script>
+        function updateTotal(shippingCost) {
+            selectedShippingCost = shippingCost;
+            let newTotal = baseTotal + selectedShippingCost;
+            document.getElementById("total-price").innerText = `CHF ${newTotal.toFixed(2)}`;
+        }
+    </script>
 
 
 {% endblock %}
