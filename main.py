@@ -245,3 +245,7 @@ def zahlungversand():
 @app.route("/datenschutzerklaerung")
 def datenschutzerklaerung() -> str:
     return render_template("datenschutzerklaerung.html")
+
+@app.route("/agb")
+def agb() -> str:
+    return render_template("AGB.html")
