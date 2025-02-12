@@ -15,18 +15,21 @@
 
         {% if cart %}
             <div class="cart-content">
+
                 {% for item in cart %}
                     <div class="cart-item">
                         <img src="{{ item.image }}" alt="{{ item.name }}" class="cart-image">
-                        <div class="text7">
+                        <div class="cart-details">
                             <p class="infos"><strong>{{ item.name }}</strong></p>
-
                             <p>Größe: {{ item.size }}</p>
                             <p>Preis: {{ item.price }} CHF</p>
-
                         </div>
+                        <a href="{{ url_for('remove_from_cart', index=loop.index0) }}">
+                        <img class="lena" src="{{ url_for('static', filename='pictures/muell.png') }}" alt="Müll">
+                        </a>
                     </div>
                 {% endfor %}
+
 
 
                 <div class="cart-button-container">
