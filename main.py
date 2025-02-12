@@ -240,3 +240,8 @@ def zahlungversand():
     total_price = sum(float(item['price']) for item in cart_items)
 
     return render_template("zahlungversand.html", cart=cart_items, total_price=total_price)
+
+
+@app.route("/datenschutzerklaerung")
+def datenschutzerklaerung() -> str:
+    return render_template("datenschutzerklaerung.html")
