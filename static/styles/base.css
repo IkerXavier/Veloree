@@ -1,15 +1,12 @@
 nav a {
     text-decoration: none;
     color: inherit;
-
 }
 
 .gutschein {
     flex: 1;
     text-align: center;
     color: white;
-
-
 }
 
 .gutscheinhr {
@@ -21,15 +18,13 @@ nav a {
     padding-left: 20px;
     padding-right: 20px;
     position: relative;
-
-
 }
+
 .cross {
     display: flex;
     justify-content: flex-end;
     width: 20px;
     align-items: center;
-
 }
 
 body {
@@ -38,9 +33,7 @@ body {
 }
 
 .linie2 {
-
     border: 2px solid #161377;
-
     width: 100%;
     margin-top: 5%;
 }
@@ -51,8 +44,6 @@ body {
     flex-direction: column;
     min-height: 1vh;
     justify-content: flex-end;
-
-
 }
 
 .content {
@@ -64,7 +55,6 @@ body {
     justify-content: center;
     gap: 10%;
     padding: 20px;
-
 }
 
 .iconLeft {
@@ -72,15 +62,12 @@ body {
     justify-content: left;
     padding-left: 20px;
     padding-top: 0;
-
 }
 
 .iconcontainer {
     display: flex;
     justify-content: space-between;
     padding-top: 20px;
-
-
 }
 
 .iconRight {
@@ -92,7 +79,6 @@ body {
 
 .logo {
     display: flex;
-
     padding-left: 55%;
 }
 
@@ -105,16 +91,11 @@ body {
     border-radius: 5px;
 }
 
-
-
-
-
 .option input:checked + span {
     transform: scale(1.1);
     font-weight: bold;
     transition: 0.2s ease-in-out;
 }
-
 
 .option:hover {
     transform: scale(1.05);

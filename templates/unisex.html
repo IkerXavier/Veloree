@@ -106,6 +106,9 @@
                             document.getElementById("selected_price").value = this.nextElementSibling.nextElementSibling.nextElementSibling.textContent;
                         });
                     });
+                    document.querySelector(".heart-btn").addEventListener("click", function () {
+                        this.classList.toggle("active");
+                    });
                 </script>
             </div>
         </div>
