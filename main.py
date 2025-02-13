@@ -130,15 +130,15 @@ def zahlen() -> str:
 
 @app.route("/bestellbestaetigung", methods=["POST"])
 def bestellbestaetigung():
-    app.logger.info("Form submitted")
-
     name = request.form.get("name")
     email = request.form.get("email")
     address = request.form.get("address")
     city = request.form.get("city")
     zip_code = request.form.get("zip")
     creditcard = request.form.get("creditcard")
-    delivery_method = request.form.get("delivery_method")
+    delivery_method = request.form.get("delivery_method")  # Holt den Wert
+
+    app.logger.info(f"Liefermethode erhalten: {delivery_method}")
 
     cart_items = session.get('cart', [])
     total_price = round(sum(float(item['price']) for item in cart_items), 2)
@@ -152,7 +152,7 @@ def bestellbestaetigung():
                            creditcard=creditcard,
                            cart=cart_items,
                            total_price=total_price,
-                           delivery_method=delivery_method)
+                           delivery_method=delivery_method)  # Übergibt an Template
 
 
 app.secret_key = "geheimschlüssel"
@@ -259,7 +259,7 @@ def agb() -> str:
 @app.route("/remove_from_cart/<int:index>")
 def remove_from_cart(index):
     cart = session.get("cart", [])
-    if 0 <= index < len(cart):  # Überprüfen, ob der Index gültig ist
-        del cart[index]  # Entferne das Item
-        session["cart"] = cart  # Aktualisiere die Session
+    if 0 <= index < len(cart):
+        del cart[index]
+        session["cart"] = cart
     return redirect(url_for("warenkorb"))
