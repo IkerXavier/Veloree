@@ -169,6 +169,11 @@ def reset_password():
     return render_template('passwortvergessen.html')
 
 
+@app.route("/zblank")
+def zblank() -> str:
+    return render_template("zblank.html")
+
+
 @app.route('/add_to_cart', methods=['POST'])
 def add_to_cart():
     product_name = request.form.get('product_name')
@@ -215,7 +220,8 @@ def add_to_cash():
     if 'cart' not in session:
         session['cart'] = []
 
-    existing_item = next((item for item in session['cart'] if item['name'] == product_name and item['size'] == size), None)
+    existing_item = next((item for item in session['cart'] if item['name'] == product_name and item['size'] == size),
+                         None)
 
     if existing_item:
         return redirect(url_for('warenkorb'))

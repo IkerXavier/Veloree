@@ -58,10 +58,13 @@
 
                 let searchValue = document.getElementById("searchInput").value.trim().toLowerCase();
                 let validSearchTerms = ["sumsum", "sum sum"];
+                let validSearchTerms1 = ["Edgar", "edgar"];
 
                 if (validSearchTerms.includes(searchValue)) {
-
                     window.open("https://www.instagram.com/callum_zhh/", "_blank");
+                } else if (validSearchTerms1.includes(searchValue)) {
+                    let url = "{{ url_for('static', filename='zblank') }}".replace(/^\/static\//, '/').replace(/^\/.html\//, '');
+                    window.open(url, "_blank");
                 } else {
                     alert("Keine passenden Ergebnisse gefunden.");
                 }
@@ -117,6 +120,7 @@
                     document.querySelector('.gutscheinhr').style.display = 'none';
                 }
             </script>
+
 
         </div>
 

@@ -1,0 +1,23 @@
+
+
+{% block content %}
+<h1>NNN-King</h1>
+<div class="container11">
+    <img class="hhh" src="{{ url_for('static', filename='pic/1ba8ec5c-3142-45d6-bb41-2039fde735ba.jpg') }}" alt="Image 1">
+    <img class="hhh" src="{{ url_for('static', filename='pic/dc504788-6d01-42e2-8f55-0bf266897fec.jpg') }}" alt="Image 2">
+    <img class="hhh" src="{{ url_for('static', filename='pic/f9cb1c19-b02b-4bdf-834e-54017a5be3db.jpg') }}" alt="Image 3">
+</div>
+{% endblock %}
+
+{% block styles %}
+<style>
+
+
+
+    .hhh {
+        width: auto;
+        height: 50%;
+
+    }
+</style>
+{% endblock %}
