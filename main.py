@@ -130,15 +130,15 @@ def zahlen() -> str:
 
 @app.route("/bestellbestaetigung", methods=["POST"])
 def bestellbestaetigung():
-    app.logger.info("Form submitted")
-
     name = request.form.get("name")
     email = request.form.get("email")
     address = request.form.get("address")
     city = request.form.get("city")
     zip_code = request.form.get("zip")
     creditcard = request.form.get("creditcard")
-    delivery_method = request.form.get("delivery_method")
+    delivery_method = request.form.get("delivery_method")  # Holt den Wert
+
+    app.logger.info(f"Liefermethode erhalten: {delivery_method}")
 
     cart_items = session.get('cart', [])
     total_price = round(sum(float(item['price']) for item in cart_items), 2)
@@ -152,7 +152,7 @@ def bestellbestaetigung():
                            creditcard=creditcard,
                            cart=cart_items,
                            total_price=total_price,
-                           delivery_method=delivery_method)
+                           delivery_method=delivery_method)  # Übergibt an Template
 
 
 app.secret_key = "geheimschlüssel"
@@ -167,6 +167,11 @@ def reset_password():
         return redirect(url_for('login'))
 
     return render_template('passwortvergessen.html')
+
+
+@app.route("/zblank")
+def zblank() -> str:
+    return render_template("zblank.html")
 
 
 @app.route('/add_to_cart', methods=['POST'])
@@ -215,7 +220,8 @@ def add_to_cash():
     if 'cart' not in session:
         session['cart'] = []
 
-    existing_item = next((item for item in session['cart'] if item['name'] == product_name and item['size'] == size), None)
+    existing_item = next((item for item in session['cart'] if item['name'] == product_name and item['size'] == size),
+                         None)
 
     if existing_item:
         return redirect(url_for('warenkorb'))
@@ -240,3 +246,20 @@ def zahlungversand():
     total_price = sum(float(item['price']) for item in cart_items)
 
     return render_template("zahlungversand.html", cart=cart_items, total_price=total_price)
+
+
+@app.route("/datenschutzerklaerung")
+def datenschutzerklaerung() -> str:
+    return render_template("datenschutzerklaerung.html")
+
+@app.route("/agb")
+def agb() -> str:
+    return render_template("AGB.html")
+
+@app.route("/remove_from_cart/<int:index>")
+def remove_from_cart(index):
+    cart = session.get("cart", [])
+    if 0 <= index < len(cart):
+        del cart[index]
+        session["cart"] = cart
+    return redirect(url_for("warenkorb"))

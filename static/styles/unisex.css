@@ -153,6 +153,11 @@
     width: 100%;
     padding: 10px;
 }
+.heart-btn.active {
+    color: white;
+    background-color: #d9534f;
+    border-color: #d9534f;
+}
 
 .accordion-header {
     background-color: white;

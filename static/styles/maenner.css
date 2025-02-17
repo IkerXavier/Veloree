@@ -258,6 +258,11 @@
     background-color: #d9534f;
     color: white;
 }
+.heart-btn.active {
+    color: white;
+    background-color: #d9534f;
+    border-color: #d9534f;
+}
 
 .button {
     background: dodgerblue;
