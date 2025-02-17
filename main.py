@@ -1,7 +1,5 @@
-
 # Wir importieren zuerst das Flask-Objekt aus dem Package
 from flask import Flask, request, render_template, url_for, redirect, session
-
 
 # mock data
 languages = [
@@ -27,15 +25,16 @@ z.B.
 """
 
 
-#@app.route("/")
-#def home() -> str:
-  #  print(math_service.add(1.0, 2.0))
+# @app.route("/")
+# def home() -> str:
+#  print(math_service.add(1.0, 2.0))
 #   app.logger.info("Rendering home page")
 #    return render_template("home.html")
 
 @app.route("/")
 def home():
     return render_template("home.html")
+
 
 @app.route("/contact")
 def contact() -> str:
@@ -78,51 +77,76 @@ def hello_world() -> str:
     # Die Anzeigefunktion 'hello_world' gibt den String "Hello, World" als Antwort zurück
     return 'Hello, World!'
 
+
 #########################
 # PARFÜM
 #########################
 @app.route("/menu")
 def menu() -> str:
     return render_template("menu.html")
+
+
 @app.route("/konto")
 def konto() -> str:
     return render_template("konto.html")
+
+
 @app.route('/warenkorb')
 def warenkorb():
     cart_items = session.get('cart', [])
     return render_template('warenkorb.html', cart=cart_items)
 
+
 @app.route("/ueberuns")
 def ueberuns() -> str:
     return render_template("ueberuns.html")
+
+
 @app.route("/frauen")
 def frauen() -> str:
     return render_template("frauen.html")
+
+
 @app.route("/maenner")
 def maenner() -> str:
     return render_template("maenner.html")
+
+
 @app.route("/parfumepage")
 def parfumepage() -> str:
     return render_template("parfumepage.html")
+
+
 @app.route("/unisex")
 def unisex() -> str:
     return render_template("unisex.html")
+
+
 @app.route("/kontakt")
 def kontakt() -> str:
     return render_template("kontakt.html")
+
+
 @app.route("/homepage")
 def homepage() -> str:
     return render_template("homepage.html")
+
+
 @app.route("/bundlepage")
 def bundlepage() -> str:
     return render_template("bundlepage.html")
+
+
 @app.route("/message")
 def message() -> str:
     return render_template("message.html")
 
+
 @app.route("/createaccount")
 def createaccount() -> str:
     return render_template("createaccount.html")
+
+
 @app.route("/zahlen")
 def zahlen() -> str:
     return render_template("zahlungsformular.html")
@@ -157,21 +181,15 @@ def bestellbestaetigung():
 
 app.secret_key = "geheimschlüssel"
 
+
 @app.route('/reset_password', methods=['GET', 'POST'])
 def reset_password():
     if request.method == 'POST':
         email = request.form['email']
 
-
-
         return redirect(url_for('login'))
 
     return render_template('passwortvergessen.html')
-
-
-@app.route("/zblank")
-def zblank() -> str:
-    return render_template("zblank.html")
 
 
 @app.route('/add_to_cart', methods=['POST'])
@@ -235,10 +253,13 @@ def add_to_cash():
 
     session.modified = True
     return redirect(url_for('warenkorb'))
+
+
 @app.route("/clear_cart")
 def clear_cart():
     session["cart"] = []
     return redirect(url_for("warenkorb"))
+
 
 @app.route("/zahlungversand")
 def zahlungversand():
@@ -252,9 +273,11 @@ def zahlungversand():
 def datenschutzerklaerung() -> str:
     return render_template("datenschutzerklaerung.html")
 
+
 @app.route("/agb")
 def agb() -> str:
     return render_template("AGB.html")
+
 
 @app.route("/remove_from_cart/<int:index>")
 def remove_from_cart(index):
