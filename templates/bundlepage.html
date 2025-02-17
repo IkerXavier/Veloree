@@ -53,7 +53,6 @@
                         <input type="radio" name="size">
                         <span class="size">3x 50ml</span>
                         <span class="online-status available">🟢 Auf Lager</span>
-                        {#                        <span class="online-status new">🟠 Bald neu</span>#}
                         <span class="price">95 CHF</span>
                     </label>
 
@@ -61,7 +60,6 @@
                         <input type="radio" name="size">
                         <span class="size">3x 100ml</span>
                         <span class="online-status available">🟢 Auf Lager</span>
-                        {#                        <span class="online-status unavailable">🔴 Nicht verfügbar</span>#}
                         <span class="price">165 CHF</span>
                     </label>
 
@@ -99,12 +97,12 @@
         <div class="accordion" id="accordionExample">
             <div class="accordion-item">
                 <h2 class="accordion-header">
-                    <button class="accordion-button" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
                         Beschreibung
                     </button>
                 </h2>
-                <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+                <div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
                     <div class="accordion-body">
                         Unser exklusives Parfüm-Bundle kombiniert drei einzigartige Düfte: frisch, süß und würzig.
                         Perfekt für jede Gelegenheit und ein ideales Geschenk für Parfüm-Liebhaber.

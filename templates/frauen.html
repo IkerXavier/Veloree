@@ -1,5 +1,3 @@
-
-
 {% extends 'base.html' %}
 
 {% block title %}Femme{% endblock %}
@@ -19,7 +17,6 @@
                                  class="carousel-img"
                                  alt="Homme Black">
                         </div>
-
                         <div class="carousel-item">
                             <img src="{{ url_for('static', filename='imagesZKB/FemmeFlavorBack.png') }}"
                                  class="carousel-img" alt="Homme Flavor Back">
@@ -61,21 +58,18 @@
                         <span class="online-status new">🔴 Nicht verfügbar</span>
                         <span class="price">20 CHF</span>
                     </label>
-
                     <label class="option">
                         <input type="radio" name="size">
                         <span class="size">50ml</span>
                         <span class="online-status unavailable">🟠 Bald neu</span>
                         <span class="price">45 CHF</span>
                     </label>
-
                     <label class="option">
                         <input type="radio" name="size">
                         <span class="size">100ml</span>
                         <span class="online-status available">🔴 Nicht verfügbar</span>
                         <span class="price">85 CHF</span>
                     </label>
-
                     <label class="option">
                         <input type="radio" name="size">
                         <span class="size">200ml</span>
@@ -86,20 +80,15 @@
 
                 <div class="button-container">
                     <button type="button" class="btn btn-outline-danger heart-btn">♥</button>
-
                     <form action="{{ url_for('add_to_cart') }}" method="POST">
                         <input type="hidden" name="product_name" value="Verlorée Femme">
                         <input type="hidden" name="size" id="selected_size" value="25ml">
                         <input type="hidden" name="price" id="selected_price" value="20 CHF">
                         <input type="hidden" name="image"
                                value="{{ url_for('static', filename='imagesZKB/FemmeBlackBack.png') }}">
-
-
                         <button type="submit" class="button">In den Warenkorb</button>
                     </form>
-
                 </div>
-
 
                 <script>
                     document.querySelectorAll(".option input").forEach(radio => {
@@ -109,28 +98,24 @@
                         });
                     });
                 </script>
-
             </div>
         </div>
+
         <div class="accordion" id="accordionExample">
             <div class="accordion-item">
                 <h2 class="accordion-header">
-                    <button class="accordion-button" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#collapseOne"
-                            aria-expanded="true" aria-controls="collapseOne">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
                         Beschreibung
                     </button>
                 </h2>
-                <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+                <div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
                     <div class="accordion-body">
                         Dieses bezaubernde Damenparfüm verströmt einen eleganten blumigen Duft, der mit einer zarten,
                         frischen Süße verführt. Die floralen Noten verleihen dem Duft eine feminine Leichtigkeit und
-                        eine
-                        raffinierte Frische, die perfekt für jeden Anlass ist. Ob im Alltag oder bei besonderen
-                        Momenten,
-                        dieses Parfüm bringt eine natürliche Eleganz und einen Hauch von Luxus in deinen Tag. Lass dich
-                        von
-                        der blumigen Komposition umhüllen und hinterlasse einen bleibenden Eindruck.
+                        eine raffinierte Frische, die perfekt für jeden Anlass ist. Ob im Alltag oder bei besonderen
+                        Momenten, dieses Parfüm bringt eine natürliche Eleganz und einen Hauch von Luxus in deinen Tag.
+                        Lass dich von der blumigen Komposition umhüllen und hinterlasse einen bleibenden Eindruck.
                     </div>
                 </div>
             </div>
@@ -145,13 +130,11 @@
                     <div class="accordion-body">
                         Alcohol Denat., Wasser, Duftstoff, Linalool, Limonene, Geraniol, Citral,
                         Eugenol, Benzylalkohol, Hydroxycitronellal, Hexyl Cinnamal, Citronellol, Farnesol,
-                        Benzylbenzoat,
-                        Cumarin, Rosenketone, Linalylacetat, Geranylatacetat, Alpha-Terpineol, Terpineol, Pinene.
+                        Benzylbenzoat, Cumarin, Rosenketone, Linalylacetat, Geranylatacetat, Alpha-Terpineol,
+                        Terpineol, Pinene.
                     </div>
                 </div>
             </div>
         </div>
     </div>
-
 {% endblock %}
-
