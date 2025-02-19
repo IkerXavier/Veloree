@@ -152,6 +152,24 @@ def zahlen() -> str:
     return render_template("zahlungsformular.html")
 
 
+@app.route("/accountbestaetigung", methods=["POST"])
+def accountbestaetigung():
+    firstname = request.form.get("firstname")
+    lastname = request.form.get("lastname")
+    birthdate = request.form.get("birthdate")
+    email = request.form.get("email")
+    password = request.form.get("password")
+
+    # Optional: Datenbank-Insert
+
+    return render_template("accountbestaetigung.html",
+                           firstname=firstname,
+                           lastname=lastname,
+                           birthdate=birthdate,
+                           email=email,
+                           password=password)
+
+
 @app.route("/bestellbestaetigung", methods=["POST"])
 def bestellbestaetigung():
     name = request.form.get("name")
