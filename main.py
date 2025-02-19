@@ -151,23 +151,6 @@ def createaccount() -> str:
 def zahlen() -> str:
     return render_template("zahlungsformular.html")
 
-@app.route("/accountbestaetigung", methods=["POST"])
-def accountbestaetigung():
-    firstname = request.form.get("firstname")
-    lastname = request.form.get("lastname")
-    birthdate = request.form.get("birthdate")
-    email = request.form.get("email")
-    password = request.form.get("password")
-    return render_template("accountbestaetigung.html",
-                           firstname=firstname,
-                           lastname=lastname,
-                           birthdate=birthdate,
-                           email=email,
-                           password=password)
-
-
-app.secret_key_new = "geheimschlüssel"
-
 
 @app.route("/bestellbestaetigung", methods=["POST"])
 def bestellbestaetigung():
@@ -177,7 +160,7 @@ def bestellbestaetigung():
     city = request.form.get("city")
     zip_code = request.form.get("zip")
     creditcard = request.form.get("creditcard")
-    delivery_method = request.form.get("delivery_method")
+    delivery_method = request.form.get("delivery_method")  # Holt den Wert
 
     app.logger.info(f"Liefermethode erhalten: {delivery_method}")
 
@@ -193,7 +176,7 @@ def bestellbestaetigung():
                            creditcard=creditcard,
                            cart=cart_items,
                            total_price=total_price,
-                           delivery_method=delivery_method)
+                           delivery_method=delivery_method)  # Übergibt an Template
 
 
 app.secret_key = "geheimschlüssel"
@@ -216,7 +199,7 @@ def add_to_cart():
     price = request.form.get('price')
     image = request.form.get('image')
 
-    print(f"Product: {product_name}, Size: {size}, Price: {price}, Image: {image}")
+    print(f"Product: {product_name}, Size: {size}, Price: {price}, Image: {image}")  # Debugging
 
     if not all([product_name, size, price, image]):
         print("Fehlende Daten!")
@@ -303,4 +286,3 @@ def remove_from_cart(index):
         del cart[index]
         session["cart"] = cart
     return redirect(url_for("warenkorb"))
-
