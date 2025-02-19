@@ -1,5 +1,10 @@
 # Wir importieren zuerst das Flask-Objekt aus dem Package
+import sqlite3
+
 from flask import Flask, request, render_template, url_for, redirect, session
+from select import select
+
+from db import get_db_connection
 
 # mock data
 languages = [
@@ -152,6 +157,25 @@ def zahlen() -> str:
     return render_template("zahlungsformular.html")
 
 
+def save_to_pay(name, email, address, city, zip_code, creditcard, delivery_method, kunde_id):
+    print(
+        f"Speichere Bestellung: Name={name}, Email={email}, Address={address}, City={city}, Zip={zip_code}, Creditcard={creditcard}, Delivery={delivery_method}")
+
+    conn = get_db_connection()
+    cursor = conn.cursor()
+    # cursor.execute("drop  table if exists warenkorb cascade")
+
+    cursor.execute("select kunde_id from kunde")
+    kunde_id = cursor.fetchall()
+    cursor.execute(
+        "insert into bestellung (name, email,address, city, zip_code, creditcard, delivery_method,kunde_id) values (%s, %s,%s, %s,%s, %s,%s,%s)",
+        (name, email, address, city, zip_code, creditcard, delivery_method, kunde_id))
+
+    conn.commit()
+    conn.close()
+    cursor.close()
+
+
 @app.route("/bestellbestaetigung", methods=["POST"])
 def bestellbestaetigung():
     name = request.form.get("name")
@@ -167,6 +191,16 @@ def bestellbestaetigung():
     cart_items = session.get('cart', [])
     total_price = round(sum(float(item['price']) for item in cart_items), 2)
 
+    conn = get_db_connection()
+    cursor = conn.cursor()
+    cursor.execute("select kunde_id from kunde")
+    kunde_id = cursor.fetchall()
+
+    cursor.close()
+    conn.close()
+
+    save_to_pay(name, email, address, city, zip_code, creditcard, delivery_method, kunde_id)
+
     return render_template("bestellbestaetigung.html",
                            name=name,
                            email=email,
@@ -176,7 +210,7 @@ def bestellbestaetigung():
                            creditcard=creditcard,
                            cart=cart_items,
                            total_price=total_price,
-                           delivery_method=delivery_method)  # Übergibt an Template
+                           delivery_method=delivery_method)
 
 
 app.secret_key = "geheimschlüssel"
@@ -192,12 +226,32 @@ def reset_password():
     return render_template('passwortvergessen.html')
 
 
+@app.route("/zblank")
+def zblank() -> str:
+    return render_template("zblank.html")
+
+
+def save_to_db(produkt_id):
+    conn = get_db_connection()
+    cursor = conn.cursor()
+
+    cursor.execute("insert into warenkorb (produkt_id) values (%s)",
+                   (produkt_id,))
+
+    conn.commit()
+    conn.close()
+    cursor.close()
+
+
 @app.route('/add_to_cart', methods=['POST'])
 def add_to_cart():
+
     product_name = request.form.get('product_name')
     size = request.form.get('size')
     price = request.form.get('price')
     image = request.form.get('image')
+
+
 
     print(f"Product: {product_name}, Size: {size}, Price: {price}, Image: {image}")  # Debugging
 
@@ -211,15 +265,51 @@ def add_to_cart():
         print("Fehler bei der Preisumwandlung!")
         return "Ungültiger Preis", 400
 
+    product_name = product_name.strip()
+    size = size.strip()
+    print(f"Gesuchter Produktname: {product_name}")
+
+    conn = get_db_connection()
+    cursor = conn.cursor()
+    cursor.execute("select groesse_preis_id from groesse_preis where size = %s", (size,))
+    groesse_preis_id = cursor.fetchall()
+
+    if not groesse_preis_id:
+        print(f"Größe '{size}' nicht gefunden in der Tabelle 'groesse_preis'")
+        return "Größe nicht gefunden", 400
+
+    groesse_preis_id = groesse_preis_id[0]
+
+    cursor.execute("select produkt_id from produkt where product_name = %s and groesse_preis_id = %s ",
+                   (product_name, groesse_preis_id))
+    produkt_id = cursor.fetchone()
+
+    if not produkt_id:
+        print(f"Kein Produkt gefunden mit dem Namen: {product_name}")
+        return "Produkt nicht gefunden", 400
+
+    produkt_id = produkt_id[0]
+
+    save_to_db(produkt_id)
+
+
+
+
+    cursor.close()
+    conn.close()
+
     if 'cart' not in session:
         session['cart'] = []
+
 
     session['cart'].append({
         'name': product_name,
         'size': size,
         'price': price,
-        'image': image
+        'image': image,
+        'warenkorb_id': produkt_id
     })
+
 
     session.modified = True
     return redirect(url_for('warenkorb'))
@@ -282,7 +372,37 @@ def agb() -> str:
 @app.route("/remove_from_cart/<int:index>")
 def remove_from_cart(index):
     cart = session.get("cart", [])
+
+
+
     if 0 <= index < len(cart):
+        produkt_id = cart[index].get("warenkorb_id")
+        print(f"Produkt-ID erhalten: {produkt_id}")
+
+        if produkt_id is not None:
+
+            conn = get_db_connection()
+            cursor = conn.cursor()
+            cursor.execute("select warenkorb_id from warenkorb where produkt_id = %s", (produkt_id,))
+            warenkorb_id = cursor.fetchone()
+            if warenkorb_id:
+                warenkorb_id = warenkorb_id[0]
+                print(f"Warenkorb-ID zum Löschen: {warenkorb_id}")
+
+
+                cursor.execute("delete from warenkorb where warenkorb_id = %s", (warenkorb_id,))
+                conn.commit()
+
+
+            cursor.close()
+            conn.close()
+
         del cart[index]
         session["cart"] = cart
+        session.modified = True
+
     return redirect(url_for("warenkorb"))
+
+
+
+
