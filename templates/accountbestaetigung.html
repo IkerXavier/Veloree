@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block title %}Accountbestätigung{% endblock %}
+
+{% block extra_styles %}
+<link rel="stylesheet" href="{{ url_for('static', filename='styles/accountbestaetigung.css') }}">
+{% endblock %}
+
+{% block content %}
+    <h1 class="erfolgreich">Erfolgreiche Registrierung!</h1>
+    <div class="daten">
+        <h2 class="lila"><strong>Ihre Kontodaten:</strong></h2>
+        <ul style="list-style-type: none;">
+            <li><strong>Vorname:</strong> {{ firstname }}</li>
+            <li><strong>Nachname:</strong> {{ lastname }}</li>
+            <li><strong>Geburtsdatum:</strong> {{ birthdate }}</li>
+            <li><strong>E-Mail:</strong> {{ email }}</li>
+            <li><strong>Passwort:</strong> {{ password }}</li>
+        </ul>
+    </div>
+
+{% endblock %}

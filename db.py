@@ -40,6 +40,7 @@ def insert(cursor):
 
 
 
+
 if __name__ == '__main__':
     conn = get_db_connection()
 
@@ -78,6 +79,15 @@ if __name__ == '__main__':
     print("Selecting rows from publisher table using cursor.fetchfall")
     publisher_records4 = cursor.fetchall()
     print(publisher_records4)
+
+    postgreSQL_select_Query = "select * from kunde"
+    cursor.execute(postgreSQL_select_Query)
+    print('Accountdaten von Kunde:')
+    print("Selecting rows from publisher table using cursor.fetchfall")
+    publisher_records4 = cursor.fetchall()
+    print(publisher_records4)
+
+
 
 
 
