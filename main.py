@@ -173,7 +173,7 @@ def accountbestaetigung():
                            password=password)
 
 
-def save_to_pay(vorname_nachname, email, strasse, ort, plz, creditcard):
+def save_to_kunde(vorname_nachname, email, strasse, ort, plz, creditcard):
     print(
         f"Speichere Bestellung: Name={vorname_nachname}, Email={email}, Address={strasse}, City={ort}, Zip={plz}, Creditcard={creditcard}")
 
@@ -184,10 +184,24 @@ def save_to_pay(vorname_nachname, email, strasse, ort, plz, creditcard):
         "insert into kunde (vorname_nachname, email,strasse, ort, plz, creditcard) values (%s, %s,%s, %s,%s, %s)",
         (vorname_nachname, email, strasse, ort, plz, creditcard))
 
+
     conn.commit()
     conn.close()
     cursor.close()
 
+
+
+def save_bestellung(kunde_id, versand_id, warenkorb_id):
+    print(f'Bestellung für Kunde {kunde_id}, Warenkorb {warenkorb_id} ')
+    conn = get_db_connection()
+    cursor = conn.cursor()
+
+    cursor.execute("insert into bestellung (kunde_id, versand_id, warenkorb_id) values (%s, %s, %s)",
+                   (kunde_id, versand_id, warenkorb_id))
+
+    conn.commit()
+    cursor.close()
+    conn.close()
 
 
 @app.route("/bestellbestaetigung", methods=["POST"])
@@ -201,6 +215,7 @@ def bestellbestaetigung():
     plz = request.form.get("zip")
     creditcard = request.form.get("creditcard")
     delivery_method_input = request.form.get("delivery_method_input")
+
     # cursor.execute("select versand_id from versand where versandart = %s",
     #                (delivery_method_input ,))
     # versand_id = cursor.fetchone()
@@ -224,10 +239,17 @@ def bestellbestaetigung():
     conn = get_db_connection()
     cursor = conn.cursor()
 
+
+
+
+    kunde_id = save_to_kunde(vorname_nachname, email, strasse, ort, plz, creditcard),
+    warenkorb_id = cursor.execute("select warenkorb_id from warenkorb"),
+    versand_id = cursor.execute("select versand_id from versand")
     cursor.close()
     conn.close()
 
-    save_to_pay(vorname_nachname, email, strasse, ort, plz, creditcard)
+    save_bestellung(kunde_id, versand_id, warenkorb_id)
+
 
     return render_template("bestellbestaetigung.html",
                            name=vorname_nachname,
@@ -302,6 +324,7 @@ def add_to_cart():
     groesse_preis_id = cursor.fetchall()
 
     if not groesse_preis_id:
+        print(f'Gesuchte Grösse: {size}')
         print(f"Größe '{size}' nicht gefunden in der Tabelle 'groesse_preis'")
         return "Größe nicht gefunden", 400
 
