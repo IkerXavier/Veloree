@@ -1,6 +1,6 @@
 
 
-h1.erfolgreich {
+.erfolgreich5 {
     color: #310f8c;
     font-size: 24px;
     margin-bottom: 20px;
@@ -9,14 +9,14 @@ h1.erfolgreich {
     margin-top: 5%;
 }
 
-h2.lila {
+.lila5 {
     color: #6A0DAD;
     font-size: 20px;
     margin-bottom: 15px;
     text-align: center;
 }
 
-.daten {
+.daten5 {
     text-align: center;
     padding: 15px;
     background: #fafafa;
@@ -35,21 +35,21 @@ h2.lila {
 
 }
 
-.daten ul {
+.daten5 ul {
     padding: 0;
     list-style: none;
     margin: 0;
     width: 100%;
 }
 
-.daten li {
+.daten5 li {
     padding: 10px 0;
     font-size: 16px;
     border-bottom: 1px solid #ddd;
     text-align: center;
 }
 
-.daten li:last-child {
+.daten5 li:last-child {
     border-bottom: none;
 }
 
