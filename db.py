@@ -85,8 +85,19 @@ if __name__ == '__main__':
     cursor.execute(postgreSQL_select_Query)
     print('Accountdaten von Beutzer:')
     print("Selecting rows from publisher table using cursor.fetchfall")
-    publisher_records4 = cursor.fetchall()
-    print(publisher_records4)
+    publisher_records5 = cursor.fetchall()
+    print(publisher_records5)
+
+    print('-------------------------------------')
+
+    postgreSQL_select_Query = "select * from bestellung"
+    cursor.execute(postgreSQL_select_Query)
+    print('Bestellungen:')
+    print("Selecting rows from publisher table using cursor.fetchfall")
+    publisher_records6 = cursor.fetchall()
+    print(publisher_records6)
+    print('-------------------------------------')
+
 
 
 
