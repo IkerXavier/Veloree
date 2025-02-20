@@ -50,6 +50,10 @@
             <a href="{{ url_for('warenkorb') }}">
                 <img class="paula" src="{{ url_for('static', filename='pictures/warennkorb.jpg') }}" alt="Warenkorb"
                      width="40" height="40">
+                <span class ="cartimage"
+                      {% if session.get('cart_number',0) > 0 %}style="display: block;"{% else %}style="display: none;"{% endif %}>
+                {{ session.get('cart_number', 0) }}
+                </span>
             </a>
         </div>
         <script>

@@ -1,36 +1,90 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
 .erfolgreich {
     display: flex;
     justify-content: center;
     text-align: center;
-    font-size: 30px;
-    margin-top: 100px;
-    margin-bottom: 0;
+    font-size: 32px;
+    font-weight: bold;
+    color: #4B0082;
+    margin-top: 80px;
+    margin-bottom: 20px;
 }
 
 .daten {
     display: flex;
-    justify-content: center;
     flex-direction: column;
-    text-align: center;
-    font-size: 30px;
-    margin-top: 5%;
-    margin-bottom: 5%;
+    align-items: center;
+    background: #fff;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 40px auto;
+    max-width: 600px;
+}
 
+.daten h2 {
+    margin-bottom: 20px;
+}
+
+.daten ul {
+    list-style: none;
+    padding: 0;
+    font-size: 18px;
+    line-height: 1.6;
 }
 
 .artikels {
     display: flex;
-    flex-direction: row;
+    flex-wrap: wrap;
     justify-content: center;
-    gap: 5%;
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.artikel {
+    background: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+}
+
+.cart-item {
+    border-bottom: 1px solid #ddd;
+    padding: 15px 0;
+}
+
+.cart-item:last-child {
+    border-bottom: none;
 }
 
 .text7, .preis {
-    font-size: 25px;
+    font-size: 22px;
 }
 
 .lila {
     color: #4B0082;
+    font-size: 24px;
+}
+
+.gesamtpreis, .liefermethode {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.gesamtpreis p, .liefermethode p {
+    font-size: 22px;
+    font-weight: bold;
 }
 
 .datatext {
@@ -39,10 +93,11 @@
     justify-content: center;
     align-items: center;
     text-align: center;
-
-
+    font-size: 18px;
 }
-.dataschutz{
+
+.dataschutz {
     display: flex;
     justify-content: center;
+    margin-top: 20px;
 }

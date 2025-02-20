@@ -213,7 +213,6 @@ def save_to_pay(vorname_nachname, email, strasse, ort, plz, creditcard):
     cursor.close()
 
 
-
 @app.route("/bestellbestaetigung", methods=["POST"])
 def bestellbestaetigung():
     print(f'Gesamte request.form-Daten: {request.form}')
@@ -235,8 +234,6 @@ def bestellbestaetigung():
     #     return "ID nicht gefunden", 400
     #
     # versand_id = versand_id[0]
-
-
 
     print(f'Erhaltene Liefermethode : {delivery_method_input}')
 
@@ -263,6 +260,7 @@ def bestellbestaetigung():
                            cart=cart_items,
                            total_price=total_price,
                            delivery_method=delivery_method_input)
+
 
 app.secret_key = "geheimschlüssel"
 
@@ -296,13 +294,10 @@ def save_to_db(produkt_id):
 
 @app.route('/add_to_cart', methods=['POST'])
 def add_to_cart():
-
     product_name = request.form.get('product_name')
     size = request.form.get('size')
     price = request.form.get('price')
     image = request.form.get('image')
-
-
 
     print(f"Product: {product_name}, Size: {size}, Price: {price}, Image: {image}")  # Debugging
 
@@ -349,7 +344,6 @@ def add_to_cart():
     if 'cart' not in session:
         session['cart'] = []
 
-
     session['cart'].append({
         'name': product_name,
         'size': size,
@@ -360,6 +354,8 @@ def add_to_cart():
 
     session.modified = True
     return redirect(url_for('warenkorb'))
+
+    session['cart_number'] = len(cart)
 
 
 @app.route('/add_to_cash', methods=['POST'])
@@ -445,7 +441,3 @@ def remove_from_cart(index):
         session.modified = True
 
     return redirect(url_for("warenkorb"))
-
-
-
-
