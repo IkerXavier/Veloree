@@ -105,17 +105,19 @@
             let newTotal = baseTotal + selectedShippingCost;
             document.getElementById("total-price").innerText = `CHF ${newTotal.toFixed(2)}`;
 
-            // Entferne vorherige Auswahl
+
             document.querySelectorAll(".buttonLief, .buttonLief1").forEach(btn => {
                 btn.classList.remove("ausgewählt");
             });
 
-            // Markiere den gewählten Button
+
             button.classList.add("ausgewählt");
 
-            // Speichere die Liefermethode in localStorage
+
             localStorage.setItem("delivery_method", method);
             localStorage.setItem("shipping_cost", shippingCost);
+
+
         }
 
 
