@@ -22,7 +22,7 @@ def insert(cursor):
            values (%s,%s,%s)"""
     insert_statement4 = """insert into bestellung (bestellung_id, status, datum,gesamtpreis,kunde_id )
                values (%s,%s,%s,%s, %s)"""
-    insert_statement5 = """insert into kunde (kunde_id, titel, vorname,nachname,geburtsdatum,email,passwort )
+    insert_statement5 = """insert into kunde (kunde_id, firstname,lastname,birthdate,email,password )
                    values (%s,%s,%s,%s, %s,%s, %s)"""
     insert_statement6 = """insert into produkt_bestellung (produkt_bestellung_id, produkt_id, bestellung_id)
                        values (%s,%s,%s)"""
