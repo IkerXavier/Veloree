@@ -76,7 +76,7 @@ h2.lila {
     gap: 20px;
     flex-wrap: wrap;
     align-items: stretch;
-    min-width: 2000px;
+    min-width: 20000px;
 }
 
 .gesamtpreis, .liefermethode {
