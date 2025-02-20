@@ -1,38 +1,29 @@
-
-
 h1.erfolgreich {
-    color: #310f8c;
-    font-size: 24px;
-    margin-bottom: 20px;
-    font-weight: bold;
+    color: #4A3FBC;
+    font-size: 28px;
+    margin: 40px 0 20px;
+    font-weight: 700;
     text-align: center;
-    margin-top: 5%;
 }
 
 h2.lila {
-    color: #6A0DAD;
-    font-size: 20px;
-    margin-bottom: 15px;
+    color: #8A2BE2;
+    font-size: 22px;
+    margin-bottom: 20px;
     text-align: center;
 }
 
 .daten {
     text-align: center;
-    padding: 15px;
-    background: #fafafa;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 25px;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 50%;
-    justify-content: center;
-    justify-items: center;
-    align-content: center;
-    margin-left: 25%;
-    margin-bottom: 22%;
-    margin-top: 5%;
-
+    width: 60%;
+    margin: 40px auto;
 }
 
 .daten ul {
@@ -43,9 +34,9 @@ h2.lila {
 }
 
 .daten li {
-    padding: 10px 0;
-    font-size: 16px;
-    border-bottom: 1px solid #ddd;
+    padding: 12px 0;
+    font-size: 18px;
+    border-bottom: 1px solid #e0e0e0;
     text-align: center;
 }
 
@@ -54,6 +45,25 @@ h2.lila {
 }
 
 strong {
-    color: #333;
+    color: #444;
 }
 
+/* Responsive Design */
+@media (max-width: 768px) {
+    .daten {
+        width: 90%;
+        padding: 20px;
+    }
+
+    h1.erfolgreich {
+        font-size: 24px;
+    }
+
+    h2.lila {
+        font-size: 20px;
+    }
+
+    .daten li {
+        font-size: 16px;
+    }
+}
