@@ -154,6 +154,21 @@ def createaccount() -> str:
 def zahlen() -> str:
     return render_template("zahlungsformular.html")
 
+def save_to_benutzer(firstname, lastname, birthdate, email, password):
+    #print(
+        #f"Speichere Bestellung: Name={firstname}, Email={email}, Address={strasse}, City={ort}, Zip={plz}, Creditcard={creditcard}")
+
+    conn = get_db_connection()
+    cursor = conn.cursor()
+
+    cursor.execute(
+        "insert into benutzer (firstname, lastname, birthdate, email, password) values (%s, %s,%s, %s,%s)",
+        (firstname, lastname, birthdate, email, password, ))
+
+    conn.commit()
+    conn.close()
+    cursor.close()
+
 
 @app.route("/accountbestaetigung", methods=["POST"])
 def accountbestaetigung():
@@ -163,7 +178,14 @@ def accountbestaetigung():
     email = request.form.get("email")
     password = request.form.get("password")
 
+    conn = get_db_connection()
+    cursor = conn.cursor()
+
+    cursor.close()
+    conn.close()
+
     # Optional: Datenbank-Insert
+    save_to_benutzer(firstname, lastname, birthdate, email, password)
 
     return render_template("accountbestaetigung.html",
                            firstname=firstname,
@@ -171,6 +193,8 @@ def accountbestaetigung():
                            birthdate=birthdate,
                            email=email,
                            password=password)
+
+
 
 
 def save_to_pay(vorname_nachname, email, strasse, ort, plz, creditcard):
