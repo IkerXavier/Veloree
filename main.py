@@ -154,6 +154,21 @@ def createaccount() -> str:
 def zahlen() -> str:
     return render_template("zahlungsformular.html")
 
+def save_to_benutzer(firstname, lastname, birthdate, email, password):
+    #print(
+        #f"Speichere Bestellung: Name={firstname}, Email={email}, Address={strasse}, City={ort}, Zip={plz}, Creditcard={creditcard}")
+
+    conn = get_db_connection()
+    cursor = conn.cursor()
+
+    cursor.execute(
+        "insert into benutzer (firstname, lastname, birthdate, email, password) values (%s, %s,%s, %s,%s)",
+        (firstname, lastname, birthdate, email, password, ))
+
+    conn.commit()
+    conn.close()
+    cursor.close()
+
 
 @app.route("/accountbestaetigung", methods=["POST"])
 def accountbestaetigung():
@@ -163,7 +178,14 @@ def accountbestaetigung():
     email = request.form.get("email")
     password = request.form.get("password")
 
+    conn = get_db_connection()
+    cursor = conn.cursor()
+
+    cursor.close()
+    conn.close()
+
     # Optional: Datenbank-Insert
+    save_to_benutzer(firstname, lastname, birthdate, email, password)
 
     return render_template("accountbestaetigung.html",
                            firstname=firstname,
@@ -173,7 +195,7 @@ def accountbestaetigung():
                            password=password)
 
 
-def save_to_pay(vorname_nachname, email, strasse, ort, plz, creditcard):
+def save_to_kunde(vorname_nachname, email, strasse, ort, plz, creditcard):
     print(
         f"Speichere Bestellung: Name={vorname_nachname}, Email={email}, Address={strasse}, City={ort}, Zip={plz}, Creditcard={creditcard}")
 
@@ -187,6 +209,20 @@ def save_to_pay(vorname_nachname, email, strasse, ort, plz, creditcard):
     conn.commit()
     conn.close()
     cursor.close()
+
+
+
+def save_bestellung(kunde_id, versand_id, warenkorb_id):
+    print(f'Bestellung für Kunde {kunde_id}, Warenkorb {warenkorb_id} ')
+    conn = get_db_connection()
+    cursor = conn.cursor()
+
+    cursor.execute("insert into bestellung (kunde_id, versand_id, warenkorb_id) values (%s, %s, %s)",
+                   (kunde_id, versand_id, warenkorb_id))
+
+    conn.commit()
+    cursor.close()
+    conn.close()
 
 
 @app.route("/bestellbestaetigung", methods=["POST"])
@@ -211,6 +247,8 @@ def bestellbestaetigung():
     #
     # versand_id = versand_id[0]
 
+
+
     print(f'Erhaltene Liefermethode : {delivery_method_input}')
 
     app.logger.info(f"Liefermethode erhalten: {delivery_method_input}")
@@ -221,10 +259,17 @@ def bestellbestaetigung():
     conn = get_db_connection()
     cursor = conn.cursor()
 
+
+
+
+    kunde_id = save_to_kunde(vorname_nachname, email, strasse, ort, plz, creditcard),
+    warenkorb_id = cursor.execute("select warenkorb_id from warenkorb"),
+    versand_id = cursor.execute("select versand_id from versand")
     cursor.close()
     conn.close()
 
-    save_to_pay(vorname_nachname, email, strasse, ort, plz, creditcard)
+    save_bestellung(kunde_id, versand_id, warenkorb_id)
+
 
     return render_template("bestellbestaetigung.html",
                            name=vorname_nachname,
@@ -236,7 +281,6 @@ def bestellbestaetigung():
                            cart=cart_items,
                            total_price=total_price,
                            delivery_method=delivery_method_input)
-
 
 app.secret_key = "geheimschlüssel"
 
@@ -270,10 +314,13 @@ def save_to_db(produkt_id):
 
 @app.route('/add_to_cart', methods=['POST'])
 def add_to_cart():
+
     product_name = request.form.get('product_name')
     size = request.form.get('size')
     price = request.form.get('price')
     image = request.form.get('image')
+
+
 
     print(f"Product: {product_name}, Size: {size}, Price: {price}, Image: {image}")  # Debugging
 
@@ -297,6 +344,7 @@ def add_to_cart():
     groesse_preis_id = cursor.fetchall()
 
     if not groesse_preis_id:
+        print(f'Gesuchte Grösse: {size}')
         print(f"Größe '{size}' nicht gefunden in der Tabelle 'groesse_preis'")
         return "Größe nicht gefunden", 400
 
@@ -319,6 +367,7 @@ def add_to_cart():
 
     if 'cart' not in session:
         session['cart'] = []
+
 
     session['cart'].append({
         'name': product_name,
@@ -417,3 +466,7 @@ def remove_from_cart(index):
         session.modified = True
 
     return redirect(url_for("warenkorb"))
+
+
+
+
