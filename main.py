@@ -154,6 +154,21 @@ def createaccount() -> str:
 def zahlen() -> str:
     return render_template("zahlungsformular.html")
 
+def save_to_benutzer(firstname, lastname, birthdate, email, password):
+    #print(
+        #f"Speichere Bestellung: Name={firstname}, Email={email}, Address={strasse}, City={ort}, Zip={plz}, Creditcard={creditcard}")
+
+    conn = get_db_connection()
+    cursor = conn.cursor()
+
+    cursor.execute(
+        "insert into benutzer (firstname, lastname, birthdate, email, password) values (%s, %s,%s, %s,%s)",
+        (firstname, lastname, birthdate, email, password, ))
+
+    conn.commit()
+    conn.close()
+    cursor.close()
+
 
 @app.route("/accountbestaetigung", methods=["POST"])
 def accountbestaetigung():
@@ -163,7 +178,14 @@ def accountbestaetigung():
     email = request.form.get("email")
     password = request.form.get("password")
 
+    conn = get_db_connection()
+    cursor = conn.cursor()
+
+    cursor.close()
+    conn.close()
+
     # Optional: Datenbank-Insert
+    save_to_benutzer(firstname, lastname, birthdate, email, password)
 
     return render_template("accountbestaetigung.html",
                            firstname=firstname,
@@ -183,7 +205,6 @@ def save_to_kunde(vorname_nachname, email, strasse, ort, plz, creditcard):
     cursor.execute(
         "insert into kunde (vorname_nachname, email,strasse, ort, plz, creditcard) values (%s, %s,%s, %s,%s, %s)",
         (vorname_nachname, email, strasse, ort, plz, creditcard))
-
 
     conn.commit()
     conn.close()
@@ -215,7 +236,6 @@ def bestellbestaetigung():
     plz = request.form.get("zip")
     creditcard = request.form.get("creditcard")
     delivery_method_input = request.form.get("delivery_method_input")
-
     # cursor.execute("select versand_id from versand where versandart = %s",
     #                (delivery_method_input ,))
     # versand_id = cursor.fetchone()
@@ -359,6 +379,8 @@ def add_to_cart():
 
     session.modified = True
     return redirect(url_for('warenkorb'))
+
+    session['cart_number'] = len(cart)
 
 
 @app.route('/add_to_cash', methods=['POST'])
