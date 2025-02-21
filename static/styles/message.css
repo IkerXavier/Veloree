@@ -1,6 +1,6 @@
 
 .confirmation-container {
-    max-width: 800px;
+     min-width: 100%;
     margin: 40px auto;
     padding: 20px;
     font-family: Arial, sans-serif;
@@ -35,7 +35,6 @@ h2.lila {
 
 .daten li {
     padding: 8px 0;
-
     font-size: 16px;
 
 }
@@ -49,7 +48,7 @@ h2.lila {
     margin-top: 30px;
 
     margin-right: 20%;
-    min-width: 2000px;
+    min-width: 100%;
 }
 
 .cart-item {
@@ -72,16 +71,16 @@ h2.lila {
 .gesamt-liefer-info {
     display: flex;
     justify-content: space-between;
-    margin-top: 30px;
+    margin-top: 30px;   
     gap: 20px;
     flex-wrap: wrap;
     align-items: stretch;
-    min-width: 20000px;
+      min-width: 100%;
 }
 
 .gesamtpreis, .liefermethode {
     flex: 1;
-    min-width: 2000px;
+    min-width: 100%;
     background-color: #fff;
     padding: 15px;
     border-radius: 6px;
