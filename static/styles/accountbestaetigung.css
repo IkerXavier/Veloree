@@ -1,19 +1,19 @@
-h1.erfolgreich {
-    color: #4A3FBC;
+.erfolgreich5 {
+    color: #4B0082;
     font-size: 28px;
     margin: 40px 0 20px;
     font-weight: 700;
     text-align: center;
 }
 
-h2.lila {
-    color: #8A2BE2;
+.lila5 {
+    color: #4B0082;
     font-size: 22px;
     margin-bottom: 20px;
     text-align: center;
 }
 
-.daten {
+.daten5 {
     text-align: center;
     padding: 25px;
     background: #ffffff;
@@ -26,21 +26,21 @@ h2.lila {
     margin: 40px auto;
 }
 
-.daten ul {
+.daten5 ul {
     padding: 0;
     list-style: none;
     margin: 0;
     width: 100%;
 }
 
-.daten li {
+.daten5 li {
     padding: 12px 0;
     font-size: 18px;
     border-bottom: 1px solid #e0e0e0;
     text-align: center;
 }
 
-.daten li:last-child {
+.daten5 li:last-child {
     border-bottom: none;
 }
 
@@ -48,22 +48,21 @@ strong {
     color: #444;
 }
 
-/* Responsive Design */
 @media (max-width: 768px) {
-    .daten {
+    .daten5 {
         width: 90%;
         padding: 20px;
     }
 
-    h1.erfolgreich {
+    .erfolgreich5 {
         font-size: 24px;
     }
 
-    h2.lila {
+    .lila5 {
         font-size: 20px;
     }
 
-    .daten li {
+    .daten5 li {
         font-size: 16px;
     }
 }

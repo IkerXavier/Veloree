@@ -11,17 +11,17 @@
 }
 
 
-h1.erfolgreich {
+.erfolgreich {
     text-align: center;
-    color: #9B59B6;
+    color: #4B0082;
     font-size: 28px;
     margin-bottom: 30px;
 }
 
-h2.lila {
-    color: #9B59B6;
+.lila {
+    color: #4B0082;
     font-size: 22px;
-    border-bottom: 2px solid #9B59B6;
+    border-bottom: 2px solid #4B0082;
     padding-bottom: 5px;
     margin-bottom: 15px;
 }
@@ -122,9 +122,9 @@ h2.lila {
 }
 .arti {
     font-size: 20px;
-    color: #9B59B6;
+    color: #4B0082;
     font-size: 22px;
-    border-bottom: 2px solid #9B59B6;
+    border-bottom: 2px solid #4B0082;
     padding-bottom: 5px;
     margin-bottom: 15px;
     margin-left: 1%;

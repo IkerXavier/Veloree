@@ -1,0 +1,48 @@
+.erfolgreich {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    font-size: 30px;
+    margin-top: 100px;
+    margin-bottom: 0;
+}
+
+.daten {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    font-size: 30px;
+    margin-top: 5%;
+    margin-bottom: 5%;
+
+}
+
+.artikels {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 5%;
+}
+
+.text7, .preis {
+    font-size: 25px;
+}
+
+.lila {
+    color: #4B0082;
+}
+
+.datatext {
+    font-family: Georgia, serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+
+}
+.dataschutz{
+    display: flex;
+    justify-content: center;
+}
