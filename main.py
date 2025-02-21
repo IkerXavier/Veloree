@@ -184,7 +184,7 @@ def accountbestaetigung():
     cursor.close()
     conn.close()
 
-    # Optional: Datenbank-Insert
+
     save_to_benutzer(firstname, lastname, birthdate, email, password)
 
     return render_template("accountbestaetigung.html",
@@ -212,17 +212,17 @@ def save_to_kunde(vorname_nachname, email, strasse, ort, plz, creditcard):
 
 
 
-def save_bestellung(kunde_id, versand_id, warenkorb_id):
-    print(f'Bestellung für Kunde {kunde_id}, Warenkorb {warenkorb_id} ')
-    conn = get_db_connection()
-    cursor = conn.cursor()
-
-    cursor.execute("insert into bestellung (kunde_id, versand_id, warenkorb_id) values (%s, %s, %s)",
-                   (kunde_id, versand_id, warenkorb_id))
-
-    conn.commit()
-    cursor.close()
-    conn.close()
+# def save_bestellung(kunde_id, versand_id, warenkorb_id):
+#     print(f'Bestellung für Kunde {kunde_id}, Warenkorb {warenkorb_id} ')
+#     conn = get_db_connection()
+#     cursor = conn.cursor()
+#
+#     cursor.execute("insert into bestellung (kunde_id, versand_id, warenkorb_id) values (%s, %s, %s)",
+#                    (kunde_id, versand_id, warenkorb_id))
+#
+#     conn.commit()
+#     cursor.close()
+#     conn.close()
 
 
 @app.route("/bestellbestaetigung", methods=["POST"])
@@ -262,13 +262,15 @@ def bestellbestaetigung():
 
 
 
-    kunde_id = save_to_kunde(vorname_nachname, email, strasse, ort, plz, creditcard),
-    warenkorb_id = cursor.execute("select warenkorb_id from warenkorb"),
-    versand_id = cursor.execute("select versand_id from versand")
-    cursor.close()
-    conn.close()
-
-    save_bestellung(kunde_id, versand_id, warenkorb_id)
+    # kunde_id = save_to_kunde(vorname_nachname, email, strasse, ort, plz, creditcard),
+    # cursor.execute("select warenkorb_id from warenkorb"),
+    # warenkorb_id = cursor.fetchone()
+    # cursor.execute("select versand_id from versand")
+    # versand_id = cursor.fetchone()
+    # cursor.close()
+    # conn.close()
+    #
+    # save_bestellung(kunde_id, versand_id, warenkorb_id)
 
 
     return render_template("bestellbestaetigung.html",
@@ -454,7 +456,7 @@ def remove_from_cart(index):
             if warenkorb_id:
                 warenkorb_id = warenkorb_id[0]
                 print(f"Warenkorb-ID zum Löschen: {warenkorb_id}")
-
+                cursor.execute("delete from bestellung where warenkorb_id = %s", (warenkorb_id,))
                 cursor.execute("delete from warenkorb where warenkorb_id = %s", (warenkorb_id,))
                 conn.commit()
 
